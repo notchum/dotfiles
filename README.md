@@ -26,6 +26,8 @@ Inspired by these rices:
 - [i3blocks](https://github.com/vivien/i3blocks) - A feed generator for text based status bars
 - [gotop](https://github.com/xxxserxxx/gotop) - A terminal based graphical activity monitor
 - [ohmyzsh](https://github.com/ohmyzsh/ohmyzsh) - An open source, community-driven framework for managing your zsh configuration
+- [pynvim](https://github.com/neovim/pynvim) - Python client and plugin host for Nvim 
 - [zathura](https://github.com/pwmt/zathura) - A document viewer
+- [ranger](https://github.com/ranger/ranger) - A VIM-inspired filemanager for the console 
 - [rofi](https://github.com/davatorium/rofi) - A window switcher, application launcher and dmenu replacement
 - [r/unixporn](https://www.reddit.com/r/unixporn) - you already know
