@@ -1,0 +1,10 @@
+{
+    "npm.binPath": "/usr/bin/npm",
+    "diagnostic.errorSign": "⨉",
+    "diagnostic.warningSign": "⚠",
+    "diagnostic.infoSign": "ℹ",
+    "diagnostic.hintSign": "➤",
+    "python.autoComplete.addBrackets": true,
+    "python.linting.enabled": true,
+    "python.jediEnabled": false
+}
