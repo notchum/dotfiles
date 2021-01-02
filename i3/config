@@ -9,10 +9,11 @@ set $mod Mod4
 #############################
 
 # Gaps
-for_window [class=".*"] border pixel 0
-gaps inner 30
-gaps outer 15
-gaps bottom 35
+for_window [class=".*"] border pixel 2
+gaps inner 5
+gaps outer 5
+gaps bottom 5
+gaps top 5
 
 # Smart borders (draw borders around container only if it is not the only container on this workspace) 
 # on|no_gaps (on=always activate and no_gaps=only activate if the gap size to the edge of the screen is 0)
@@ -22,24 +23,21 @@ smart_borders on
 ### Autostart Applications ###
 ##############################
 
-exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-exec --no-startup-id nitrogen --restore; sleep 1; picom -b
+exec --no-startup-id killall -q picom; picom -b
 exec --no-startup-id xautolock -time 10 -locker blurlock
-exec_always --no-startup-id ff-theme-util
-exec_always --no-startup-id fix_xcursor
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 ###############################
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font xft:URWGothic-Book 11
+font xft:SF Pro Display 12
 
 # Use Mouse+$mod to drag floating windows
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec kitty
+bindsym $mod+Return exec st
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -48,7 +46,7 @@ bindsym $mod+Shift+q kill
 bindsym $mod+Shift+s exec flameshot
 
 # Menu
-bindsym $mod+d exec rofi -show drun
+bindsym $mod+d exec rofi -show drun -theme an_94
 
 # launch categorized menu
 bindsym $mod+z exec --no-startup-id morc_menu
@@ -60,7 +58,6 @@ bindsym $mod+z exec --no-startup-id morc_menu
 #exec --no-startup-id volumeicon
 #bindsym $mod+Ctrl+m exec terminal -e 'alsamixer'
 exec --no-startup-id start-pulseaudio-x11
-exec --no-startup-id pa-applet
 bindsym $mod+Ctrl+m exec pavucontrol
 
 ################################################################################################
@@ -72,44 +69,28 @@ bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart du
 focus_follows_mouse no
 
 # change focus
-##bindsym $mod+h exec i3-msg border pixel 2; focus left
-##bindsym $mod+j exec i3-msg border pixel 2; focus down
-##bindsym $mod+k exec i3-msg border pixel 2; focus up
-##bindsym $mod+l exec i3-msg border pixel 2; focus right
-##bindsym --release $mod+h exec i3-msg border pixel 0
-##bindsym --release $mod+j exec i3-msg border pixel 0
-##bindsym --release $mod+k exec i3-msg border pixel 0
-##bindsym --release $mod+l exec i3-msg border pixel 0
+bindsym $mod+j focus left
+bindsym $mod+k focus down
+bindsym $mod+l focus up
+bindsym $mod+semicolon focus right
 
 # alternatively, you can use the cursor keys:
-bindsym $mod+Left exec i3-msg border pixel 2; focus left
-bindsym $mod+Down exec i3-msg border pixel 2; focus down
-bindsym $mod+Up exec i3-msg border pixel 2; focus up
-bindsym $mod+Right exec i3-msg border pixel 2; focus right
-bindsym --release $mod+Left exec i3-msg border pixel 0
-bindsym --release $mod+Down exec i3-msg border pixel 0
-bindsym --release $mod+Up exec i3-msg border pixel 0
-bindsym --release $mod+Right exec i3-msg border pixel 0
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
 
 # move focused window
-## bindsym $mod+Shift+h exec i3-msg border pixel 2; move left
-## bindsym $mod+Shift+j exec i3-msg border pixel 2; move down
-## bindsym $mod+Shift+k exec i3-msg border pixel 2; move up
-## bindsym $mod+Shift+l exec i3-msg border pixel 2; move right
-## bindsym --release $mod+Shift+h exec i3-msg border pixel 0
-## bindsym --release $mod+Shift+j exec i3-msg border pixel 0
-## bindsym --release $mod+Shift+k exec i3-msg border pixel 0
-## bindsym --release $mod+Shift+l exec i3-msg border pixel 0
+bindsym $mod+Shift+j move left
+bindsym $mod+Shift+k move down
+bindsym $mod+Shift+l move up
+bindsym $mod+Shift+semicolon move right
 
 # alternatively, you can use the cursor keys:
-bindsym $mod+Shift+Left exec i3-msg border pixel 2; move left
-bindsym $mod+Shift+Down exec i3-msg border pixel 2; move down
-bindsym $mod+Shift+Up exec i3-msg border pixel 2; move up
-bindsym $mod+Shift+Right exec i3-msg border pixel 2; move right
-bindsym --release $mod+Shift+Left exec i3-msg border pixel 0
-bindsym --release $mod+Shift+Down exec i3-msg border pixel 0
-bindsym --release $mod+Shift+Up exec i3-msg border pixel 0
-bindsym --release $mod+Shift+Right exec i3-msg border pixel 0
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
 
 # workspace back and forth (with/without active container)
 workspace_auto_back_and_forth yes
@@ -189,11 +170,10 @@ bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
 # assign [class="Pcmanfm"] $ws3
 
 # Open specific applications in floating mode
-for_window [class="Lightdm-settings"] floating enable
 for_window [class="Lxappearance"] floating enable sticky enable
-for_window [class="Nitrogen"] floating enable sticky enable
 for_window [class="Pavucontrol"] floating enable
 for_window [class="Pcmanfm"] floating enable
+for_window [class="feh"] floating enable
 
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
@@ -206,22 +186,6 @@ bindsym $mod+Shift+r restart
 
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
-
-# Set shut down, restart and locking feature
-set $mode_system System (l)ock, s(i)gn_out, (s)leep, (h)ibernate, (r)eboot, sh(u)tdown
-mode "$mode_system" {
-    bindsym l exec --no-startup-id i3exit lock, mode "default"
-    bindsym s exec --no-startup-id i3exit suspend, mode "default"
-    bindsym i exec --no-startup-id i3exit logout, mode "default"
-    bindsym h exec --no-startup-id i3exit hibernate, mode "default"
-    bindsym r exec --no-startup-id i3exit reboot, mode "default"
-    bindsym u exec --no-startup-id i3exit shutdown, mode "default"
-
-    # exit system mode: "Enter" or "Escape"
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-}
-bindsym $mod+x mode "$mode_system"
 
 # Resize window (you can also use the mouse for that)
 bindsym $mod+r mode "resize"
@@ -247,12 +211,38 @@ mode "resize" {
         bindsym Escape mode "default"
 }
 
-# Theme colors
-# class                   border  backgr. text    indic.   child_border
-  client.focused          #000000 #000000 #000000 #000000
-  client.focused_inactive #2F3D44 #2F3D44 #1ABC9C #454948
-  client.unfocused        #2F3D44 #2F3D44 #1ABC9C #454948
-  client.urgent           #CB4B16 #FDF6E3 #1ABC9C #268BD2
-  client.placeholder      #000000 #0c0c0c #ffffff #000000 
+# Start i3bar to display a workspace bar (plus the system information i3status
+# finds out, if available)
+# bar {
+   # status_command i3status
+# }
 
-  client.background       #000000
+# Using Xresources to source colors
+# set_from_resource $<name> <resource_name> <fallback>
+set_from_resource $tbackground background
+set_from_resource $tforeground foreground
+set_from_resource $tcolor0     color0
+set_from_resource $tcolor1     color1
+set_from_resource $tcolor2     color2
+set_from_resource $tcolor3     color3
+set_from_resource $tcolor4     color4
+set_from_resource $tcolor5     color5
+set_from_resource $tcolor6     color6
+set_from_resource $tcolor7     color7
+set_from_resource $tcolor8     color8
+set_from_resource $tcolor9     color9
+set_from_resource $tcolor10    color10
+set_from_resource $tcolor11    color11
+set_from_resource $tcolor12    color12
+set_from_resource $tcolor13    color13
+set_from_resource $tcolor14    color14
+set_from_resource $tcolor15    color15
+
+# Theme colors
+# class                     border  backgr. text    indic.  child_border
+  client.focused            #000000 #000000 #000000 #000000 $tcolor4
+  # client.focused_inactive #2F3D44 #2F3D44 #1ABC9C #454948
+  # client.unfocused        #2F3D44 #2F3D44 #1ABC9C #454948
+  # client.urgent           #CB4B16 #FDF6E3 #1ABC9C #268BD2
+  # client.placeholder      #000000 #0c0c0c #ffffff #000000 
+  # client.background       #000000

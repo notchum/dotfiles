@@ -3,7 +3,14 @@
 
 # Path to your oh-my-zsh installation.
   export ZSH="$HOME/.oh-my-zsh"
-  export PATH=/opt/Qt/Tools/QtCreator/bin:$PATH
+  
+# Add QtCreator tools to path
+  export PATH="$PATH:/opt/Qt/Tools/QtCreator/bin"
+  
+# Set NeoVim to default editor
+  export VISUAL=nvim;
+  export EDITOR=nvim;
+  export MYVIMRC="$HOME/.vimrc"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -104,7 +111,7 @@ neofetch
 alias root='cd /'
 alias show='xdg-open'
 alias helpi3='$HOME/helpi3.sh'
-
+eval $(thefuck --alias)
 alias ls='ls --color=always'
 LS_COLORS="di=94:fi=2:*.png=93:*.jpg=93:*.sh=96:*.cpp=96:*.py=96:*.pdf=92:*.zip=91:*.json=91:ln=95" ; export LS_COLORS
  
