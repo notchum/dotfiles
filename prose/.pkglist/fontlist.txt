@@ -1,0 +1,10 @@
+awesome-terminal-fonts
+nerd-fonts-complete
+noto-fonts-cjk
+noto-fonts-emoji
+otf-san-francisco
+otf-san-francisco-mono
+ttf-dejavu
+ttf-liberation
+ttf-symbola
+ttf-unifont

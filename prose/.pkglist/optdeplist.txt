@@ -1,0 +1,11 @@
+dbus-python
+djvulibre
+libmicrohttpd
+python-gobject
+python-keyring
+python-pillow
+python-pyopenssl
+python-pyserial
+python-pyxdg
+python-service-identity
+which

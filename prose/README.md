@@ -10,6 +10,9 @@
 + distro: [`Arch Linux`](https://www.archlinux.org/)
 + wallpapers: [one](https://github.com/notchum/wallpapers/blob/main/nature/flowers.jpg)
               [two](https://github.com/notchum/wallpapers/blob/main/nature/u04W.jpg)
+              [three](https://github.com/notchum/wallpapers/blob/main/nature/saffu-Vya8eGk5Y64-unsplash.jpg)
++ font: `Hack` and `NotoSans Nerd Font`
++ icons: `Papirus`
 + Shown in the screenshots: `i3`, `polybar`, `neovim`, `zathura`, `kitty`.
 
 ### CLI
@@ -53,12 +56,3 @@
 - [BetterDiscord](https://github.com/BetterDiscord/BetterDiscord) - A client modification for Discord with endless flexibility and addons.
     - [Dark Discord Theme](https://github.com/discord-modifications/dark-discord)
     - [Modern Indicators](https://github.com/discord-extensions/modern-indicators)
-
-### Fonts
-- [Cascadia Code](https://www.archlinux.org/packages/community/any/ttf-cascadia-code/)
-- [San Francisco](https://aur.archlinux.org/packages/otf-san-francisco-pro/)
-
-### Icons
-- papirus
-- kora
-- adwaita

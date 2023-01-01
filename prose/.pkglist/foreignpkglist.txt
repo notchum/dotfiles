@@ -1,0 +1,15 @@
+betterdiscord-installer
+gotop-bin
+i3-resurrect
+jmtpfs
+kora-icon-theme
+nerd-fonts-complete
+otf-san-francisco
+otf-san-francisco-mono
+paru
+spicetify-cli
+spotify
+ttf-symbola
+ttf-unifont
+visual-studio-code-bin
+zscroll-git
