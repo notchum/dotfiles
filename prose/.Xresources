@@ -1,0 +1,85 @@
+! font
+*.font:	Hack Nerd Font:pixelsize=12:antialias=true:autohint=true;
+
+! Universal
+#define BACKGROUND #010101
+#define FOREGROUND #D8DEE9
+
+! Nord
+! https://github.com/arcticicestudio/nord-xresources/blob/develop/src/nord
+#define nord0 #2E3440
+#define nord1 #3B4252
+#define nord2 #434C5E
+#define nord3 #4C566A
+#define nord4 #D8DEE9
+#define nord5 #E5E9F0
+#define nord6 #ECEFF4
+#define nord7 #8FBCBB
+#define nord8 #88C0D0
+#define nord9 #81A1C1
+#define nord10 #5E81AC
+#define nord11 #BF616A
+#define nord12 #D08770
+#define nord13 #EBCB8B
+#define nord14 #A3BE8C
+#define nord15 #B48EAD
+
+! Pink Rose
+! https://github.com/notchum/wallpapers/blob/main/nature/flowers.jpg
+#define PROSE0 #34414e
+#define PROSE1 #c37688
+#define PROSE2 #728387
+#define PROSE3 #9a978b
+#define PROSE4 #dba1ac
+#define PROSE5 #8a4455
+#define PROSE6 #547c7d
+#define PROSE7 #d8c8c1
+
+! special
+*.foreground:   FOREGROUND
+*.background:   BACKGROUND
+*.abackground:  #50010101
+*.cursorColor:  FOREGROUND
+*.alpha: 0.5
+*.fading: 35
+
+! black
+*.color0:       PROSE0
+*.color8:       PROSE0
+
+! red
+*.color1:       PROSE1
+*.color9:       PROSE1
+
+! green
+*.color2:       PROSE2
+*.color10:      PROSE2
+
+! yellow
+*.color3:       PROSE3
+*.color11:      PROSE3
+
+! blue
+*.color4:       PROSE4
+*.color12:      PROSE4
+
+! magenta
+*.color5:       PROSE5
+*.color13:      PROSE5
+
+! cyan
+*.color6:       PROSE6
+*.color14:      PROSE6
+
+! white
+*.color7:       PROSE7
+*.color15:      PROSE7
+
+! Black color that will not be affected by bold highlighting.
+*color66:       BACKGROUND
+
+! rofi
+rofi.color-window: BACKGROUND, BACKGROUND, BACKGROUND
+rofi.color-normal: BACKGROUND, FOREGROUND, BACKGROUND, BACKGROUND, PROSE1
+rofi.color-active: BACKGROUND, FOREGROUND, BACKGROUND, BACKGROUND, PROSE1
+rofi.color-urgent: BACKGROUND, FOREGROUND, BACKGROUND, BACKGROUND, PROSE1
