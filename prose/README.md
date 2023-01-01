@@ -1,19 +1,21 @@
 # `prose`
 > of course i still love you
 
-# Screenshots
+## Screenshots
 
 ![screenshot1](screenshot1.png)
 ![screenshot2](screenshot2.png)
 
-# Installation
+## Installation
 [here](https://wiki.archlinux.org/title/Pacman/Tips_and_tricks#List_of_installed_packages).
 
-# Details
-- [Arch Linux](https://www.archlinux.org/) - btw i use arch
-- [r/unixporn](https://www.reddit.com/r/unixporn) - you already know
+## Details
++ distro: [`Arch Linux`](https://www.archlinux.org/)
++ wallpapers: [one](https://github.com/notchum/wallpapers/blob/main/nature/flowers.jpg)
+              [two](https://github.com/notchum/wallpapers/blob/main/nature/u04W.jpg)
++ Shown in the screenshots: `i3`, `polybar`, `neovim`, `zathura`, `kitty`.
 
-## CLI
+### CLI
 - [zsh](https://github.com/zsh-users/zsh) - A shell designed for interactive use, although it is also a powerful scripting language.
     - [lambda-minimal Theme](https://github.com/sohnryang/lambda-minimal-theme)
     - [ohmyzsh](https://github.com/ohmyzsh/ohmyzsh) - An open source, community-driven framework for managing your zsh configuration.
@@ -31,7 +33,7 @@
 - [neofetch](https://github.com/dylanaraps/neofetch) - A command-line system information tool written in bash.
 - [onefetch](https://github.com/o2sh/onefetch) - A command-line Git information tool.
 
-## GUI
+### GUI
 - [i3](https://github.com/i3/i3) - A tiling window manager.
     - [i3-resurrect](https://github.com/JonnyHaystack/i3-resurrect) - A solution for saving and restoring i3 workspaces.
 - [i3blocks](https://github.com/vivien/i3blocks) - A feed generator for text based status bars.
@@ -44,7 +46,7 @@
 - [Dunst](https://github.com/dunst-project/dunst) - Lightweight and customizable notification daemon.
 - [Rofi](https://github.com/davatorium/rofi) - A window switcher, application launcher and dmenu replacement.
 
-## Applications
+### Applications
 - [Firefox](https://mozilla.org/firefox) - A free and open source web browser.
 - [feh](https://feh.finalrewind.org/) - An X11 image viewer aimed mostly at console users.
 - [flameshot](https://github.com/flameshot-org/flameshot) - A powerful yet simple to use screenshot software.
@@ -54,11 +56,11 @@
 - [BetterDiscord](https://github.com/BetterDiscord/BetterDiscord) - A client modification for Discord with endless flexibility and addons.
     - [Dark Discord Theme](https://github.com/discord-modifications/dark-discord)
 
-## Fonts
+### Fonts
 - [Cascadia Code](https://www.archlinux.org/packages/community/any/ttf-cascadia-code/)
 - [San Francisco](https://aur.archlinux.org/packages/otf-san-francisco-pro/)
 
-## Icons
+### Icons
 - papirus
 - kora
 - adwaita
