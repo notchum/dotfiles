@@ -1,14 +1,16 @@
 #!/bin/sh
-#
-# ~/.xinitrc
-#
-# Executed by startx (run your window manager from here)
+
+# This file runs when a DM logs you into a graphical session.
+# If you use startx/xinit like a Chad, this file will also be sourced.
+
+# Set DPI: https://dpi.lv/
+xrandr --dpi 122
 
 # Merge resources
 [[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources
 
 # Start for keybindings
-xbindkeys
+# xbindkeys
 
 # Start compositor
 picom &
@@ -16,5 +18,5 @@ picom &
 # Set wallpaper
 ~/.fehbg &
 
-# Open up a terminal
-kitty &
+# Ensure that xrdb has finished running before moving on to start the WM/DE.
+[ -n "$xrdbpid" ] && wait "$xrdbpid"
