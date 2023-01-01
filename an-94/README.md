@@ -1,5 +1,5 @@
-# `prose`
-> of course i still love you
+# `an-94`
+> as a result of its complexity, the AN-94 is incredibly user unfriendly when it comes to maintenance, and thus became unfit to replace the AK-47
 
 ## Screenshots
 
