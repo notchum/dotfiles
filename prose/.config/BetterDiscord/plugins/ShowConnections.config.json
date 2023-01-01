@@ -1,0 +1,34 @@
+{
+	"all": {
+		"connections": {
+			"battlenet": true,
+			"crunchyroll": true,
+			"ebay": true,
+			"epicgames": true,
+			"facebook": true,
+			"github": true,
+			"instagram": true,
+			"leagueoflegends": true,
+			"paypal": true,
+			"playstation": true,
+			"playstation-stg": true,
+			"reddit": true,
+			"riotgames": true,
+			"samsung": true,
+			"skype": true,
+			"spotify": true,
+			"steam": true,
+			"tiktok": true,
+			"twitch": true,
+			"twitter": true,
+			"xbox": true,
+			"youtube": true
+		},
+		"general": {
+			"useColoredIcons": true,
+			"useColoredTooltips": true,
+			"showVerifiedBadge": true,
+			"openWebpage": true
+		}
+	}
+}
