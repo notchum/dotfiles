@@ -8,8 +8,7 @@
 
 ## Details
 + distro: [`Arch Linux`](https://www.archlinux.org/)
-+ wallpapers: [one](https://github.com/notchum/wallpapers/blob/main/nature/flowers.jpg)
-              [two](https://github.com/notchum/wallpapers/blob/main/nature/u04W.jpg)
++ wallpapers: [here](https://github.com/notchum/wallpapers/blob/main/anime/anime_irl_an_94.jpg)
 + Shown in the screenshots: `i3`, `polybar`, `neovim`, `zathura`, `kitty`.
 
 ### CLI
