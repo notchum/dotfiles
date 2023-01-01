@@ -11,7 +11,7 @@ The wallpapers can be found here: [wallpapers](https://github.com/notchum/wallpa
 
 ##  Screenshots
 
-### [`prose`](doublechic/)
+### [`prose`](prose/)
 
 ![screenshot1](doublechic/screenshot1.png)
 ![screenshot2](doublechic/screenshot2.png)
