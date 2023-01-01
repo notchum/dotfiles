@@ -52,6 +52,7 @@
     - [Ziro Theme](https://github.com/spicetify/spicetify-themes)
 - [BetterDiscord](https://github.com/BetterDiscord/BetterDiscord) - A client modification for Discord with endless flexibility and addons.
     - [Dark Discord Theme](https://github.com/discord-modifications/dark-discord)
+    - [Modern Indicators](https://github.com/discord-extensions/modern-indicators)
 
 ### Fonts
 - [Cascadia Code](https://www.archlinux.org/packages/community/any/ttf-cascadia-code/)
