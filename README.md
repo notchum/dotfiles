@@ -5,7 +5,7 @@ Here are my dotfiles (my rice repo)!
 ---
 
 ## Installation
-> **The `install.sh` script is still a WIP.** I would recommend manually copying files for now.
+> **Note**: **The `install.sh` script is still a WIP.** I would recommend manually copying files for now.
 
 ```sh
 git clone https://github.com/notchum/dotfiles.git
