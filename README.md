@@ -27,8 +27,8 @@ The wallpapers can be found here: [wallpapers](https://github.com/notchum/wallpa
 
 ### [`prose`](prose/)
 
-![screenshot1](doublechic/screenshot1.png)
-![screenshot2](doublechic/screenshot2.png)
+![screenshot1](prose/screenshot1.png)
+![screenshot2](prose/screenshot2.png)
 
 ### [`an-94`](an-94/)
 
