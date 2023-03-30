@@ -9,7 +9,7 @@
 ## Details
 + distro: [`Arch Linux`](https://www.archlinux.org/)
 + wallpapers: [here](https://github.com/notchum/wallpapers/blob/main/anime/anime_irl_an_94.jpg)
-+ Shown in the screenshots: `i3`, `polybar`, `neovim`, `zathura`, `kitty`.
++ Shown in the screenshots: `i3`, `polybar`, `neovim`, `zathura`, `ranger`, `st`.
 
 ### CLI
 - [zsh](https://github.com/zsh-users/zsh) - A shell designed for interactive use, although it is also a powerful scripting language.
