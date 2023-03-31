@@ -1,0 +1,9 @@
+nerd-fonts-cascadia-code
+nerd-fonts-sf-mono
+noto-fonts-cjk
+otf-san-francisco-pro
+ttf-dejavu
+ttf-font-awesome
+ttf-material-icons-git
+ttf-symbola
+ttf-unifont

@@ -1,0 +1,13 @@
+boost-libs
+botan
+db
+libid3tag
+libmicrohttpd
+lsof
+p7zip
+python-dnspython
+python-markdown
+python-pyopenssl
+python-setuptools
+subversion
+which

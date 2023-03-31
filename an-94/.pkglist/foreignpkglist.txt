@@ -1,0 +1,11 @@
+gotop-bin
+ly
+nerd-fonts-cascadia-code
+nerd-fonts-sf-mono
+otf-san-francisco-pro
+paru
+spotify-tui
+ttf-material-icons-git
+ttf-symbola
+ttf-unifont
+xst-git
