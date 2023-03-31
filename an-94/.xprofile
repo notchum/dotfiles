@@ -1,0 +1,13 @@
+#!/bin/sh
+
+# Merge Xresources
+[[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources
+
+# Start for keybindings
+xbindkeys
+
+# Start compositor
+picom &
+
+# Set bg image
+~/.fehbg &
