@@ -25,6 +25,11 @@ The wallpapers can be found here: [wallpapers](https://github.com/notchum/wallpa
 
 ##  Screenshots
 
+### [`metamorphosis`](metamorphosis/)
+
+![screenshot1](metamorphosis/screenshot1.png)
+![screenshot2](metamorphosis/screenshot2.png)
+
 ### [`prose`](prose/)
 
 ![screenshot1](prose/screenshot1.png)
