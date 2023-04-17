@@ -1,0 +1,20 @@
+- defaults:
+    link:
+      relink: true
+      stdin: true
+      stdout: true
+
+- clean: ['~']
+
+- link:
+    ~/.zshrc: .zshrc
+    # ~/bin: bin
+    # ~/.pkglist: .pkglist
+    # ~/.local/share/fonts: .local/share/fonts
+
+# - create:
+#   - ~/downloads
+
+# - shell:
+#   - [git submodule update --init --recursive, Installing submodules]
+#   - [chsh -s $(which zsh), Making zsh the default shell]

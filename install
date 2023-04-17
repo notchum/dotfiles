@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+
+set -e
+
+die () {
+  echo >&2 "$@"
+  exit 1
+}
+
+[ "$#" -eq 1 ] || die "1 argument required, $# provided"
+case $1 in
+  an-94|prose|metamorphosis) echo "Theme selected for install: $1" ;;
+  *) die "$1 is not a valid theme"
+esac
+
+CONFIG="$1/install.conf.yaml"
+DOTBOT_DIR="dotbot"
+
+DOTBOT_BIN="bin/dotbot"
+BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+echo "$CONFIG"
+
+cd "${BASEDIR}"
+git -C "${DOTBOT_DIR}" submodule sync --quiet --recursive
+git submodule update --init --recursive "${DOTBOT_DIR}"
+
+"${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "${CONFIG}" "${@}"

@@ -5,14 +5,12 @@ Here are my dotfiles (my rice repo)!
 ---
 
 ## Installation
-> **Note**: **The `install.sh` script is still a WIP.** I would recommend manually copying files for now.
+> **Note**: **The `install` script for earlier an-94/prose is still a WIP.**
 
-```sh
-git clone https://github.com/notchum/dotfiles.git
-cd dotfiles
-chmod +x install.sh
-./install.sh
-```
+I use a modified [dotbot](https://github.com/anishathalye/dotbot) install script to manage my dotfiles. Usage:
+    ```sh
+    $ install (an-94|prose|metamorphosis)
+    ```
 ---
 
 ## Usage

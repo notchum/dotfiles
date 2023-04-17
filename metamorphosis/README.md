@@ -5,3 +5,5 @@
     - [theCode-Breaker's waybar config](https://github.com/theCode-Breaker/riverwm)
 
     - [cbonsai](https://gitlab.com/jallbrit/cbonsai)
+
+    - [adi1090x's rofi menus](https://github.com/adi1090x/rofi)
