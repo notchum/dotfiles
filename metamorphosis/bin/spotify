@@ -1,0 +1,17 @@
+#!/bin/bash
+
+## Author ----------------------------
+# @notchum
+
+## Description ----------------------------
+# Starts spotify-tui and spotifyd with a 
+# simple, all-in-one `spotify` command.
+#
+# This file must be on your $PATH.
+
+if [[ $(pidof spotifyd) ]] ; then
+  spt
+else
+  spotifyd --no-daemon >/dev/null 2>&1 &
+  spt
+fi

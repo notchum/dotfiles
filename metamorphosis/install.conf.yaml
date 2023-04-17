@@ -8,7 +8,7 @@
 
 - link:
     ~/.zshrc: .zshrc
-    # ~/bin: bin
+    ~/bin: bin
     # ~/.pkglist: .pkglist
     # ~/.local/share/fonts: .local/share/fonts
 
