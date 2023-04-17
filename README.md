@@ -5,12 +5,14 @@ Here are my dotfiles (my rice repo)!
 ---
 
 ## Installation
-> **Note**: **The `install` script for earlier an-94/prose is still a WIP.**
 
 I use a modified [dotbot](https://github.com/anishathalye/dotbot) install script to manage my dotfiles. Usage:
-    ```sh
-    $ install (an-94|prose|metamorphosis)
-    ```
+```sh
+$ install (an-94|prose|metamorphosis)
+```
+
+> **Note**: **The `install` script doesn't support an-94/prose rices, yet.**
+
 ---
 
 ## Usage
