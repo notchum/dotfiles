@@ -1,6 +1,6 @@
 # dotfiles
 
-Here are my dotfiles (my rice repo)!
+dots dots dots dots dots dots dots dots dots
 
 ---
 
@@ -8,7 +8,7 @@ Here are my dotfiles (my rice repo)!
 
 I use a modified [dotbot](https://github.com/anishathalye/dotbot) install script to manage my dotfiles. Usage:
 ```sh
-$ install (an-94|prose|metamorphosis)
+$ install [-t THEME] (...dotbot OPTIONS...)
 ```
 
 > **Note**: **The `install` script doesn't support an-94/prose rices, yet.**
@@ -23,7 +23,7 @@ The wallpapers can be found here: [wallpapers](https://github.com/notchum/wallpa
 
 ---
 
-##  Screenshots
+## Screenshots
 
 ### [`metamorphosis`](metamorphosis/)
 
@@ -39,3 +39,14 @@ The wallpapers can be found here: [wallpapers](https://github.com/notchum/wallpa
 
 ![screenshot1](an-94/screenshot1.png)
 ![screenshot2](an-94/screenshot2.png)
+
+---
+
+## Fetches
+
+- [pfetch](https://github.com/dylanaraps/pfetch) - Fast and pretty fetch tool that can be configured with one line in `.zshrc`/`.bashrc`.
+- [nitch](https://github.com/ssleert/nitch) - Very uniquely designed fetch tool that has a great configuration out of the box.
+- [macchina](https://github.com/Macchina-CLI/macchina) - Extremely customizable fetch tool with an amazing name. Also written in Rust btw.
+- [neofetch](https://github.com/dylanaraps/neofetch) - The king of system info. Holds a special place in my heart.
+
+![fetch](fetch.png)
