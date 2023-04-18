@@ -1,2 +1,9 @@
-# Ignore zcompile files
+# zcompile files
 *.zwc
+
+# lazygit state
+**/lazygit/state.yml
+
+# spotify-tui secrets
+**/spotify-tui/client.yml
+**/spotify-tui/.spotify_token_cache.json
