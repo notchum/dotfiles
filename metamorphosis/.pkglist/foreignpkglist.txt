@@ -1,0 +1,14 @@
+autotiling
+bash-pipes
+cbonsai
+gotop-bin
+macchina
+mullvad-vpn-cli
+nitch
+paru
+pfetch
+rofi-lbonn-wayland-git
+spotify-tui
+swaylock-effects-git
+ttf-juliamono
+ttf-symbola-free

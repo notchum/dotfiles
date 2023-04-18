@@ -1,0 +1,51 @@
+spacing            = 3
+padding            = 0
+hide_ascii         = false
+prefer_small_ascii = true
+separator          = ""
+key_color          = "Blue"
+separator_color    = "Red"
+
+# [palette]
+# type    = "Dark"
+# glyph   = " "
+# visible = true
+
+[box]
+title           = " chum@cruel-oath "
+border          = "rounded"
+visible         = true
+
+[box.inner_margin]
+x               = 1
+y               = 0
+
+[custom_ascii]
+color = "Cyan"
+path  = "~/.config/macchina/ascii/arch"
+
+[randomize]
+key_color       = false
+separator_color = false
+
+[keys]
+host            = " host"
+kernel          = " kern"
+battery         = "󱊣 batt"
+os              = " os"
+de              = "缾de"
+wm              = " wm"
+distro          = " dist"
+terminal        = " term"
+shell           = " sh"
+packages        = " pkgs"
+uptime          = "神up"
+memory          = " mem"
+machine         = " machine"
+local_ip        = "󰩟 local ip"
+backlight       = " brightness"
+resolution      = "󰹑 resolution"
+cpu_load        = "󰒢 cpu load"
+cpu             = " cpu"
+gpu             = " gpu"
+disk_space      = "󰋊 disk"

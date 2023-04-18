@@ -1,0 +1,260 @@
+# sway config file
+# Read `man 5 sway` for a complete reference.
+
+#############################
+###       Variables       ###
+#############################
+# Set mod key (Mod1=<Alt>, Mod4=<Super>)
+set $mod Mod4
+
+# Home row direction keys, like vim
+set $left h
+set $down j
+set $up k
+set $right l
+
+# Your preferred terminal emulator
+set $term alacritty
+
+# Your preferred application launcher
+set $menu $HOME/.config/rofi/launcher/launcher.sh
+
+# Your preferred powermenu
+set $power $HOME/.config/rofi/powermenu/powermenu.sh
+
+#############################
+###       Windows         ###
+#############################
+default_border pixel
+default_floating_border pixel
+focus_follows_mouse no
+
+#############################
+###         Gaps          ###
+#############################
+gaps inner  10
+gaps outer  10
+gaps bottom 10
+gaps top    10
+
+#############################
+###         Font          ###
+#############################
+font pango:Hack Nerd Font 10
+
+#############################
+###    Autostart Apps     ###
+#############################
+exec diskie -F
+exec autotiling
+
+#############################
+###      Background       ###
+#############################
+output * bg $HOME/repos/wallpapers/anime/perfect_blue.jpg fill
+
+#############################
+###         Idle          ###
+#############################
+exec swayidle -w \
+       timeout 300 'swaylock' \
+       timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
+       before-sleep 'swaylock'
+# This will lock your screen after 300 seconds of inactivity, then turn off
+# your displays after another 300 seconds, and turn your screens back on when
+# resumed. It will also lock your screen before your computer goes to sleep.
+
+#############################
+###        Input          ###
+#############################
+input "2:7:SynPS/2_Synaptics_TouchPad" {
+  dwt enabled
+  tap enabled
+  natural_scroll enabled
+  middle_emulation enabled
+}
+
+#############################
+###    Custom Keybinds    ###
+#############################
+bindsym XF86AudioRaiseVolume  exec $HOME/bin/volume_brightness.sh volume_up
+bindsym XF86AudioLowerVolume  exec $HOME/bin/volume_brightness.sh volume_down
+bindsym XF86AudioMute         exec $HOME/bin/volume_brightness.sh volume_mute
+bindsym XF86AudioMicMute      exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
+bindsym XF86MonBrightnessDown exec $HOME/bin/volume_brightness.sh brightness_down
+bindsym XF86MonBrightnessUp   exec $HOME/bin/volume_brightness.sh brightness_up
+bindsym XF86AudioPlay         exec playerctl play-pause
+bindsym XF86AudioNext         exec playerctl next
+bindsym XF86AudioPrev         exec playerctl previous
+
+#############################
+###     Sway Keybinds     ###
+#############################
+# Start a terminal
+bindsym $mod+Return exec $term
+
+# Kill focused window
+bindsym $mod+Shift+q kill
+
+# Start your launcher
+bindsym $mod+d exec $menu
+
+# Take a screenshot with region
+bindsym $mod+Shift+s exec grim -g "$(slurp)" - | wl-copy --type image/png && scrot_path="$HOME/photos/screenshots/screenshot_`date +%Y.%m.%d_%H.%M.%S`.png" && wl-paste > "$scrot_path" && notify-send "Screenshot captured" "Saved to $scrot_path" -i dialog-information-symbolic
+
+# Take a screenshot with region
+bindsym $mod+Print exec grim - | wl-copy --type image/png && scrot_path="$HOME/photos/screenshots/screenshot_`date +%Y.%m.%d_%H.%M.%S`.png" && wl-paste > "$scrot_path" && notify-send "Screenshot captured" "Saved to $scrot_path" -i dialog-information-symbolic
+
+# Drag floating windows by holding down $mod and left mouse button.
+# Resize them with right mouse button + $mod.
+# Despite the name, also works for non-floating windows.
+# Change normal to inverse to use left mouse button for resizing and right
+# mouse button for dragging.
+floating_modifier $mod normal
+
+# Reload the configuration file
+bindsym $mod+Shift+c reload
+
+# Show Powermenu
+bindsym $mod+Shift+e exec $power
+
+#############################
+###     Moving Around     ###
+#############################
+# Move your focus around
+bindsym $mod+$left focus left
+bindsym $mod+$down focus down
+bindsym $mod+$up focus up
+bindsym $mod+$right focus right
+# Or use $mod+[up|down|left|right]
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# Move the focused window with the same, but add Shift
+bindsym $mod+Shift+$left move left
+bindsym $mod+Shift+$down move down
+bindsym $mod+Shift+$up move up
+bindsym $mod+Shift+$right move right
+# Ditto, with arrow keys
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+#############################
+###      Workspaces       ###
+#############################
+# Switch to workspace
+bindsym $mod+1 workspace number 1
+bindsym $mod+2 workspace number 2
+bindsym $mod+3 workspace number 3
+bindsym $mod+4 workspace number 4
+bindsym $mod+5 workspace number 5
+bindsym $mod+6 workspace number 6
+bindsym $mod+7 workspace number 7
+bindsym $mod+8 workspace number 8
+bindsym $mod+9 workspace number 9
+# Move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace number 1
+bindsym $mod+Shift+2 move container to workspace number 2
+bindsym $mod+Shift+3 move container to workspace number 3
+bindsym $mod+Shift+4 move container to workspace number 4
+bindsym $mod+Shift+5 move container to workspace number 5
+bindsym $mod+Shift+6 move container to workspace number 6
+bindsym $mod+Shift+7 move container to workspace number 7
+bindsym $mod+Shift+8 move container to workspace number 8
+bindsym $mod+Shift+9 move container to workspace number 9
+
+#############################
+###        Layout         ###
+#############################
+# You can "split" the current object of your focus with
+# $mod+b or $mod+v, for horizontal and vertical splits
+# respectively.
+bindsym $mod+b splith; exec notify-send "Sway" "Horizontal split" -i dialog-information-symbolic -t 1000
+bindsym $mod+v splitv; exec notify-send "Sway" "Vertical split" -i dialog-information-symbolic -t 1000
+
+# Switch the current container between different layout styles
+bindsym $mod+s layout stacking; exec notify-send "Sway" "Stacking layout" -i dialog-information-symbolic -t 1000
+bindsym $mod+w layout tabbed; exec notify-send "Sway" "Tabbed layout" -i dialog-information-symbolic -t 1000
+bindsym $mod+e layout toggle split
+
+# Make the current focus fullscreen
+bindsym $mod+f fullscreen
+
+# Toggle the current focus between tiling and floating mode
+bindsym $mod+Shift+space floating toggle
+
+# Swap focus between the tiling area and the floating area
+bindsym $mod+space focus mode_toggle
+
+# Move focus to the parent container
+bindsym $mod+a focus parent
+
+# Navigate workspaces next / previous
+bindsym $mod+Ctrl+$right workspace next
+bindsym $mod+Ctrl+Right workspace next
+bindsym $mod+Ctrl+$left workspace prev
+bindsym $mod+Ctrl+Left workspace prev
+# Allow switching between workspaces with left and right swipes
+bindgesture swipe:3:right workspace prev
+bindgesture swipe:3:left workspace next
+
+#############################
+###      Scratchpad       ###
+#############################
+# Sway has a "scratchpad", which is a bag of holding for windows.
+# You can send windows there and get them back later.
+
+# Move the currently focused window to the scratchpad
+bindsym $mod+Shift+minus move scratchpad
+
+# Show the next scratchpad window or hide the focused scratchpad window.
+# If there are multiple scratchpad windows, this command cycles through them.
+bindsym $mod+minus scratchpad show
+
+#############################
+###  Resizing Containers  ###
+#############################
+mode "resize" {
+  # left will shrink the containers width
+  # right will grow the containers width
+  # up will shrink the containers height
+  # down will grow the containers height
+  bindsym $left resize shrink width 10px
+  bindsym $down resize grow height 10px
+  bindsym $up resize shrink height 10px
+  bindsym $right resize grow width 10px
+
+  # Ditto, with arrow keys
+  bindsym Left resize shrink width 10px
+  bindsym Down resize grow height 10px
+  bindsym Up resize shrink height 10px
+  bindsym Right resize grow width 10px
+
+  # Return to default mode
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
+}
+bindsym $mod+r mode "resize"
+
+#############################
+###      Status Bar       ###
+#############################
+bar swaybar_command waybar
+
+#############################
+###        Colors         ###
+#############################
+# class                    border  backgr. text    indic.  child_border
+  client.focused           #4c7899 #285577 #ffffff #C7C7C7 #53BDFA
+  client.focused_inactive  #333333 #5f676a #ffffff #484e50 #5f676a
+  client.focused_tab_title #333333 #5f676a #ffffff
+  client.unfocused         #333333 #222222 #888888 #292d2e #222222
+  client.urgent            #2f343a #900000 #ffffff #900000 #900000
+  client.placeholder       #000000 #0c0c0c #ffffff #000000 #0c0c0c 
+  client.background        #000000 #ffffff
+
+include /etc/sway/config.d/*

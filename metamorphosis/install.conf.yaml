@@ -6,15 +6,47 @@
 
 - clean: ['~']
 
+- create:
+  - ~/downloads
+  # - ~/.config/ranger/plugins
+  # - ~/.config/mpv/scripts
+  - ~/.config/lazygit
+  - ~/.config/nvim
+
 - link:
     ~/.zshrc: .zshrc
     ~/bin: bin
-    # ~/.pkglist: .pkglist
-    # ~/.local/share/fonts: .local/share/fonts
+    ~/.pkglist: .pkglist
+    ~/.local/share/fonts: .local/share/fonts
 
-# - create:
-#   - ~/downloads
+    ~/.config/alacritty: .config/alacritty
+    ~/.config/bat: .config/bat
+    ~/.config/dunst: .config/dunst
+    ~/.config/lazygit/config.yml: .config/lazygit/config.yml
+    ~/.config/macchina: .config/macchina
+    # ~/.config/mpv: .config/mpv
+    ~/.config/neofetch: .config/neofetch
+    # ~/.config/nvim/lua/custom: .config/nvim/lua/custom
+    ~/.config/paru: .config/paru
+    # ~/.config/ranger: 
+    #   glob: true
+    #   path: .config/ranger
+    #   exclude: []
+    ~/.config/rofi: .config/rofi
+    ~/.config/spaceship: .config/spaceship
+    ~/.config/sway: .config/sway
+    ~/.config/swaylock: .config/swaylock
+    ~/.config/waybar: .config/waybar
+    ~/.config/yt-dlp: .config/yt-dlp
+    ~/.config/zathura: .config/zathura
 
-# - shell:
-#   - [git submodule update --init --recursive, Installing submodules]
+- shell:
+  - [git submodule update --init --recursive, Installing submodules]
 #   - [chsh -s $(which zsh), Making zsh the default shell]
+#   - [sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)", Installing Oh My Zsh]
+#   - [git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting, Installing zsh-syntax-highlighting]
+#   - [git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions, Installing zsh-autosuggestions]
+#   - [git clone https://github.com/spaceship-prompt/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt" --depth=1, Installing Spaceship]
+#   - [ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme", Linking Spaceship]
+#   - [git clone https://github.com/alexanderjeurissen/ranger_devicons ~/.config/ranger/plugins/ranger_devicons, Installing file icons for Ranger]
+#   - [cd ~/.config/mpv/scripts && curl -s https://api.github.com/repos/marzzzello/mpv_thumbnail_script/releases/latest | grep "browser_download_url.*lua" | cut -d : -f 2,3 | tr -d \" | wget -qi -, Installing mpv thumbnails scripts]

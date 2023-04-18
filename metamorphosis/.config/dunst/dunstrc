@@ -1,0 +1,243 @@
+[global]
+
+# --- Display --- #
+
+    # The monitor to be displayed to
+    monitor = 0
+
+    # Follow monitor with mouse
+    follow = none
+
+# --- Geometry --- #
+
+    width = (200, 300)
+    # height = 50
+    origin = top-right
+    offset = 10x10
+
+    # Scale factor. It is auto-detected if value is 0.
+    scale = 0
+
+    # Maximum number of notification (0 means no limit)
+    notification_limit = 3
+
+# --- Progress bar --- #
+
+    progress_bar = true
+    progress_bar_height = 14
+    progress_bar_frame_width = 1
+    progress_bar_min_width = 150
+    progress_bar_max_width = 300
+
+# --- Settings --- #
+
+    # Show how many messages are hidden
+    indicate_hidden = yes
+
+    # Shrink window if it's smaller than the width.
+    shrink = no
+
+    # The transparency of the window.  Range: [0; 100].
+    # This option will only work if a compositing window manager is
+    # present (e.g. xcompmgr, compiz, etc.). (X11 only)
+    transparency = 0
+
+    # Draw a line between multiple notifications
+    separator_height = 6
+
+    # Set notification padding
+    padding = 16
+    horizontal_padding = 16
+    text_icon_padding = 0
+
+    # Defines width in pixels of frame around the notification window.
+    # Set to 0 to disable.
+    frame_width = 2
+
+    # Defines color of the frame around the notification window.
+    frame_color = "#000000"
+
+    # Size of gap to display between notifications - requires a compositor.
+    # If value is greater than 0, separator_height will be ignored and a border
+    # of size frame_width will be drawn around each notification instead.
+    # Click events on gaps do not currently propagate to applications below.
+    gap_size = 5
+
+    # Define a color for the separator.
+    # possible values are:
+    #  * auto: dunst tries to find a color fitting to the background;
+    #  * foreground: use the same color as the foreground;
+    #  * frame: use the same color as the frame;
+    #  * anything else will be interpreted as a X color.
+    separator_color = "#272f57"
+
+    # Sort messages by urgency.
+    sort = no
+
+    # Don't remove messages, if the user is idle (no mouse or keyboard input)
+    # for longer than idle_threshold seconds.
+    # Set to 0 to disable.
+    # A client can set the 'transient' hint to bypass this. See the rules
+    # section for how to disable this if necessary
+    idle_threshold = 0
+   
+# --- Text --- #
+
+    # Set the font
+    font = "Noto Sans 12"
+
+    # Set line height to font height
+    line_height = 0
+
+    # Reference for markup and formatting:
+    #  <b>bold</b>
+    #  <i>italic</i>
+    #  <s>strikethrough</s>
+    #  <u>underline</u>
+    #  <https://developer.gnome.org/pango/stable/pango-Markup.html>.
+    #  %a appname
+    #  %s summary
+    #  %b body
+    #  %i iconname (including its path)
+    #  %I iconname (without its path)
+    #  %p progress value if set ([  0%] to [100%]) or nothing
+    #  %n progress value if set without any extra characters
+    #  %% Literal %
+    markup = full
+    format = "<span font="Noto Sans 12" font_weight="bold">%s</span>\n<span font="Noto Sans 10">%b</span>"
+
+    # Left align the text
+    alignment = left
+
+    # Vertical alignment of message text and icon.
+    vertical_alignment = center
+
+    # Show age of message if message is old
+    show_age_threshold = 120
+
+    # Where to place ellipses if word wrap is disabled
+    # ellipsize = middle
+
+    # Use newlines '\n' in notifications.
+    ignore_newline = no
+
+    # Don't stack together notifications
+    stack_duplicates = false
+
+    # Hide the count of stacked notifications
+    # hide_duplicate_count = false
+
+    # Display indicators for URLs (U) and actions (A).
+    show_indicators = yes
+
+    # Wrap text if it doesn't fit in geometry
+    word_wrap = yes
+    
+# ---- Icons ---- #
+
+    # Recursive icon lookup. You can set a single theme, instead of having to
+    # define all lookup paths.
+    # enable_recursive_icon_lookup = true
+
+    # Set icon theme (only used for recursive icon lookup)
+    # icon_theme = Adwaita
+    # You can also set multiple icon themes, with the leftmost one being used first.
+    # icon_theme = "Adwaita, breeze"
+
+    # Align icons left/right/off
+    icon_position = left
+
+    # Scale small icons up to this size, set to 0 to disable.
+    min_icon_size = 50
+
+    # Scale larger icons down to this size, set to 0 to disable
+    max_icon_size = 60
+
+    # Paths to default icons.
+    icon_path = /usr/share/icons/Pop/scalable/status/:/usr/share/icons/Pop/scalable/devices/
+ 
+# --- History --- #
+
+    # Avoid timing out hidden notifications
+    sticky_history = yes
+
+    # Maximum amount of notifications kept in history
+    history_length = 100
+
+# --- Misc/Advanced --- #
+
+    dmenu = /usr/bin/dmenu -p dunst:
+
+    # Browser for opening urls in context menu.
+    browser = /usr/bin/firefox -new-tab
+
+    # Always run rule-defined scripts, even if the notification is suppressed
+    always_run_script = false
+
+    # Define the title of the windows spawned by dunst
+    title = dunst
+
+    # Define the class of the windows spawned by dunst
+    class = dunst
+
+    # Define the corner radius of the notification window
+    # in pixel size. If the radius is 0, you have no rounded
+    # corners.
+    # The radius will be automatically lowered if it exceeds half of the
+    # notification height to avoid clipping text and/or icons.
+    corner_radius = 5
+
+    # Don't ignore the dbus closeNotification message.
+    ignore_dbusclose = false
+
+# --- Legacy --- #
+
+    # Use the Xinerama extension instead of RandR for multi-monitor support.
+    # This setting is provided for compatibility with older nVidia drivers that
+    # do not support RandR and using it on systems that support RandR is highly
+    # discouraged.
+    #
+    # By enabling this setting dunst will not be able to detect when a monitor
+    # is connected or disconnected which might break follow mode if the screen
+    # layout changes.
+    force_xinerama = false
+
+# --- Mouse --- #
+
+    # Defines list of actions for each mouse event
+    # Possible values are:
+    # * none: Don't do anything.
+    # * do_action: Invoke the action determined by the action_name rule. If there is no
+    #              such action, open the context menu.
+    # * open_url: If the notification has exactly one url, open it. If there are multiple
+    #             ones, open the context menu.
+    # * close_current: Close current notification.
+    # * close_all: Close all notifications.
+    # * context: Open context menu for the notification.
+    # * context_all: Open context menu for all notifications.
+    # These values can be strung together for each mouse event, and
+    # will be executed in sequence.
+    mouse_left_click = close_current
+    mouse_middle_click = do_action, close_current
+    mouse_right_click = close_all
+
+[urgency_low]
+    background = "#0A0E14FF"
+    foreground = "#B3B1AD"
+    highlight = "#FAE994"
+    frame_color = "#53BDFA"
+    timeout = 8
+
+[urgency_normal]
+    background = "#0A0E14FF"
+    foreground = "#B3B1AD"
+    highlight = "#FAE994"
+    frame_color = "#53BDFA"
+    timeout = 8
+
+[urgency_critical]
+    background = "#0A0E14FF"
+    foreground = "#B3B1AD"
+    highlight = "#FAE994"
+    frame_color = "#EA6C73"
+    timeout = 0
