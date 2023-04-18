@@ -8,6 +8,7 @@
 
 - create:
   - ~/downloads
+  - ~/photos/screenshots
   - ~/.config/ranger/plugins
   - ~/.config/lazygit
   - ~/.config/nvim
