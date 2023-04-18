@@ -122,6 +122,13 @@ alias delta='delta -sn'
 alias bw-lock='bw lock && unset BW_SESSION'
 alias bw-unlock='export BW_SESSION=$( bw unlock --raw )'
 
+# User functions
+lazygit_func () {
+    eval 'lazygit'
+}
+zle -N lazygit_func
+bindkey '^g' lazygit_func
+
 # Import colorscheme from 'wal' asynchronously
 # &   # Run the process in the background.
 # ( ) # Hide shell job control messages.
