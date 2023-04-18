@@ -1,8 +1,14 @@
+# python
+*.pyc
+
 # zcompile files
 *.zwc
 
 # lazygit state
 **/lazygit/state.yml
+
+# ranger plugins
+**/ranger/plugins/__init__.py
 
 # spotify-tui secrets
 **/spotify-tui/client.yml
