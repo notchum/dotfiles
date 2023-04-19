@@ -28,6 +28,8 @@
     ~/.config/ranger: .config/ranger
     ~/.config/rofi: .config/rofi
     ~/.config/spaceship: .config/spaceship
+    ~/.config/spotify-tui: .config/spotify-tui
+    ~/.config/spotifyd: .config/spotifyd
     ~/.config/sway: .config/sway
     ~/.config/swaylock: .config/swaylock
     ~/.config/waybar: .config/waybar
