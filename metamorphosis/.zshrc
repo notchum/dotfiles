@@ -124,10 +124,18 @@ alias bw-unlock='export BW_SESSION=$( bw unlock --raw )'
 
 # User functions
 lazygit_func () {
-    eval 'lazygit'
+  eval 'lazygit'
 }
 zle -N lazygit_func
 bindkey '^g' lazygit_func
+
+ranger() {
+  if [ -z "$RANGER_LEVEL" ]; then
+    /usr/bin/ranger "$@"
+  else
+    exit
+  fi
+}
 
 # Import colorscheme from 'wal' asynchronously
 # &   # Run the process in the background.
