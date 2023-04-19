@@ -62,8 +62,8 @@ spotifyd_setup() {
   echo -e ${BGreen}"[*] Filling out spotifyd configuration..." ${Color_Off}
   sed -i "/username/c\username = \"$spotify_user_id\"" "$SPOTIFYD_CONFIG"
   sed -i "/device_name/c\device_name = \"$(uname -n)\"" "$SPOTIFYD_CONFIG"
-  sed -i "/onevent/c\onevent = \"bash $(pwd)/bin/spotify_notifications.sh\"" "$SPOTIFYD_CONFIG"
-  sed -i "/cache_path/c\cache_path = \"$(pwd)/.cache/spotifyd\"" "$SPOTIFYD_CONFIG"
+  sed -i "/onevent/c\onevent = \"bash $HOME/bin/spotify_notifications.sh\"" "$SPOTIFYD_CONFIG"
+  sed -i "/cache_path/c\cache_path = \"$HOME/.cache/spotifyd\"" "$SPOTIFYD_CONFIG"
 }
 
 spotify_tui_setup() {
