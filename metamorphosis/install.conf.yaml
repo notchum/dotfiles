@@ -37,7 +37,8 @@
     ~/.config/zathura: .config/zathura
 
 - shell:
-  - [git submodule update --init --recursive, Installing submodules]
+  - [git submodule update --init --recursive, Installing git submodules]
+  - [git update-index --assume-unchanged $(pwd)/.config/spotifyd/spotifyd.conf, Updating git index]
   - 
     command: if [[ ! -d ~/.oh-my-zsh ]] ; then sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" ; fi
     description: Installing Oh My Zsh
