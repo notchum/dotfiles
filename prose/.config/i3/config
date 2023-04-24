@@ -25,7 +25,7 @@ smart_borders on
 
 exec --no-startup-id i3-resurrect restore -w 1
 exec --no-startup-id i3-resurrect restore -w 2
-exec_always --no-startup-id $HOME/.scripts/polybar_launch.sh
+exec_always --no-startup-id $HOME/bin/polybar_launch.sh
 
 ###############################
 
@@ -200,7 +200,7 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec $HOME/.scripts/rofi_power_menu_wrapper.sh
+bindsym $mod+Shift+e exec $HOME/bin/rofi_power_menu_wrapper.sh
 
 # Resize window (you can also use the mouse for that)
 bindsym $mod+r mode "resize"
