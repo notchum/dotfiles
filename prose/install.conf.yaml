@@ -8,14 +8,16 @@
 
 - create:
   - ~/downloads
-  # - ~/photos/screenshots
   - ~/.config/nvim
 
 - link:
-    ~/.zshrc: .zshrc
-    # ~/bin: bin
     ~/.pkglist: .pkglist
-    # ~/.local/share/fonts: .local/share/fonts
+    # ~/bin: bin
+
+    ~/.fehbg: .fehbg
+    ~/.xprofile: .xprofile
+    ~/.Xresources: .Xresources
+    ~/.zshrc: .zshrc
 
     ~/.config/bat: .config/bat
     ~/.config/dunst: .config/dunst
