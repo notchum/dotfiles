@@ -9,6 +9,7 @@ syntax enable
 set nocompatible   " Don't try to be vi compatible
 set modelines=0    " Security
 set number         " Show line numbers
+set relativenumber " Show relative line numbers
 set ruler          " Show file stats
 set visualbell     " Blink cursor on error instead of beeping (grr)
 set encoding=utf-8 " Encoding
@@ -34,42 +35,44 @@ set expandtab
 
 " Load plugins here
 filetype off " Helps force plugins to load correctly when it is turned back on below
-call plug#begin('~/.vim/plugged')
+" call plug#begin()
+" auto-install vim-plug
+if empty(glob('~/.config/nvim/autoload/plug.vim'))
+  silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall
+endif
+call plug#begin('~/.config/nvim/plugged')
 
-Plug 'fratajczak/one-monokai-vim' " colorschemes
-Plug 'joshdick/onedark.vim'
-Plug 'itchyny/lightline.vim'      " statusline
-Plug 'preservim/nerdtree'         " fs explorer
-Plug 'preservim/nerdcommenter'
+Plug 'rose-pine/neovim'             " colorscheme
+Plug 'itchyny/lightline.vim'        " statusline
+Plug 'preservim/nerdtree'           " fs explorer
+Plug 'preservim/nerdcommenter'      " comments
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'jiangmiao/auto-pairs'      " auto parens, brackets, quotes
 Plug 'Yggdroot/indentLine'       " show line indents
 Plug 'airblade/vim-gitgutter'    " show git diffs
-Plug 'markonm/traces.vim'        " range, pattern, substitute preview
 Plug 'Chiel92/vim-autoformat'    " format code
 Plug 'vim-jp/vim-cpp'            " cpp syntax
-Plug 'pboettch/vim-cmake-syntax' " cmake syntax
 Plug 'vim-python/python-syntax'  " python syntax
 Plug 'plasticboy/vim-markdown'   " md syntax
 Plug 'elzr/vim-json'             " json syntax
 Plug 'sheerun/vim-polyglot'      " improved syntax highlighting
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'vhdirk/vim-cmake'          " make cmake easy
 Plug 'ryanoasis/vim-devicons'    " icons
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()
 filetype plugin indent on " For plugins to load correctly
 
 " colorscheme
-colorscheme onedark
+colorscheme rose-pine
 if has("termguicolors")
    set termguicolors
 endif
 hi Normal guibg=NONE ctermbg=NONE
 
 " Plugin configurations
-let g:lightline = { 'colorscheme': 'onedark' }
+let g:lightline = { 'colorscheme': 'rose-pine' }
 let g:NERDSpaceDelims = 1
 let g:NERDCompactSexyComs = 1
 let g:indentLine_char = '⎸'
