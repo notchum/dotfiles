@@ -2,6 +2,7 @@ arc-gtk-theme
 autoconf
 automake
 bash
+bash-pipes
 bat
 binutils
 bison
@@ -11,16 +12,16 @@ btrfs-progs
 bzip2
 coreutils
 cpupower
+cronie
 debugedit
 dhcpcd
 dialog
 discord
-dmenu
-docker
 dosfstools
 dunst
 e2fsprogs
 efibootmgr
+exa
 fakeroot
 fbset
 feh
@@ -46,7 +47,6 @@ gvfs-mtp
 gzip
 i3-resurrect
 i3-wm
-i3blocks
 i3lock
 i3status
 imagemagick
@@ -71,9 +71,8 @@ m4
 make
 man-db
 man-pages
-minecraft-launcher
+mpv
 mtpfs
-nano
 neofetch
 neovim
 networkmanager
@@ -92,9 +91,7 @@ paru
 patch
 pavucontrol
 pciutils
-pcmanfm
 perl-anyevent-i3
-phonon-qt5-vlc
 picom
 pkgconf
 playerctl
@@ -147,6 +144,7 @@ qt5-x11extras
 qt5-xmlpatterns
 ranger
 rofi
+rustup
 samba
 sed
 shadow
@@ -158,7 +156,6 @@ systemd
 systemd-sysvcompat
 tar
 texinfo
-thefuck
 ttf-dejavu
 ttf-hack-nerd
 ttf-liberation
@@ -170,7 +167,6 @@ unzip
 util-linux
 vim
 visual-studio-code-bin
-vlc
 wget
 wireless_tools
 wpa_supplicant
@@ -223,8 +219,8 @@ xorg-xwayland
 xorg-xwd
 xorg-xwininfo
 xorg-xwud
-xterm
 xz
+yt-dlp
 zathura
 zathura-cb
 zathura-pdf-mupdf

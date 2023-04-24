@@ -1,8 +1,8 @@
+bash-pipes
 gotop-bin
 i3-resurrect
 jmtpfs
 kora-icon-theme
-minecraft-launcher
 paru
 spicetify-cli
 spotify
