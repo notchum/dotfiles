@@ -3,7 +3,6 @@ autoconf
 automake
 bash
 bat
-betterdiscord-installer
 binutils
 bison
 bluez
@@ -12,6 +11,7 @@ btrfs-progs
 bzip2
 coreutils
 cpupower
+debugedit
 dhcpcd
 dialog
 discord
@@ -36,6 +36,7 @@ gcc
 gcc-libs
 gettext
 git
+git-delta
 glibc
 gnome-keyring
 gotop-bin
@@ -43,8 +44,8 @@ grep
 grub
 gvfs-mtp
 gzip
-i3-gaps
 i3-resurrect
+i3-wm
 i3blocks
 i3lock
 i3status
@@ -56,6 +57,7 @@ jmtpfs
 jq
 kitty
 kora-icon-theme
+lazygit
 licenses
 lightdm
 lightdm-webkit-theme-litarvan
@@ -69,12 +71,13 @@ m4
 make
 man-db
 man-pages
+minecraft-launcher
 mtpfs
 nano
 neofetch
 neovim
-nerd-fonts-complete
 networkmanager
+noto-fonts
 noto-fonts-cjk
 noto-fonts-emoji
 ntfs-3g
@@ -83,10 +86,9 @@ nvidia
 nvidia-utils
 onefetch
 os-prober
-otf-san-francisco
-otf-san-francisco-mono
 pacman
 papirus-icon-theme
+paru
 patch
 pavucontrol
 pciutils
@@ -145,6 +147,7 @@ qt5-x11extras
 qt5-xmlpatterns
 ranger
 rofi
+samba
 sed
 shadow
 spicetify-cli
@@ -157,8 +160,10 @@ tar
 texinfo
 thefuck
 ttf-dejavu
+ttf-hack-nerd
 ttf-liberation
-ttf-symbola
+ttf-noto-nerd
+ttf-symbola-free
 ttf-unifont
 udisks2
 unzip
@@ -220,7 +225,6 @@ xorg-xwininfo
 xorg-xwud
 xterm
 xz
-yay
 zathura
 zathura-cb
 zathura-pdf-mupdf
