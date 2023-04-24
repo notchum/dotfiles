@@ -8,6 +8,7 @@
 
 ## Details
 + distro: [`Arch Linux`](https://www.archlinux.org/)
++ display server: [`X`](https://www.x.org/wiki/)
 + wallpapers: [here](https://github.com/notchum/wallpapers/blob/main/anime/anime_irl_an_94.jpg)
 + fonts: `Cascadia Code` and `San Francisco Pro`
 + icons: `Adwaita`

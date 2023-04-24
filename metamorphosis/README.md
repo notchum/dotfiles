@@ -8,7 +8,7 @@
 
 ## Details
 + distro: [`Arch Linux`](https://www.archlinux.org/)
-+ wm/compositor: [`Wayland`](https://wayland.freedesktop.org/)
++ display server: [`Wayland`](https://wayland.freedesktop.org/)
 + wallpapers: [one](https://github.com/notchum/wallpapers/blob/main/anime/perfect_blue.jpg)
 + font: `Hack`
 + icons: `Pop`
@@ -27,7 +27,6 @@
 
 ### Tools
 - [bat](https://github.com/sharkdp/bat) - A cat clone with syntax highlighting and Git integration.
-- [bash-pipes](https://github.com/pipeseroni/pipes.sh) - Animated pipes terminal screensaver.
 - [cbonsai](https://gitlab.com/jallbrit/cbonsai) - Grow bonsai trees in your terminal.
 - [delta](https://github.com/dandavison/delta) - A syntax-highlighting pager for git, diff, and grep output.
 - [dust](https://github.com/bootandy/dust) - A more intuitive version of du in rust.
@@ -50,10 +49,10 @@
 - [dunst](https://github.com/dunst-project/dunst) - Lightweight and customizable notification daemon.
 - [greetd](https://git.sr.ht/~kennylevinsen/greetd) - A minimal and flexible login manager daemon that makes no assumptions about what you want to launch.
     - [tuigreet](https://github.com/apognu/tuigreet) - Graphical console greeter for greetd.
-- [waybar](https://github.com/Alexays/Waybar) - Highly customizable Wayland bar for Sway and Wlroots based compositors.
-    - Modified version of [theCode-Breaker's waybar config](https://github.com/theCode-Breaker/riverwm)
 - [rofi-lbonn-wayland](https://github.com/lbonn/rofi) - A window switcher, application launcher and dmenu replacement - fork with wayland support.
     - [adi1090x's rofi menus](https://github.com/adi1090x/rofi) - A huge collection of Rofi based custom Applets, Launchers & Powermenus.
+- [waybar](https://github.com/Alexays/Waybar) - Highly customizable Wayland bar for Sway and Wlroots based compositors.
+    - Modified version of [theCode-Breaker's waybar config](https://github.com/theCode-Breaker/riverwm)
 
 ### Applications
 - [imv](https://sr.ht/~exec64/imv/) - A command line image viewer intended for use with tiling window managers.
