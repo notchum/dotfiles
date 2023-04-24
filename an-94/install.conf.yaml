@@ -43,4 +43,7 @@
     command: >-
       if [[ ! -d ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting ]] ; then git clone https://github.com/zsh-users/zsh-autosuggestions.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions ; fi
     description: Installing zsh-autosuggestions
-  - [curl 'https://raw.githubusercontent.com/ergenekonyigit/lambda-gitster/master/lambda-gitster.zsh-theme' -o $ZSH_CUSTOM/themes/lambda-gitster.zsh-theme, Installing zsh prompt]
+  - 
+    command: >-
+      curl https://raw.githubusercontent.com/ergenekonyigit/lambda-gitster/master/lambda-gitster.zsh-theme -o ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/lambda-gitster.zsh-theme
+    description: Installing zsh prompt
