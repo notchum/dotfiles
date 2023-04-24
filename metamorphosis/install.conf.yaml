@@ -11,10 +11,11 @@
   - ~/photos/screenshots
 
 - link:
-    ~/.zshrc: .zshrc
-    ~/bin: bin
-    ~/.pkglist: .pkglist
     ~/.local/share/fonts: .local/share/fonts
+    ~/.pkglist: .pkglist
+    ~/bin: bin
+    
+    ~/.zshrc: .zshrc
 
     ~/.config/alacritty: .config/alacritty
     ~/.config/bat: .config/bat
