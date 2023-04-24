@@ -1,0 +1,67 @@
+- defaults:
+    link:
+      relink: true
+      stdin: true
+      stdout: true
+
+- clean: ['~']
+
+- create:
+  - ~/downloads
+  # - ~/photos/screenshots
+
+- link:
+    # ~/.zshrc: .zshrc
+    # ~/bin: bin
+    ~/.pkglist: .pkglist
+    # ~/.local/share/fonts: .local/share/fonts
+
+    # ~/.config/alacritty: .config/alacritty
+    # ~/.config/bat: .config/bat
+    ~/.config/dunst: .config/dunst
+    # ~/.config/lazygit: .config/lazygit
+    ~/.config/i3: .config/i3
+    ~/.config/kitty: .config/kitty
+    # ~/.config/macchina: .config/macchina
+    # ~/.config/mpv: .config/mpv
+    ~/.config/neofetch: .config/neofetch
+    # ~/.config/nvim: .config/nvim
+    # ~/.config/paru: .config/paru
+    ~/.config/picom: .config/picom
+    ~/.config/polybar: .config/polybar
+    # ~/.config/ranger: .config/ranger
+    ~/.config/rofi: .config/rofi
+    # ~/.config/spaceship: .config/spaceship
+    # ~/.config/spotify-tui: .config/spotify-tui
+    # ~/.config/spotifyd: .config/spotifyd
+    # ~/.config/sway: .config/sway
+    # ~/.config/swaylock: .config/swaylock
+    # ~/.config/yt-dlp: .config/yt-dlp
+    # ~/.config/spicetify: .config/spicetify
+    ~/.config/zathura: .config/zathura
+
+- shell:
+  - [git submodule update --init --recursive, Installing git submodules]
+#   - [git update-index --assume-unchanged $(pwd)/.config/spotifyd/spotifyd.conf, Updating git index]
+#   - 
+#     command: if [[ ! -d ~/.oh-my-zsh ]] ; then sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" ; fi
+#     description: Installing Oh My Zsh
+#   - 
+#     command: >-
+#       if [[ ! -d ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting ]] ; then git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting ; fi
+#     description: Installing zsh-syntax-highlighting
+#   - 
+#     command: >-
+#       if [[ ! -d ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting ]] ; then git clone https://github.com/zsh-users/zsh-autosuggestions.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions ; fi
+#     description: Installing zsh-autosuggestions
+# #   - [git clone https://github.com/spaceship-prompt/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt" --depth=1, Installing Spaceship]
+# #   - [ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme", Linking Spaceship]
+#   - [rm -f ~/.config/mpv/scripts/mpv_thumbnail_script_*, Cleaning up mpv scripts]
+#   - 
+#     command: >-
+#       cd ~/.config/mpv/scripts && curl -s https://api.github.com/repos/marzzzello/mpv_thumbnail_script/releases/latest | grep "browser_download_url.*lua" | cut -d : -f 2,3 | tr -d \" | wget -qi -
+#     description: Installing mpv thumbnails scripts
+#   - 
+#     command: if paru -Qs gnu-free-fonts >/dev/null ; then paru -R --noconfirm gnu-free-fonts ; fi
+#     description: Removing gnu-free-fonts if installed
+#     stdin: true
