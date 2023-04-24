@@ -1,15 +1,10 @@
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+# Update PATH for user scripts
+if [ -d "$HOME/bin" ] ; then
+  export PATH="$HOME/bin:$PATH"
+fi
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
-
-# Set default editor
-export EDITOR=/usr/bin/nvim
-
-# Set default browser
-export BROWSER=/usr/bin/firefox
-
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -70,52 +65,46 @@ ZSH_THEME="lambda-minimal"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
+    copyfile
     extract
     git
-    docker
     python
     rust
     fzf
-    thefuck
     z
     zsh-syntax-highlighting
+    zsh-autosuggestions
 )
-
+export FZF_BASE=/usr/bin/fzf
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
+export LANG=en_US.UTF-8
+export ARCHFLAGS="-arch x86_64"
+export SUDO_PROMPT="[] Enter Password: "
+export XDG_CACHE_HOME=$HOME/.cache
+export XDG_CONFIG_HOME=$HOME/.config
+export XDG_DATA_HOME=$HOME/.local/share
+export XDG_STATE_HOME=$HOME/.local/state
+export VISUAL=nvim
+export EDITOR=$VISUAL
+export PAGER=bat
+export TERMCMD=kitty
+export BROWSER=firefox
 
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# ssh
-# export SSH_KEY_PATH="~/.ssh/rsa_id"
-
-# Startup commands
-clear
-neofetch
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-alias root='cd /'
-alias c='clear'
+# User aliases
 alias ..='cd ..'
-alias ls='ls -CF --color=auto'
-alias ll='ls -lisa --color=auto'
+alias rm='rm -rIv'
+alias cp='cp -rv'
+alias mv='mv -v'
+alias cat='bat'
+# alias ls='ls -CF --color=auto'
+# alias ll='ls -lisah --color=auto'
+alias exa='exa --icons --group-directories-first --git --color=auto'
+alias la='exa -a'
+alias ll='exa -lah'
+alias ls='exa'
+alias exatree='exa --icons --tree --level=2'
 alias mkdir='mkdir -pv'
 alias free='free -mt'
 alias ps='ps auxf'
@@ -125,8 +114,29 @@ alias histg='history | grep'
 alias myip='curl ipv4.icanhazip.com'
 alias grep='grep --color=auto'
 alias show='xdg-open'
+alias dust='dust -r'
+alias delta='delta -sn'
+alias bw-lock='bw lock && unset BW_SESSION'
+alias bw-unlock='export BW_SESSION=$( bw unlock --raw )'
 
-LS_COLORS="di=94:fi=2:*.png=93:*.jpg=93:*.sh=96:*.cpp=96:*.py=96:*.pdf=92:*.zip=91:*.json=91:ln=95" ; export LS_COLORS
+# Startup commands
+clear
+neofetch
+
+# User functions
+lazygit_func () {
+  eval 'lazygit'
+}
+zle -N lazygit_func
+bindkey '^g' lazygit_func
+
+ranger() {
+  if [ -z "$RANGER_LEVEL" ]; then
+    /usr/bin/ranger "$@"
+  else
+    exit
+  fi
+}
 
 # Import colorscheme from 'wal' asynchronously
 # &   # Run the process in the background.
