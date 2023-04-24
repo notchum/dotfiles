@@ -5,3 +5,5 @@ Machine-specific packages include:
 My personal services-related packages:
   - mullvad-vpn-cli (VPN client)
   - bitwarden-cli (password manager)
+  - spotify-tui (music client)
+  - spotifyd (spotify daemon)
