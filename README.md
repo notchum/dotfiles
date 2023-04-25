@@ -11,7 +11,7 @@ I use a modified [dotbot](https://github.com/anishathalye/dotbot) install script
 $ install [-t THEME] (...dotbot OPTIONS...)
 ```
 
-> **Note**: **The `install` script doesn't support the an-94 theme, yet.**
+> **Note**: **The `install` script doesn't install packages, those would have to be installed manually.**
 
 ---
 
