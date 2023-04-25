@@ -23,6 +23,7 @@ smart_borders on
 ### Autostart Applications ###
 ##############################
 
+exec autotiling
 exec --no-startup-id i3-resurrect restore -w 1
 exec --no-startup-id i3-resurrect restore -w 2
 exec_always --no-startup-id $HOME/bin/polybar_launch.sh
@@ -47,9 +48,6 @@ bindsym $mod+Shift+s exec flameshot gui
 
 # Menu
 bindsym $mod+d exec rofi -show drun
-
-# launch categorized menu
-bindsym $mod+z exec --no-startup-id morc_menu
 
 ################################################################################################
 ## sound-section - DO NOT EDIT if you wish to automatically upgrade Alsa -> Pulseaudio later! ##
