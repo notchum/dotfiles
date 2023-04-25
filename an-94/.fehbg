@@ -1,2 +1,2 @@
 #!/bin/sh
-feh --no-fehbg --bg-fill '/home/chum/wallpapers/anime/anime_irl_an_94.jpg' 
+feh --no-fehbg --bg-fill '/usr/share/backgrounds/anime/anime-irl-an-94-1600x1066.jpg' 

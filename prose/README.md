@@ -9,9 +9,9 @@
 ## Details
 + distro: [`Arch Linux`](https://www.archlinux.org/)
 + display server: [`X`](https://www.x.org/wiki/)
-+ wallpapers: [one](https://github.com/notchum/wallpapers/blob/main/nature/flowers.jpg)
-              [two](https://github.com/notchum/wallpapers/blob/main/nature/u04W.jpg)
-              [three](https://github.com/notchum/wallpapers/blob/main/nature/saffu-Vya8eGk5Y64-unsplash.jpg)
++ wallpapers: [one](https://github.com/notchum/wallpapers/blob/main/nature/alina-sofia-cropped-1920x1080.jpg)
+              [two](https://github.com/notchum/wallpapers/blob/main/nature/pink-roses-1920x1080.jpg)
+              [three](https://github.com/notchum/wallpapers/blob/main/nature/saffu-1440x2560.jpg)
 + font: `Hack` and `NotoSans Nerd Font`
 + icons: `Papirus`
 + Shown in the screenshots: `i3`, `polybar`, `firefox`, `spotify`, `gotop`, `ranger`, `kitty`.

@@ -53,6 +53,7 @@
     description: Installing zsh-autosuggestions
 #   - [git clone https://github.com/spaceship-prompt/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt" --depth=1, Installing Spaceship]
 #   - [ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme", Linking Spaceship]
+# - [git clone https://github.com/notchum/wallpapers ~ && sudo rsync -av --exclude='.git' ~/repos/wallpapers/ /usr/share/background, Installing wallpapers]
   - [rm -f ~/.config/mpv/scripts/mpv_thumbnail_script_*, Cleaning up mpv scripts]
   - 
     command: >-

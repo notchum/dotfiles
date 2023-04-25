@@ -51,7 +51,7 @@ exec autotiling
 #############################
 ###      Background       ###
 #############################
-output * bg $HOME/repos/wallpapers/anime/perfect_blue.jpg fill
+output * bg /usr/share/backgrounds/anime/perfect-blue-1920x1080.jpg fill
 
 #############################
 ###         Idle          ###

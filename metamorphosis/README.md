@@ -9,7 +9,7 @@
 ## Details
 + distro: [`Arch Linux`](https://www.archlinux.org/)
 + display server: [`Wayland`](https://wayland.freedesktop.org/)
-+ wallpapers: [one](https://github.com/notchum/wallpapers/blob/main/anime/perfect_blue.jpg)
++ wallpaper: [here](https://github.com/notchum/wallpapers/blob/main/anime/perfect-blue-1920x1080.jpg)
 + font: `Hack`
 + icons: `Pop`
 + Shown in the screenshots: `sway`, `waybar`, `neovim`, `nitch`, `zathura`, `mpv`, `cbonsai`, `alacritty`.

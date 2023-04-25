@@ -9,7 +9,7 @@
 ## Details
 + distro: [`Arch Linux`](https://www.archlinux.org/)
 + display server: [`X`](https://www.x.org/wiki/)
-+ wallpapers: [here](https://github.com/notchum/wallpapers/blob/main/anime/anime_irl_an_94.jpg)
++ wallpaper: [here](https://github.com/notchum/wallpapers/blob/main/anime/anime-irl-an-94-1600x1066.jpg)
 + fonts: `Cascadia Code` and `San Francisco Pro`
 + icons: `Adwaita`
 + shown in the screenshots: `i3`, `polybar`, `neovim`, `zathura`, `ranger`, `st`.
