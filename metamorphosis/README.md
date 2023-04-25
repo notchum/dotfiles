@@ -12,7 +12,7 @@
 + wallpapers: [one](https://github.com/notchum/wallpapers/blob/main/anime/perfect_blue.jpg)
 + font: `Hack`
 + icons: `Pop`
-+ Shown in the screenshots: `sway`, `waybar`, `firefox`, `neovim`, `nitch`, `zathura`, `cbonsai`, `alacritty`.
++ Shown in the screenshots: `sway`, `waybar`, `neovim`, `nitch`, `zathura`, `mpv`, `cbonsai`, `alacritty`.
 
 ### CLI
 - [zsh](https://github.com/zsh-users/zsh) - A shell designed for interactive use, although it is also a powerful scripting language.
