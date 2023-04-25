@@ -20,6 +20,7 @@
     ~/.config/alacritty: .config/alacritty
     ~/.config/bat: .config/bat
     ~/.config/dunst: .config/dunst
+    ~/.config/imv: .config/imv
     ~/.config/lazygit: .config/lazygit
     ~/.config/macchina: .config/macchina
     ~/.config/mpv: .config/mpv
