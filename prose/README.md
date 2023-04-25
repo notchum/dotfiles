@@ -14,7 +14,7 @@
               [three](https://github.com/notchum/wallpapers/blob/main/nature/saffu-Vya8eGk5Y64-unsplash.jpg)
 + font: `Hack` and `NotoSans Nerd Font`
 + icons: `Papirus`
-+ Shown in the screenshots: `i3`, `polybar`, `firefox`, `spotify`, `neovim`, `gotop`, `ranger`, `zathura`, `kitty`.
++ Shown in the screenshots: `i3`, `polybar`, `firefox`, `spotify`, `gotop`, `ranger`, `kitty`.
 
 ### CLI
 - [zsh](https://github.com/zsh-users/zsh) - A shell designed for interactive use, although it is also a powerful scripting language.
