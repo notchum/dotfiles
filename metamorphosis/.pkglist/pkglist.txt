@@ -43,6 +43,7 @@ nitch
 noto-fonts
 noto-fonts-cjk
 noto-fonts-emoji
+ntp
 onefetch
 openssh
 p7zip
