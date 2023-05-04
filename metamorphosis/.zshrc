@@ -1,6 +1,6 @@
 # Update PATH for user scripts
 if [ -d "$HOME/bin" ] ; then
-  export PATH="$HOME/bin:$PATH"
+  export PATH="$HOME/bin:$HOME/.local/bin:$PATH"
 fi
 
 # Path to your oh-my-zsh installation.
