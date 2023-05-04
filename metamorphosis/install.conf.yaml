@@ -15,6 +15,7 @@
     ~/.pkglist: .pkglist
     ~/bin: bin
     
+    ~/.mime.types: .mime.types
     ~/.zshrc: .zshrc
 
     ~/.config/alacritty: .config/alacritty
