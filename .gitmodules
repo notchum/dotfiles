@@ -14,3 +14,6 @@
 [submodule "prose/.config/ranger/plugins/ranger_devicons"]
 	path = prose/.config/ranger/plugins/ranger_devicons
 	url = https://github.com/alexanderjeurissen/ranger_devicons
+[submodule "metamorphosis/.config/nvim"]
+	path = metamorphosis/.config/nvim
+	url = https://github.com/astronvim/astronvim
