@@ -5,9 +5,6 @@
 [submodule "metamorphosis/.config/ranger/plugins/ranger_devicons"]
 	path = metamorphosis/.config/ranger/plugins/ranger_devicons
 	url = https://github.com/alexanderjeurissen/ranger_devicons
-[submodule "metamorphosis/.config/nvim/NvChad"]
-	path = metamorphosis/.config/nvim
-	url = https://github.com/NvChad/NvChad
 [submodule "crontab-dotbot"]
 	path = crontab-dotbot
 	url = https://github.com/fundor333/crontab-dotbot.git
