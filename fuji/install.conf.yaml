@@ -1,0 +1,87 @@
+- defaults:
+    link:
+      relink: true
+      stdin: true
+      stdout: true
+
+- clean: ['~']
+
+- create:
+  - ~/.config/nvim
+  - ~/.local/share/fonts
+  - ~/.local/share/icons
+  - ~/.themes
+
+- link:
+    ~/.pkglist: .pkglist
+    ~/bin: bin
+
+    ~/.xprofile: .xprofile
+    ~/.Xresources: .Xresources
+    ~/.zshrc: .zshrc
+
+    ~/.config/bat: .config/bat
+    ~/.config/kitty: .config/kitty
+    ~/.config/lazygit: .config/lazygit
+    ~/.config/mpv: .config/mpv
+    ~/.config/neofetch: .config/neofetch
+    ~/.config/nvim/init.vim: .config/nvim/init.vim
+    ~/.config/paru: .config/paru
+    ~/.config/ranger: .config/ranger
+    ~/.config/yt-dlp: .config/yt-dlp
+
+- shell:
+  - [git submodule update --init --recursive, Installing git submodules]
+  - 
+    command: >-
+      if [[ ! -d ~/.oh-my-zsh ]] ; then sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" ; fi
+    description: Installing Oh My Zsh
+  - 
+    command: >-
+      if [[ ! -d ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting ]] ; then git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting ; fi
+    description: Installing zsh-syntax-highlighting
+  - 
+    command: >-
+      if [[ ! -d ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting ]] ; then git clone https://github.com/zsh-users/zsh-autosuggestions.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions ; fi
+    description: Installing zsh-autosuggestions
+  - 
+    command: >-
+      curl https://raw.githubusercontent.com/sohnryang/lambda-minimal-theme/master/lambda-minimal.zsh-theme -o ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/lambda-minimal.zsh-theme
+    description: Installing zsh prompt
+  - 
+    command: >-
+      rm -f ~/.config/mpv/scripts/mpv_thumbnail_script_*
+    description: Cleaning up mpv scripts
+  - 
+    command: >-
+      cd ~/.config/mpv/scripts && curl -s https://api.github.com/repos/marzzzello/mpv_thumbnail_script/releases/latest | grep "browser_download_url.*lua" | cut -d : -f 2,3 | tr -d \" | wget -qi -
+    description: Installing mpv thumbnails scripts
+  - 
+    command: >-
+      if paru -Qs gnu-free-fonts >/dev/null ; then paru -R --noconfirm gnu-free-fonts ; fi
+    description: Removing gnu-free-fonts if installed
+    stdin: true
+  # -
+  #   command: >-
+  #     ~/bin/install_fonts.sh
+  #   description: Installing fonts
+  # -
+  #   command: >-
+  #     ~/bin/install_gruvbox_gtk_theme.sh
+  #   description: Installing GTK theme and icons
+  # -
+  #   command: >-
+  #     if [[ ! -d ~/.config/kitty/kitty-themes ]] ; then git clone --depth 1 https://github.com/dexpota/kitty-themes.git ~/.config/kitty/kitty-themes ; fi
+  #   description: Installing kitty themes
+  # -
+  #   command: >-
+  #     if [[ ! -d ~/.config/spicetify/Themes ]] ; then git clone --depth=1 https://github.com/spicetify/spicetify-themes.git ~/.config/spicetify/Themes ; fi
+  #   description: Installing spicetify themes
+  # -
+  #   command: >-
+  #     spicetify config current_theme Onepunch && spicetify config color_scheme dark && spicetify apply
+  #   description: Applying spicetify theme
+
+- crontab:
+  - cron: "@daily"
+    command: $HOME/bin/pkglist_mgr.sh

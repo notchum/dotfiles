@@ -1,0 +1,12 @@
+bash-pipes
+gotop-bin
+i3-resurrect
+jmtpfs
+kora-icon-theme
+paru
+spicetify-cli
+spotify
+ttf-symbola-free
+ttf-unifont
+visual-studio-code-bin
+zscroll-git

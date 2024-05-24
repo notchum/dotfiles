@@ -13,3 +13,6 @@
 # spotify-tui secrets
 **/spotify-tui/client.yml
 **/spotify-tui/.spotify_token_cache.json
+
+# kitty themes
+**/kitty/kitty-themes/
