@@ -103,16 +103,15 @@ alias mv='mv -v'
 alias cat='bat'
 # alias ls='ls -CF --color=auto'
 # alias ll='ls -lisah --color=auto'
-alias exa='exa --icons --group-directories-first --git --color=auto'
-alias la='exa -a'
-alias ll='exa -lah'
-alias ls='exa'
-alias exatree='exa --icons --tree --level=2'
+alias eza='eza --icons --group-directories-first --git --color=auto'
+alias la='eza -a'
+alias ll='eza -lah'
+alias ls='eza'
+alias ezatree='eza --icons --tree --level=2'
 alias mkdir='mkdir -pv'
 alias free='free -mt'
 alias ps='ps auxf'
 alias psgrep='ps aux | grep -v grep | grep -i -e VSZ -e'
-alias wget='wget -c'
 alias histg='history | grep'
 alias myip='curl ipv4.icanhazip.com'
 alias grep='grep --color=auto'
@@ -141,3 +140,8 @@ ranger() {
 # &   # Run the process in the background.
 # ( ) # Hide shell job control messages.
 #(cat ~/.cache/wal/sequences &)
+
+# Turn off all beeps
+unsetopt BEEP
+# Turn off autocomplete beeps
+# unsetopt LIST_BEEP

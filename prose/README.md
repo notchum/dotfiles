@@ -32,7 +32,7 @@
 - [bash-pipes](https://github.com/pipeseroni/pipes.sh) - Animated pipes terminal screensaver.
 - [delta](https://github.com/dandavison/delta) - A syntax-highlighting pager for git, diff, and grep output.
 - [dust](https://github.com/bootandy/dust) - A more intuitive version of du in rust.
-- [exa](https://github.com/ogham/exa) - A modern replacement for ‘ls’.
+- [eza](https://github.com/eza-community/eza) - A modern, maintained replacement for ‘ls’.
 - [fzf](https://github.com/junegunn/fzf) - A command-line fuzzy finder.
 - [gotop](https://github.com/xxxserxxx/gotop) - A terminal based graphical activity monitor.
 - [lazygit](https://github.com/jesseduffield/lazygit) - Simple terminal UI for git commands.
@@ -62,5 +62,5 @@
 - [ranger](https://github.com/ranger/ranger) - A VIM-inspired filemanager for the console.
     - [ranger_devicons](https://github.com/alexanderjeurissen/ranger_devicons) - Ranger plugin that adds file glyphs / icon support to Ranger.
 - [spicetify](https://github.com/spicetify/spicetify-cli) - Command-line tool to customize Spotify client.
-    - [sleek cherry](https://github.com/spicetify/spicetify-themes) - 
+    - [sleek cherry](https://github.com/spicetify/spicetify-themes) - Spotify client theme.
 - [zathura](https://github.com/pwmt/zathura) - A document viewer.

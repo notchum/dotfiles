@@ -30,7 +30,7 @@
 - [cbonsai](https://gitlab.com/jallbrit/cbonsai) - Grow bonsai trees in your terminal.
 - [delta](https://github.com/dandavison/delta) - A syntax-highlighting pager for git, diff, and grep output.
 - [dust](https://github.com/bootandy/dust) - A more intuitive version of du in rust.
-- [exa](https://github.com/ogham/exa) - A modern replacement for ‘ls’.
+- [eza](https://github.com/eza-community/eza) - A modern, maintained replacement for ‘ls’.
 - [fzf](https://github.com/junegunn/fzf) - A command-line fuzzy finder.
 - [gotop](https://github.com/xxxserxxx/gotop) - A terminal based graphical activity monitor.
 - [lazygit](https://github.com/jesseduffield/lazygit) - Simple terminal UI for git commands.

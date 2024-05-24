@@ -21,7 +21,7 @@ dosfstools
 dunst
 e2fsprogs
 efibootmgr
-exa
+eza
 fakeroot
 fbset
 feh
