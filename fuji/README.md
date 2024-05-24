@@ -50,6 +50,7 @@
     - [Quick Setting Tweaker](https://extensions.gnome.org/extension/5446/quick-settings-tweaker/)
     - [Clipboard Indicator](https://extensions.gnome.org/extension/779/clipboard-indicator/)
     - [User Themes](https://extensions.gnome.org/extension/19/user-themes/)
+      - [Gruvbox GTK Theme Borderless (BL)](https://github.com/Fausto-Korpsvart/Gruvbox-GTK-Theme)
     - [AppIndicator](https://extensions.gnome.org/extension/615/appindicator-support/)
     - [Dash to Panel](https://extensions.gnome.org/extension/1160/dash-to-panel/)
     - [Tiling Assistant](https://extensions.gnome.org/extension/3733/tiling-assistant/)
@@ -64,3 +65,4 @@
     - [ranger_devicons](https://github.com/alexanderjeurissen/ranger_devicons) - Ranger plugin that adds file glyphs / icon support to Ranger.
 - [spicetify](https://github.com/spicetify/spicetify-cli) - Command-line tool to customize Spotify client.
     - [Onepunch dark](https://github.com/spicetify/spicetify-themes) - Gruvbox-like theme for the Spotify client.
+- [vesktop](https://github.com/Vencord/Vesktop) - A lightweight custom Discord app that is aimed for better privacy and performance.

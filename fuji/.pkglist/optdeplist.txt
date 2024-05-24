@@ -1,11 +1,9 @@
-dbus-python
-djvulibre
+graphviz
 libmicrohttpd
-python-gobject
+python-dbus
 python-keyring
-python-pillow
 python-pyopenssl
 python-pyserial
-python-pyxdg
 python-service-identity
-which
+webp-pixbuf-loader
+xfsprogs
