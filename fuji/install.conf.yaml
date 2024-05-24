@@ -16,6 +16,7 @@
     ~/.pkglist: .pkglist
     ~/bin: bin
 
+    ~/.config/dconf-settings.ini: .config/dconf-settings.ini
     ~/.xprofile: .xprofile
     ~/.Xresources: .Xresources
     ~/.zshrc: .zshrc
