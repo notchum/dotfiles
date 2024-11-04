@@ -1,4 +1,5 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
 # ref: https://www.reddit.com/r/unixporn/comments/8giij5/comment/dyfg9s3/?utm_source=share&utm_medium=web2x&context=3
 # Update kitty config to apply Xresources color scheme
 

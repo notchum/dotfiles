@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 ## Author ----------------------------
 # @notchum
@@ -31,7 +31,8 @@ download_font_asset_github () {
 
 # Define the list of fonts with their repo name (e.g., "FontName GithubUser/RepoName")
 fonts=(
-    "JuliaMono cormullion/juliamono"
+    # "JuliaMono cormullion/juliamono"
+    "JuliaMonoNerdFont mietzen/juliamono-nerd-font"
     "Hack ryanoasis/nerd-fonts"
     "Hasklig ryanoasis/nerd-fonts"
     "Iosevka ryanoasis/nerd-fonts"
