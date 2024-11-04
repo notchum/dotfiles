@@ -11,7 +11,7 @@ die () {
 case "${1}" in
   -t|--theme)
     case "${2}" in
-      an-94|prose|metamorphosis|fuji)
+      an-94|prose|metamorphosis|grimoire)
         echo "Theme selected for install: ${2}"
         THEME="${2}"
         ;;

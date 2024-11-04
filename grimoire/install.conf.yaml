@@ -15,19 +15,21 @@
 - link:
     # Global configs
     ~/bin: ../global/bin
-    ~/.pkglist: ../global/.pkglist
     ~/.zshrc: ../global/.zshrc
+    ~/.config/bottom: ../global/.config/bottom
     ~/.config/lazygit: ../global/.config/lazygit
     ~/.config/mpv: ../global/.config/mpv
+    ~/.config/nvim: ../global/.config/nvim
     ~/.config/paru: ../global/.config/paru
     ~/.config/ranger: ../global/.config/ranger
+    ~/.config/spaceship: ../global/.config/spaceship
     ~/.config/yt-dlp: ../global/.config/yt-dlp
 
     # Theme-specific configs
+    ~/.pkglist: .pkglist
     ~/.config/bat: .config/bat
     ~/.config/kitty: .config/kitty
     ~/.config/neofetch: .config/neofetch
-    ~/.config/nvim/init.vim: .config/nvim/init.vim
 
 - shell:
   - [git submodule update --init --recursive, Installing git submodules]
