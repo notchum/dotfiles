@@ -1,0 +1,47 @@
+okular
+vlc
+teamspeak
+tesseract
+torbrowser-launcher
+spotify
+spicetify-cli
+handbrake                                            # video transcoder
+flameshot                                            # screenshots
+filezilla
+dbgate-bin
+cider-client
+bottles
+vencord-desktop-git
+
+gwenview                                             # image viewer
+isoimagewriter                                       # write iso files to usb
+kamoso                                               # webcam recorder
+kdenlive                                             # full-featured video editing software
+kolourpaint                                          # paint program
+ktailctl                                             # plasma tailscale gui
+
+gpu-screen-recorder-git
+gpu-screen-recorder-gtk-git
+gpu-screen-recorder-notification
+losslesscut-bin                                      # quick and dirty video editing software
+monero-gui                                           # monero wallet management
+obs-studio                                           # recording software
+
+openrgb                                              # rgb lighting control
+plasma6-applets-thermal-monitor-git                  # thermal monitoring
+qalculate-qt                                         # calculator
+qemu-full                                            # virtual machines
+qmk
+rpi-imager
+
+gamemode                                             # daemon and library for game optimizations
+heroic-games-launcher-bin                            # epic games launcher
+liberica-jdk-21-full-bin                             # java 21
+mangohud                                             # system performance overlay
+prismlauncher                                        # minecraft launcher
+proton-ge-custom-bin                                 # glorious eggroll proton
+protontricks
+rpcs3-bin
+steam                                                # gaming platform
+steamtinkerlaunch-git
+xone-dkms-git                                        # xbox controller support
