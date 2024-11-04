@@ -7,10 +7,17 @@
 - clean: ['~']
 
 - create:
-  - ~/.config/nvim
+  - ~/.backup
   - ~/.local/share/fonts
   - ~/.local/share/icons
+  - ~/.pkglist
   - ~/.themes
+  - ~/repos
+  - ~/Documents
+  - ~/Downloads
+  - ~/Music
+  - ~/Pictures/Screenshots
+  - ~/Videos
 
 - link:
     # Global configs
@@ -18,6 +25,7 @@
     ~/.zshrc: ../global/.zshrc
     ~/.config/bottom: ../global/.config/bottom
     ~/.config/lazygit: ../global/.config/lazygit
+    ~/.config/macchina: ../global/.config/macchina
     ~/.config/mpv: ../global/.config/mpv
     ~/.config/nvim: ../global/.config/nvim
     ~/.config/paru: ../global/.config/paru
@@ -25,13 +33,14 @@
     ~/.config/spaceship: ../global/.config/spaceship
     ~/.config/yt-dlp: ../global/.config/yt-dlp
 
-    # Theme-specific configs
-    ~/.pkglist: .pkglist
+    # Profile configs
     ~/.config/bat: .config/bat
     ~/.config/kitty: .config/kitty
     ~/.config/neofetch: .config/neofetch
+    ~/.config/OpenRGB: .config/OpenRGB
 
 - shell:
+  # Global commands
   - [git submodule update --init --recursive, Installing git submodules]
   - 
     command: >-
@@ -64,32 +73,43 @@
     stdin: true
   - 
     command: >-
-      git clone https://github.com/notchum/wallpapers ~/Pictures
+      if [[ ! -d ~/Pictures/wallpapers ]] ; then git clone https://github.com/notchum/wallpapers ~/Pictures/wallpapers ; fi
     description: Installing wallpapers to ~/Pictures/wallpapers
-  # -
-  #   command: >-
-  #     ~/bin/install_fonts.sh
-  #   description: Installing fonts
-  # -
-  #   command: >-
-  #     ~/bin/install_icons.sh
-  #   description: Installing icons
+  -
+    command: >-
+      ~/bin/install_fonts.sh
+    description: Installing fonts
+  -
+    command: >-
+      ~/bin/install_icons.sh
+    description: Installing icons
+
+  # Profile commands
   -
     command: >-
       if [[ ! -d ~/.config/kitty/kitty-themes ]] ; then git clone --depth 1 https://github.com/kovidgoyal/kitty-themes.git ~/.config/kitty/kitty-themes ; fi
     description: Installing kitty themes
-  # -
-  #   command: >-
-  #     if [[ ! -d ~/.config/spicetify/Themes ]] ; then git clone --depth=1 https://github.com/spicetify/spicetify-themes.git ~/.config/spicetify/Themes ; fi
-  #   description: Installing spicetify themes
-  # -
-  #   command: >-
-  #     spicetify config current_theme Onepunch && spicetify config color_scheme dark && spicetify apply
-  #   description: Applying spicetify theme
+  - 
+    command: >-
+      spicetify && spicetify backup apply
+    description: Creating spicetify config and backing up
+  -
+    command: >-
+      if [[ ! -d ~/.config/spicetify/Themes ]] ; then git clone --depth=1 https://github.com/spicetify/spicetify-themes.git ~/.config/spicetify/Themes ; fi
+    description: Installing spicetify themes
+  -
+    command: >-
+      spicetify config current_theme Sleek && spicetify config color_scheme UltraBlack && spicetify apply
+    description: Applying spicetify theme
 
 - crontab:
+  # Global cronjobs
   - cron: "@daily"
     command: $HOME/bin/pkglist_mgr.sh
 
   - cron: "0 13 */2 * *"
     command: $HOME/bin/bw_backup_notify.sh
+
+  # Profile cronjobs
+  - cron: "@reboot"
+    command: openrgb --profile "dark orange"

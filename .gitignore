@@ -10,6 +10,10 @@
 # mpv scripts
 **/mpv/scripts/
 
+# openrgb logs/plugins
+**/OpenRGB/logs/
+**/OpenRGB/plugins/
+
 # ranger plugins
 **/ranger/plugins/__init__.py
 

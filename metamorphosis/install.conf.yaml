@@ -7,41 +7,50 @@
 - clean: ['~']
 
 - create:
-  - ~/downloads
-  - ~/photos/screenshots
+  - ~/.backup
+  - ~/.local/share/fonts
+  - ~/.local/share/icons
+  - ~/.pkglist
+  - ~/.themes
+  - ~/repos
+  - ~/Documents
+  - ~/Downloads
+  - ~/Music
+  - ~/Pictures/Screenshots
+  - ~/Videos
 
 - link:
+    # Global configs
+    ~/bin: ../global/bin
+    ~/.zshrc: ../global/.zshrc
+    ~/.config/bottom: ../global/.config/bottom
+    ~/.config/lazygit: ../global/.config/lazygit
+    ~/.config/macchina: ../global/.config/macchina
+    ~/.config/mpv: ../global/.config/mpv
+    ~/.config/nvim: ../global/.config/nvim
+    ~/.config/paru: ../global/.config/paru
+    ~/.config/ranger: ../global/.config/ranger
+    ~/.config/spaceship: ../global/.config/spaceship
+    ~/.config/yt-dlp: ../global/.config/yt-dlp
+
     ~/.local/share/fonts: .local/share/fonts
     ~/.pkglist: .pkglist
-    ~/bin: bin
-    
-    ~/.mime.types: .mime.types
-    ~/.zshrc: .zshrc
-
     ~/.config/alacritty: .config/alacritty
     ~/.config/bat: .config/bat
     ~/.config/dunst: .config/dunst
     ~/.config/imv: .config/imv
-    ~/.config/lazygit: .config/lazygit
-    ~/.config/macchina: .config/macchina
-    ~/.config/mpv: .config/mpv
     ~/.config/neofetch: .config/neofetch
-    ~/.config/nvim: .config/nvim
-    ~/.config/paru: .config/paru
-    ~/.config/ranger: .config/ranger
     ~/.config/rofi: .config/rofi
-    ~/.config/spaceship: .config/spaceship
     ~/.config/spotify-tui: .config/spotify-tui
     ~/.config/spotifyd: .config/spotifyd
     ~/.config/sway: .config/sway
     ~/.config/swaylock: .config/swaylock
     ~/.config/waybar: .config/waybar
-    ~/.config/yt-dlp: .config/yt-dlp
     ~/.config/zathura: .config/zathura
 
 - shell:
+  # Global commands
   - [git submodule update --init --recursive, Installing git submodules]
-  - [git update-index --assume-unchanged $(pwd)/.config/spotifyd/spotifyd.conf, Updating git index]
   - 
     command: if [[ ! -d ~/.oh-my-zsh ]] ; then sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" ; fi
     description: Installing Oh My Zsh
@@ -70,10 +79,41 @@
       if paru -Qs gnu-free-fonts >/dev/null ; then paru -R --noconfirm gnu-free-fonts ; fi
     description: Removing gnu-free-fonts if installed
     stdin: true
+  - 
+    command: >-
+      git clone https://github.com/notchum/wallpapers ~/Pictures/wallpapers
+    description: Installing wallpapers to ~/Pictures/wallpapers
+  -
+    command: >-
+      ~/bin/install_fonts.sh
+    description: Installing fonts
+  -
+    command: >-
+      ~/bin/install_icons.sh
+    description: Installing icons
+
+  # Profile commands
+  - 
+    command: >-
+      echo "TODO w/ RSYNC"
+    description: Copying profile-specific scripts to ~/bin
+  - 
+    command: >-
+      git update-index --assume-unchanged $(pwd)/.config/spotifyd/spotifyd.conf
+    description: Updating spotifyd git index
+  - 
+    command: >-
+      cd ~/.local/share/fonts && wget https://github.com/adi1090x/rofi/raw/refs/heads/master/fonts/Icomoon-Feather.ttf
+    description: Installing Feather icon font for rofi
 
 - crontab:
-  - cron: "*/2 * * * *"
-    command: DISPLAY=:0 DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus $HOME/bin/check_battery.sh
-
+  # Global cronjobs
   - cron: "@daily"
     command: $HOME/bin/pkglist_mgr.sh
+  
+  - cron: "0 13 */2 * *"
+    command: $HOME/bin/bw_backup_notify.sh
+
+  # Profile cronjobs
+  - cron: "*/2 * * * *"
+    command: DISPLAY=:0 DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus $HOME/bin/check_battery.sh
