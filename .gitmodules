@@ -10,3 +10,7 @@
 [submodule "global/.config/ranger/plugins/ranger_devicons"]
 	path = global/.config/ranger/plugins/ranger_devicons
 	url = https://github.com/alexanderjeurissen/ranger_devicons.git
+
+[submodule "global/.config/nvim"]
+	path = global/.config/nvim
+	url = https://github.com/notchum/AstroNvim.git
