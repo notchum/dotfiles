@@ -13,23 +13,21 @@
   - ~/.themes
 
 - link:
-    ~/.pkglist: .pkglist
-    ~/bin: bin
+    # Global configs
+    ~/bin: ../global/bin
+    ~/.pkglist: ../global/.pkglist
+    ~/.zshrc: ../global/.zshrc
+    ~/.config/lazygit: ../global/.config/lazygit
+    ~/.config/mpv: ../global/.config/mpv
+    ~/.config/paru: ../global/.config/paru
+    ~/.config/ranger: ../global/.config/ranger
+    ~/.config/yt-dlp: ../global/.config/yt-dlp
 
-    ~/.config/dconf-settings.ini: .config/dconf-settings.ini
-    ~/.xprofile: .xprofile
-    ~/.Xresources: .Xresources
-    ~/.zshrc: .zshrc
-
+    # Theme-specific configs
     ~/.config/bat: .config/bat
     ~/.config/kitty: .config/kitty
-    ~/.config/lazygit: .config/lazygit
-    ~/.config/mpv: .config/mpv
     ~/.config/neofetch: .config/neofetch
     ~/.config/nvim/init.vim: .config/nvim/init.vim
-    ~/.config/paru: .config/paru
-    ~/.config/ranger: .config/ranger
-    ~/.config/yt-dlp: .config/yt-dlp
 
 - shell:
   - [git submodule update --init --recursive, Installing git submodules]
@@ -47,8 +45,8 @@
     description: Installing zsh-autosuggestions
   - 
     command: >-
-      curl https://raw.githubusercontent.com/sohnryang/lambda-minimal-theme/master/lambda-minimal.zsh-theme -o ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/lambda-minimal.zsh-theme
-    description: Installing zsh prompt
+      git clone https://github.com/spaceship-prompt/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt" --depth=1 && ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
+    description: Installing Spaceship
   - 
     command: >-
       rm -f ~/.config/mpv/scripts/mpv_thumbnail_script_*
@@ -62,18 +60,22 @@
       if paru -Qs gnu-free-fonts >/dev/null ; then paru -R --noconfirm gnu-free-fonts ; fi
     description: Removing gnu-free-fonts if installed
     stdin: true
+  - 
+    command: >-
+      git clone https://github.com/notchum/wallpapers ~/Pictures
+    description: Installing wallpapers to ~/Pictures/wallpapers
   # -
   #   command: >-
   #     ~/bin/install_fonts.sh
   #   description: Installing fonts
   # -
   #   command: >-
-  #     ~/bin/install_gruvbox_gtk_theme.sh
-  #   description: Installing GTK theme and icons
-  # -
-  #   command: >-
-  #     if [[ ! -d ~/.config/kitty/kitty-themes ]] ; then git clone --depth 1 https://github.com/dexpota/kitty-themes.git ~/.config/kitty/kitty-themes ; fi
-  #   description: Installing kitty themes
+  #     ~/bin/install_icons.sh
+  #   description: Installing icons
+  -
+    command: >-
+      if [[ ! -d ~/.config/kitty/kitty-themes ]] ; then git clone --depth 1 https://github.com/kovidgoyal/kitty-themes.git ~/.config/kitty/kitty-themes ; fi
+    description: Installing kitty themes
   # -
   #   command: >-
   #     if [[ ! -d ~/.config/spicetify/Themes ]] ; then git clone --depth=1 https://github.com/spicetify/spicetify-themes.git ~/.config/spicetify/Themes ; fi
@@ -86,3 +88,6 @@
 - crontab:
   - cron: "@daily"
     command: $HOME/bin/pkglist_mgr.sh
+
+  - cron: "0 13 */2 * *"
+    command: $HOME/bin/bw_backup_notify.sh

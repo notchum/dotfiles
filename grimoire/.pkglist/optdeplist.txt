@@ -1,6 +1,12 @@
 graphviz
+iio-sensor-proxy
+ladspa
+lib32-gnutls
 libmicrohttpd
+mtools
+openmpi
 python-dbus
+python-inflect
 python-keyring
 python-pyopenssl
 python-pyserial

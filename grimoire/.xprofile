@@ -4,7 +4,7 @@
 # If you use startx/xinit like a Chad, this file will also be sourced.
 
 # Set DPI: https://dpi.lv/
-xrandr --dpi 122
+xrandr --dpi 221
 
 # Merge resources
 [[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources

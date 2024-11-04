@@ -12,8 +12,8 @@
 + wallpaper: [one](https://github.com/notchum/wallpapers/blob/main/nature/flowers.jpg)
               [two](https://github.com/notchum/wallpapers/blob/main/nature/u04W.jpg)
               [three](https://github.com/notchum/wallpapers/blob/main/nature/saffu-Vya8eGk5Y64-unsplash.jpg)
-+ font: `JuliaMono` and `NotoSans Nerd Font`
-+ icons: `Papirus`
++ font: [`JuliaMono`](https://juliamono.netlify.app/) and [`NotoSans Nerd Font`](https://www.nerdfonts.com/)
++ icons: [`Marwaita`](https://github.com/darkomarko42/Marwaita-Icons)
 + Shown in the screenshots: `i3`, `polybar`, `firefox`, `spotify`, `neovim`, `gotop`, `ranger`, `zathura`, `kitty`.
 
 ### CLI
@@ -26,6 +26,7 @@
 - [neovim](https://github.com/neovim/neovim) - Hyperextensible Vim-based text editor.
     - [vim-plug](https://github.com/junegunn/vim-plug) - Minimalist Vim plugin manager.
 - [kitty](https://sw.kovidgoyal.net/kitty/) - A fast, featureful, GPU based terminal emulator.
+    - [Hurtado](https://github.com/dexpota/kitty-themes) - A black kitty theme with good color coverage.
 
 ### Tools
 - [bat](https://github.com/sharkdp/bat) - A cat clone with syntax highlighting and Git integration.
@@ -43,6 +44,7 @@
 
 ### Display
 - [GNOME](https://www.gnome.org/) - A desktop environment that aims to be simple and easy to use.
+  - **Extenstions:**
     - [User Avatar In Quick Settings](https://extensions.gnome.org/extension/5506/user-avatar-in-quick-settings/)
     - [Mullvad Indicator](https://extensions.gnome.org/extension/3560/mullvad-indicator/)
     - [Vitals](https://extensions.gnome.org/extension/1460/vitals/)
@@ -50,10 +52,12 @@
     - [Quick Setting Tweaker](https://extensions.gnome.org/extension/5446/quick-settings-tweaker/)
     - [Clipboard Indicator](https://extensions.gnome.org/extension/779/clipboard-indicator/)
     - [User Themes](https://extensions.gnome.org/extension/19/user-themes/)
-      - [Gruvbox GTK Theme Borderless (BL)](https://github.com/Fausto-Korpsvart/Gruvbox-GTK-Theme)
     - [AppIndicator](https://extensions.gnome.org/extension/615/appindicator-support/)
     - [Dash to Panel](https://extensions.gnome.org/extension/1160/dash-to-panel/)
     - [Tiling Assistant](https://extensions.gnome.org/extension/3733/tiling-assistant/)
+  - **Themes:**
+    - [Flat Remix (White Darkest) GNOME Shell Theme](https://drasite.com/flat-remix-gnome)
+    - [Flat Remix (White Darkest) GTK Theme](https://drasite.com/flat-remix-gtk)
 
 ### Applications
 - [feh](https://feh.finalrewind.org/) - An X11 image viewer aimed mostly at console users.
@@ -64,5 +68,7 @@
 - [ranger](https://github.com/ranger/ranger) - A VIM-inspired filemanager for the console.
     - [ranger_devicons](https://github.com/alexanderjeurissen/ranger_devicons) - Ranger plugin that adds file glyphs / icon support to Ranger.
 - [spicetify](https://github.com/spicetify/spicetify-cli) - Command-line tool to customize Spotify client.
-    - [Onepunch dark](https://github.com/spicetify/spicetify-themes) - Gruvbox-like theme for the Spotify client.
+    - [Sleek UltraBlack](https://github.com/spicetify/spicetify-themes) - A clean white & black theme for the Spotify client.
 - [vesktop](https://github.com/Vencord/Vesktop) - A lightweight custom Discord app that is aimed for better privacy and performance.
+    - [midnight](https://refact0r.github.io/midnight-discord/) - A darkened discord theme with rounded chat and sidebars.
+    - [amoled-cord](https://github.com/LuckFire/amoled-cord) - A basically pitch black theme for Discord.
