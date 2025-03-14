@@ -8,7 +8,7 @@
 # Put any other launch options before `%command%` like normal
 
 # WINEPREFIX for Rocket League
-RL_PREFIX="$HOME/.steam/steam/steamapps/compatdata/252950"
+RL_PREFIX="$HOME/Games/SteamLibrary/steamapps/compatdata/252950"
 
 # Detect what Proton version was used last
 # $() evaluates the command in parentheses
