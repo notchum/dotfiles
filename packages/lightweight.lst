@@ -1,0 +1,11 @@
+# --------------------------------------------------- // System
+grim                                                   # image grabber
+slurp                                                  # region select for screenshot/screenshare
+
+# --------------------------------------------------- // Dependencies
+spotifyd                                               # daemon for tui spotify
+
+# --------------------------------------------------- // Applications
+imv                                                    # image viewer
+spotify-tui                                            # terminal spotify client
+zathura                                                # document viewer

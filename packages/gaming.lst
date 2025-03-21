@@ -1,0 +1,13 @@
+# --------------------------------------------------- // Gaming
+asf                                                  # steam trading card utility
+gamemode                                             # daemon and library for game optimizations
+# gamescope                                            # micro-compositor for gaming
+heroic-games-launcher-bin                            # epic games launcher
+liberica-jdk-21-full-bin                             # java 21
+mangohud                                             # system performance overlay
+prismlauncher                                        # minecraft launcher
+proton-ge-custom-bin                                 # glorious eggroll proton
+protontricks                                         # proton wrapper for winetricks
+rpcs3-bin                                            # ps3 emulator
+steam                                                # gaming platform
+steamtinkerlaunch-git                                # wrapper for steam custom launch options
