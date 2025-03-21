@@ -1,4 +1,6 @@
 # --------------------------------------------------- // Dependencies
+android-udev                                           # for connect android devices ???? NEEDED?
+fontforge                                              # for patching fonts with nerd fonts
 mkvtoolnix-cli                                         # for freevine (TODO: install in .venv)
 
 # --------------------------------------------------- // System
@@ -6,6 +8,7 @@ backrest                                               # restic backup interface
 gpu-screen-recorder-git                                # shadowplay-like screen recorder
 gpu-screen-recorder-gtk-git                            # frontend for gpu-screen-record
 gpu-screen-recorder-notification                       # screen recording notifications
+npm                                                    # javascript package manager
 syncthing                                              # sync app
 syncthingtray-qt6                                      # tray icon/info for syncthing
 
@@ -21,6 +24,7 @@ bitwarden-cli                                          # password manager client
 brave-bin                                              # browser
 bottles                                                # wine prefix manager
 filezilla                                              # ftp application
+gnumeric                                               # spreadsheet application
 gparted                                                # disk partition editor
 handbrake                                              # video transcoder
 lite-xl                                                # lightweight text editor
@@ -30,7 +34,7 @@ mullvad-vpn                                            # vpn client
 obsidian                                               # note-taking app
 obs-studio                                             # recording software
 rpi-image                                              # create raspberry pi devices
-rustdesk                                               # remote desktop
+rustdesk-bin                                           # remote desktop
 signal-desktop                                         # messaging app
 spicetify-cli                                          # cli to customize spotify
 spotify                                                # spotify music client

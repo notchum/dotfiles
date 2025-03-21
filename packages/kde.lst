@@ -61,7 +61,6 @@ plasma print-manager
 plasma qqc2-breeze-style
 plasma sddm-kcm
 plasma systemsettings
-plasma wacomtablet
 plasma xdg-desktop-portal-kde
 
 kde-applications

@@ -2,6 +2,9 @@
 libinput-gestures                                      # actions touchpad gestures using libinput
 gestures                                               # gui for libinput-gestures
 
+# --------------------------------------------------- // Desktop
+nct6687d-dkms-git                                      # motherboard chipset support
+
 # --------------------------------------------------- // AMDGPU
 lib32-mesa
 lib32-vulkan-radeon

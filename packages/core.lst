@@ -1,14 +1,28 @@
 # --------------------------------------------------- // System
+pipewire                                               # audio/video server
+pipewire-alsa                                          # pipewire alsa client
+pipewire-audio                                         # pipewire audio client
+pipewire-jack                                          # pipewire jack client
+pipewire-pulse                                         # pipewire pulseaudio client
+wireplumber                                            # pipewire session manager
 cronie                                                 # schedule programs
 downgrade                                              # downgrade packages
 flameshot                                              # screenshots
+jmtpfs                                                 # access mtp devices ???? NEEDED?
+mtpfs                                                  # access mtp devices ???? NEEDED?
+ntp                                                    # network time protocol
+udisks2                                                # manage removable media
+samba                                                  # smb fileserver
 
 # --------------------------------------------------- // Programming
+clang
+cmake
 rustup
+lua
 python
+python-pip                                             # python package manager
 python-uv                                              # python package/project manager
 ipython                                                # interactive python shell
-cmake
 
 # --------------------------------------------------- // Dependencies
 parallel                                               # for parallel processing
@@ -23,6 +37,8 @@ ffmpegthumbs                                           # for dolphin video thumb
 kde-cli-tools                                          # for dolphin file type defaults
 pacman-contrib                                         # for system update check
 libnotify                                              # for notifications
+wl-clipboard                                           # for clipboard support
+zoxide                                                 # for historical directories navigation
 
 # --------------------------------------------------- // Shell
 oh-my-zsh-git                                          # plugin manager for zsh
@@ -62,6 +78,7 @@ fastfetch
 onefetch                                               # fetch for git repos
 
 # --------------------------------------------------- // Fonts
+ttf-unifont
 noto-fonts
 noto-fonts-cjk
 noto-fonts-emoji
