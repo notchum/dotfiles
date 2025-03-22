@@ -17,9 +17,7 @@ plugins=(
   python
   rust
   fzf
-  z
   zsh-syntax-highlighting
-  zsh-autosuggestions
 )
 export FZF_BASE=/usr/bin/fzf
 source $ZSH/oh-my-zsh.sh
@@ -66,8 +64,9 @@ alias ezatree='eza --icons --tree --level=2'
 
 # Useful aliases
 alias hmmm='paru -Sy &> /dev/null && paru -Qu'
-alias remove-orphans='orphans=$(pacman -Qdtq); [ -z "$orphans" ] && echo "There are no orphaned packages" || sudo pacman -Rsc $orphans'
+alias remove-orphans='paru -Qdtq | paru -Rnu -'
 alias error='journalctl -b -p err'
+alias gap='git add -p'
 alias psgrep='ps aux | grep -v grep | grep -i -e VSZ -e'
 alias histg='history | grep'
 alias myip='curl ipv4.icanhazip.com'
