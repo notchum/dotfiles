@@ -42,36 +42,12 @@
 - shell:
   # Global commands
   - [git submodule update --init --recursive, Installing git submodules]
-  - 
-    command: >-
-      if [[ ! -d ~/.oh-my-zsh ]] ; then sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" ; fi
-    description: Installing Oh My Zsh
-  - 
-    command: >-
-      if [[ ! -d ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting ]] ; then git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting ; fi
-    description: Installing zsh-syntax-highlighting
-  - 
-    command: >-
-      if [[ ! -d ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting ]] ; then git clone https://github.com/zsh-users/zsh-autosuggestions.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions ; fi
-    description: Installing zsh-autosuggestions
-  - 
-    command: >-
-      git clone https://github.com/spaceship-prompt/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt" --depth=1 && ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
-    description: Installing Spaceship
-  - 
-    command: >-
-      rm -f ~/.config/mpv/scripts/mpv_thumbnail_script_*
-    description: Cleaning up mpv scripts
-  - 
-    command: >-
-      cd ~/.config/mpv/scripts && curl -s https://api.github.com/repos/marzzzello/mpv_thumbnail_script/releases/latest | grep "browser_download_url.*lua" | cut -d : -f 2,3 | tr -d \" | wget -qi -
-    description: Installing mpv thumbnails scripts
-  - 
+  -
     command: >-
       if paru -Qs gnu-free-fonts >/dev/null ; then paru -R --noconfirm gnu-free-fonts ; fi
     description: Removing gnu-free-fonts if installed
     stdin: true
-  - 
+  -
     command: >-
       if [[ ! -d ~/Pictures/wallpapers ]] ; then git clone https://github.com/notchum/wallpapers ~/Pictures/wallpapers ; fi
     description: Installing wallpapers to ~/Pictures/wallpapers
@@ -89,7 +65,7 @@
     command: >-
       if [[ ! -d ~/.config/kitty/kitty-themes ]] ; then git clone --depth 1 https://github.com/kovidgoyal/kitty-themes.git ~/.config/kitty/kitty-themes ; fi
     description: Installing kitty themes
-  - 
+  -
     command: >-
       spicetify && spicetify backup apply
     description: Creating spicetify config and backing up
@@ -104,9 +80,6 @@
 
 - crontab:
   # Global cronjobs
-  - cron: "@daily"
-    command: $HOME/bin/pkglist_mgr.sh
-
   - cron: "0 13 */2 * *"
     command: $HOME/bin/bw_backup_notify.sh
 
