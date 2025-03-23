@@ -45,6 +45,7 @@ oh-my-zsh-git                                          # plugin manager for zsh
 zsh-syntax-highlighting-git                            # syntax highlights for zsh
 zsh-theme-powerlevel10k-git                            # theme for zsh
 # spaceship-prompt-git                                   # theme for zsh
+pokemon-colorscripts-git                               # display pokemon sprites
 eza                                                    # file lister for zsh
 dust                                                   # better du
 bat                                                    # better cat
