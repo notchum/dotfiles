@@ -3,23 +3,63 @@ if [ -d "$HOME/bin" ] ; then
   export PATH="$HOME/bin:$HOME/.local/bin:$PATH"
 fi
 
-# Path to your oh-my-zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
+# Oh-my-zsh installation path
+ZSH=/usr/share/oh-my-zsh/
 
-# oh-my-zsh theme
-ZSH_THEME="spaceship"
+# Update cache directory
+ZSH_CACHE_DIR=$HOME/.cache/oh-my-zsh
+if [[ ! -d $ZSH_CACHE_DIR ]]; then
+  mkdir $ZSH_CACHE_DIR
+fi
 
-# oh-my-zsh plugins
+# Powerlevel10k theme path
+source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
+
+# Oh-my-zsh plugins
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 plugins=(
+  # adds 'ctrl+o' to copy current command line text to clipboard
+  copybuffer
+
+  # copyfile <filename>: copies the contents of 'filename'
   copyfile
+
+  # copypath: copies the absolute path of the current directory
+  # copypath <file_or_directory>: copies the absolute path of the given file
+  copypath
+
+  # defines `cpv` function that uses `rsync`
+  cp
+
+  # extract <filename>: extracts the archive of the file you pass to it
   extract
-  git
-  python
-  rust
+
+  # enables fzf (installed separately)
   fzf
-  zsh-syntax-highlighting
+
+  # adds a ton of git aliases https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git
+  git
+
+  # kssh: runs a kitten ssh session
+  # kssh-slow: slower form of 'kssh' that always works
+  # kitty-theme: change the theme of kitty term
+  kitty
+
+  # py: runs 'python3'
+  # pyclean [dirs]: cleans byte-code and cache files
+  # mkv: make a new virtual environment
+  # automatically activates the venv when entering a python project directory
+  python
+
+  # adds completion for 'rustc', 'rustup', and 'cargo'
+  rust
 )
-export FZF_BASE=/usr/bin/fzf
+
+# Plugin configurations
+export PYTHON_VENV_NAME=.venv
+export PYTHON_AUTO_VRUN=true
+
+# Source Oh-my-zsh
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -40,9 +80,15 @@ export BROWSER=firefox
 export PF_INFO="ascii title os kernel shell pkgs uptime memory"
 
 # Shortened command aliases
-alias ..='cd ..'
 alias v='vim'
 alias nv='nvim'
+
+# Directory navigation shortcuts
+alias ..='cd ..'
+alias ...='cd ../..'
+alias .3='cd ../../..'
+alias .4='cd ../../../..'
+alias .5='cd ../../../../..'
 
 # Improved command aliases
 alias rm='rm -rIv'
@@ -55,18 +101,20 @@ alias grep='grep --color=auto'
 alias dust='dust -r'
 alias delta='delta -sn'
 
-# Remapped aliases
-alias eza='eza --icons --group-directories-first --git --color=auto'
-alias la='eza -a'
-alias ll='eza -lah'
-alias ls='eza'
-alias ezatree='eza --icons --tree --level=2'
-
-# Useful aliases
+# Helpful aliases
+alias ls='eza -1 --icons=auto'
+alias ll='eza -lah --icons=auto --sort=name --group-directories-first --git'
+alias ld='eza -lhD --icons=auto'
+alias lt='eza --icons=auto --tree --level=2'
+alias lS='eza -l -ssize'
+alias lT='eza -l -snewest'
+alias rsync-copy='rsync -avz --progress -h'
+alias rsync-move='rsync -avz --progress -h --remove-source-files'
+alias rsync-update='rsync -avzu --progress -h'
+alias rsync-synchronize='rsync -avzu --delete --progress -h'
 alias hmmm='paru -Sy &> /dev/null && paru -Qu'
 alias remove-orphans='paru -Qdtq | paru -Rnu -'
 alias error='journalctl -b -p err'
-alias gap='git add -p'
 alias psgrep='ps aux | grep -v grep | grep -i -e VSZ -e'
 alias histg='history | grep'
 alias myip='curl ipv4.icanhazip.com'
@@ -75,10 +123,6 @@ alias ipv6="ip addr show | grep 'inet6 ' | cut -d ' ' -f6 | sed -n '2p'"
 alias show='rifle'
 alias bw-lock='bw lock && unset BW_SESSION'
 alias bw-unlock='export BW_SESSION=$( bw unlock --raw )'
-
-# Startup commands
-clear
-neofetch
 
 # Open lazygit with Ctrl+g
 lazygit_func () {
@@ -96,7 +140,8 @@ ranger() {
   fi
 }
 
-# Turn off all beeps
-unsetopt BEEP
-# Turn off autocomplete beeps
-# unsetopt LIST_BEEP
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# Display Pokemon on startup
+pokemon-colorscripts --no-title -r 1,3,6
