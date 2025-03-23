@@ -1,0 +1,66 @@
+- defaults:
+    link:
+      relink: true
+      stdin: true
+      stdout: true
+
+- clean: ['~']
+
+- create:
+  - ~/.backup
+  - ~/.local/share/fonts
+  - ~/.local/share/icons
+  - $XDG_DATA_HOME/temptest # TODO REMOVE TESTING ONLY
+  - ~/.themes
+  - ~/repos
+  - ~/Desktop
+  - ~/Documents
+  - ~/Downloads
+  - ~/Music
+  - ~/Pictures/Screenshots
+  - ~/Public
+  - ~/Templates
+  - ~/Videos
+
+- link:
+    ~/bin: scripts
+    ~/.zshrc: home/.zshrc
+    ~/.config/bottom: config/bottom
+    ~/.config/lazygit: config/lazygit
+    ~/.config/macchina: config/macchina
+    ~/.config/mpv: config/mpv
+    ~/.config/nvim: config/nvim
+    ~/.config/paru: config/paru
+    ~/.config/ranger: config/ranger
+    ~/.config/spaceship: config/spaceship
+    ~/.config/yt-dlp: config/yt-dlp
+    # ~/.config/neofetch: config/neofetch
+
+- shell:
+  - [git submodule update --init --recursive, Installing git submodules]
+  -
+    command: >-
+      if [[ "$(grep "/${USER}:" /etc/passwd | awk -F '/' '{print $NF}')" != "zsh" ]] ; then chsh -s $(which zsh) ; fi
+    description: Making zsh the default shell
+  -
+    command: >-
+      if paru -Qs gnu-free-fonts >/dev/null ; then paru -R --noconfirm gnu-free-fonts ; fi
+    description: Removing gnu-free-fonts if installed
+    stdin: true
+  -
+    command: >-
+      if [[ ! -d ~/Pictures/wallpapers ]] ; then git clone https://github.com/notchum/wallpapers ~/Pictures/wallpapers ; fi
+    description: Installing wallpapers to ~/Pictures/wallpapers
+  -
+    command: >-
+      ~/bin/install_fonts.sh
+    description: Installing fonts
+  # -
+  #   command: >-
+  #     ~/bin/install_icons.sh
+  #   description: Installing icons
+
+- crontab:
+  # Global cronjobs
+  - cron: "0 13 */2 * *"
+    command: $HOME/bin/bw_backup_notify.sh
