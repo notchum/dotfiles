@@ -111,7 +111,7 @@ alias mv='mv -v'
 alias mkdir='mkdir -pv'
 alias free='free -mt'
 alias ps='ps auxf'
-alias grep='grep --color=auto'
+alias grep='grep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn,.idea,.tox,.venv,venv}'
 alias dust='dust -r'
 alias delta='delta -sn'
 
