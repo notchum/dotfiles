@@ -1,0 +1,33 @@
+- defaults:
+    link:
+      relink: true
+      stdin: true
+      stdout: true
+
+- link:
+    ~/.config/bat: config/bat
+    ~/.config/kitty: config/kitty
+    ~/.config/neofetch: config/neofetch
+    ~/.config/OpenRGB: config/OpenRGB
+
+- shell:
+  -
+    command: >-
+      if [[ ! -d ~/.config/kitty/kitty-themes ]] ; then git clone --depth 1 https://github.com/kovidgoyal/kitty-themes.git ~/.config/kitty/kitty-themes ; fi
+    description: Installing kitty themes
+  # -
+  #   command: >-
+  #     spicetify && spicetify backup apply
+  #   description: Creating spicetify config and backing up
+  # -
+  #   command: >-
+  #     if [[ ! -d ~/.config/spicetify/Themes ]] ; then git clone --depth=1 https://github.com/spicetify/spicetify-themes.git ~/.config/spicetify/Themes ; fi
+  #   description: Installing spicetify themes
+  # -
+  #   command: >-
+  #     spicetify config current_theme Sleek && spicetify config color_scheme UltraBlack && spicetify apply
+  #   description: Applying spicetify theme
+
+- crontab:
+  - cron: "@reboot"
+    command: openrgb --profile "dark orange"
