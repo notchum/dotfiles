@@ -3,15 +3,16 @@
       relink: true
       stdin: true
       stdout: true
+    shell:
+      stdout: true
 
 - clean: ['~']
 
 - create:
   - ~/.backup
-  - ~/.local/share/fonts
-  - ~/.local/share/icons
-  - $XDG_DATA_HOME/temptest # TODO REMOVE TESTING ONLY
   - ~/.themes
+  - $XDG_DATA_HOME/fonts
+  - $XDG_DATA_HOME/icons
   - ~/repos
   - ~/Desktop
   - ~/Documents
@@ -51,16 +52,15 @@
     command: >-
       if [[ ! -d ~/Pictures/wallpapers ]] ; then git clone https://github.com/notchum/wallpapers ~/Pictures/wallpapers ; fi
     description: Installing wallpapers to ~/Pictures/wallpapers
-  -
-    command: >-
-      ~/bin/install_fonts.sh
-    description: Installing fonts
+  # -
+  #   command: >-
+  #     ~/bin/install_fonts.sh
+  #   description: Installing fonts
   # -
   #   command: >-
   #     ~/bin/install_icons.sh
   #   description: Installing icons
 
-- crontab:
-  # Global cronjobs
-  - cron: "0 13 */2 * *"
-    command: $HOME/bin/bw_backup_notify.sh
+# - crontab:
+#   - cron: "0 13 */2 * *"
+#     command: $HOME/bin/bw_backup_notify.sh

@@ -2,48 +2,61 @@
 
 set -e
 
+CONFIG="install.conf.yaml"
+DOTBOT_DIR="dotbot"
+
+DOTBOT_BIN="bin/dotbot"
+BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
 die () {
   echo >&2 "${@}"
   exit 1
 }
 
-[ "${#}" -ge 2 ] || die "usage: install [-t THEME] (...dotbot OPTIONS...)"
-case "${1}" in
-  -t|--theme)
-    case "${2}" in
-      an-94|prose|metamorphosis|grimoire)
-        echo "Theme selected for install: ${2}"
-        THEME="${2}"
-        ;;
-      *) 
-        die "${2} is not a valid theme"
-    esac
-    ;;
-  *)
-    die "usage: install [-t THEME] (...dotbot OPTIONS...)"
-esac
+# Get the names of available rices
+cd "${BASEDIR}"/rices
+rices=()
+for dir in */ ; do
+  rices+=("$(basename ${dir})")
+done
+printf -v RICES_STR '%s|' "${rices[@]}"
 
+# Print help if requested
+if [[ "$1" == "-h" || "$1" == "--help" ]]; then
+  echo "usage: install [--rice ${RICES_STR%|}] (...dotbot OPTIONS...)"
+  exit 0
+fi
+
+# Loop over arguments and check for --rice flag
 args=()
 rflag=false
-for var in "${@}"; do
+for var in "${@}" ; do
   if [[ "${rflag}" == true ]] ; then
+    if [[ " ${rices[*]} " =~ " ${var} " ]] ; then
+      echo "Rice selected for install: ${var}"
+      RICE_NAME="${var}"
+    else
+      die "${var} is not a valid rice! Choose one of ${RICES_STR%|}"
+    fi
+
     rflag=false
     continue
-  elif [[ "${var}" == "--theme" ]] || [[ "${var}" == "-t" ]] ; then
+  elif [[ "${var}" == "--rice" ]] ; then
     rflag=true
     continue
   fi
   args+=("${var}")
 done
 
-CONFIG="${THEME}/install.conf.yaml"
-DOTBOT_DIR="dotbot"
-
-DOTBOT_BIN="bin/dotbot"
-BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-
+# dotbot setup
 cd "${BASEDIR}"
 git -C "${DOTBOT_DIR}" submodule sync --quiet --recursive
 git submodule update --init --recursive "${DOTBOT_DIR}"
 
-"${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}/${THEME}" --plugin-dir crontab-dotbot -c "${CONFIG}" "${args[@]}"
+# Run dotbot for all global configs
+"${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" --plugin-dir crontab-dotbot -c "${CONFIG}" "${args[@]}"
+
+# If a rice was selected, run dotbot again with the config within that rice's directory
+if [[ "${RICE_NAME+x}" ]] ; then
+  "${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}/rices/${RICE_NAME}" --plugin-dir crontab-dotbot -c "rices/${RICE_NAME}/${CONFIG}" "${args[@]}"
+fi
