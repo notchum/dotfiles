@@ -25,6 +25,7 @@
 
 - link:
     ~/bin: scripts
+    ~/.p10k.zsh: home/.p10k.zsh
     ~/.zshrc: home/.zshrc
     ~/.config/bottom: config/bottom
     ~/.config/lazygit: config/lazygit
