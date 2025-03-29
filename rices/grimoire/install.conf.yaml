@@ -9,6 +9,7 @@
     ~/.config/kitty: config/kitty
     ~/.config/neofetch: config/neofetch
     ~/.config/OpenRGB: config/OpenRGB
+    ~/.config/plasmarc: config/plasmarc
 
 - shell:
   -
