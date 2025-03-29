@@ -35,6 +35,7 @@
     ~/.config/paru: config/paru
     ~/.config/ranger: config/ranger
     ~/.config/spaceship: config/spaceship
+    ~/.config/yazi: config/yazi
     ~/.config/yt-dlp: config/yt-dlp
     # ~/.config/neofetch: config/neofetch
 
