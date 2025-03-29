@@ -29,6 +29,7 @@
     ~/.zshrc: home/.zshrc
     ~/.config/bottom: config/bottom
     ~/.config/lazygit: config/lazygit
+    ~/.config/lite-xl: config/lite-xl
     ~/.config/macchina: config/macchina
     ~/.config/mpv: config/mpv
     ~/.config/nvim: config/nvim

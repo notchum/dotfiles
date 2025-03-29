@@ -23,3 +23,8 @@
 
 # kitty themes
 **/kitty/kitty-themes/
+
+# lite-xl sessions
+**/lite-xl/session.lua
+**/lite-xl/ws/
+**/lite-xl/fonts/
