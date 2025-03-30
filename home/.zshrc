@@ -134,7 +134,6 @@ alias histg='history | grep'
 alias myip='curl ipv4.icanhazip.com'
 alias ipv4="ip addr show | grep 'inet ' | grep -v '127.0.0.1' | cut -d' ' -f6 | cut -d/ -f1"
 alias ipv6="ip addr show | grep 'inet6 ' | cut -d ' ' -f6 | sed -n '2p'"
-alias show='rifle'
 alias bw-lock='bw lock && unset BW_SESSION'
 alias bw-unlock='export BW_SESSION=$( bw unlock --raw )'
 
@@ -155,14 +154,5 @@ lazygit_func () {
 zle -N lazygit_func
 bindkey '^g' lazygit_func
 
-# Prevent ranger from nesting
-ranger() {
-  if [ -z "$RANGER_LEVEL" ]; then
-    /usr/bin/ranger "$@"
-  else
-    exit
-  fi
-}
-
 # Display Pokemon on startup
-pokemon-colorscripts --no-title -r 1,3,6
+pokemon-colorscripts --no-title -r 1,2,3,6

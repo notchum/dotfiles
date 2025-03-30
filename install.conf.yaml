@@ -34,7 +34,7 @@
     ~/.config/mpv: config/mpv
     ~/.config/nvim: config/nvim
     ~/.config/paru: config/paru
-    ~/.config/ranger: config/ranger
+    # ~/.config/ranger: config/ranger
     ~/.config/spaceship: config/spaceship
     ~/.config/yazi: config/yazi
     ~/.config/yt-dlp: config/yt-dlp
