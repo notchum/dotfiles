@@ -3,8 +3,8 @@
 
 ## Screenshots
 
-![screenshot1](screenshot1.png)
-![screenshot2](screenshot2.png)
+![screenshot1](images/screenshot1.png)
+![screenshot2](images/screenshot2.png)
 
 ## Details
 + distro: [`Arch Linux`](https://www.archlinux.org/)

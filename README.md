@@ -34,18 +34,18 @@ The wallpapers can be found here: [wallpapers](https://github.com/notchum/wallpa
 
 ### [`metamorphosis`](rices/metamorphosis/)
 
-![screenshot1](rices/metamorphosis/screenshot1.png)
-![screenshot2](rices/metamorphosis/screenshot2.png)
+![screenshot1](rices/metamorphosis/images/screenshot1.png)
+![screenshot2](rices/metamorphosis/images/screenshot2.png)
 
 ### [`prose`](rices/prose/)
 
-![screenshot1](rices/prose/screenshot1.png)
-![screenshot2](rices/prose/screenshot2.png)
+![screenshot1](rices/prose/images/screenshot1.png)
+![screenshot2](rices/prose/images/screenshot2.png)
 
 ### [`an-94`](rices/an-94/)
 
-![screenshot1](rices/an-94/screenshot1.png)
-![screenshot2](rices/an-94/screenshot2.png)
+![screenshot1](rices/an-94/images/screenshot1.png)
+![screenshot2](rices/an-94/images/screenshot2.png)
 
 ## Fetches
 

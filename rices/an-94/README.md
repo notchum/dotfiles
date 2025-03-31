@@ -3,8 +3,8 @@
 
 ## Screenshots
 
-![screenshot1](screenshot1.png)
-![screenshot2](screenshot2.png)
+![screenshot1](images/screenshot1.png)
+![screenshot2](images/screenshot2.png)
 
 ## Details
 + distro: [`Arch Linux`](https://www.archlinux.org/)
@@ -56,5 +56,5 @@
     - [ark](https://apps.kde.org/ark/) - A graphical file compression/decompression utility that can be used to browse, extract, create, and modify archives.
 - [ranger](https://github.com/ranger/ranger) - A VIM-inspired filemanager for the console.
 - [spotify-tui](https://github.com/Rigellute/spotify-tui) - A Spotify client for the terminal written in Rust.
-    - [spotifyd](https://github.com/Spotifyd/spotifyd) - A Spotify daemon. 
+    - [spotifyd](https://github.com/Spotifyd/spotifyd) - A Spotify daemon.
 - [zathura](https://github.com/pwmt/zathura) - A document viewer.
