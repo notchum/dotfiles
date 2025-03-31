@@ -154,5 +154,14 @@ lazygit_func () {
 zle -N lazygit_func
 bindkey '^g' lazygit_func
 
+# Prevent ranger from nesting
+ranger() {
+  if [ -z "$RANGER_LEVEL" ]; then
+    /usr/bin/ranger "$@"
+  else
+    exit
+  fi
+}
+
 # Display Pokemon on startup
 pokemon-colorscripts --no-title -r 1,2,3,6
