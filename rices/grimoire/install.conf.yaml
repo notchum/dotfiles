@@ -5,25 +5,21 @@
       stdout: true
 
 - link:
-    ~/.config/bat: config/bat
-    ~/.config/kitty: config/kitty
+    ~/.config/kitty/font.conf: config/kitty/font.conf
+    ~/.config/kitty/theme.conf: config/kitty/theme.conf
     ~/.config/neofetch: config/neofetch
     ~/.config/OpenRGB: config/OpenRGB
     ~/.config/plasmarc: config/plasmarc
 
 - shell:
-  -
-    command: >-
-      if [[ ! -d ~/.config/kitty/kitty-themes ]] ; then git clone --depth 1 https://github.com/kovidgoyal/kitty-themes.git ~/.config/kitty/kitty-themes ; fi
-    description: Installing kitty themes
   # -
   #   command: >-
   #     spicetify && spicetify backup apply
   #   description: Creating spicetify config and backing up
-  # -
-  #   command: >-
-  #     if [[ ! -d ~/.config/spicetify/Themes ]] ; then git clone --depth=1 https://github.com/spicetify/spicetify-themes.git ~/.config/spicetify/Themes ; fi
-  #   description: Installing spicetify themes
+  -
+    command: >-
+      if [[ ! -d ~/.config/spicetify/Themes ]] ; then git clone --depth=1 https://github.com/spicetify/spicetify-themes.git ~/.config/spicetify/Themes ; fi
+    description: Installing spicetify themes
   # -
   #   command: >-
   #     spicetify config current_theme Sleek && spicetify config color_scheme UltraBlack && spicetify apply

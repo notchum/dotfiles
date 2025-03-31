@@ -21,8 +21,9 @@
 **/spotify-tui/client.yml
 **/spotify-tui/.spotify_token_cache.json
 
-# kitty themes
-**/kitty/kitty-themes/
+# kitty themes/fonts symlinks
+config/kitty/font.conf
+config/kitty/theme.conf
 
 # lite-xl sessions
 **/lite-xl/session.lua

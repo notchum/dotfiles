@@ -27,18 +27,21 @@
     ~/bin: scripts
     ~/.p10k.zsh: home/.p10k.zsh
     ~/.zshrc: home/.zshrc
-    ~/.config/bottom: config/bottom
+    ~/.config/bat: config/bat
+    # ~/.config/bottom: config/bottom
+    ~/.config/kitty: config/kitty
     ~/.config/lazygit: config/lazygit
     ~/.config/lite-xl: config/lite-xl
     ~/.config/macchina: config/macchina
     ~/.config/mpv: config/mpv
+    # ~/.config/neofetch: config/neofetch
     ~/.config/nvim: config/nvim
     ~/.config/paru: config/paru
     # ~/.config/ranger: config/ranger
-    ~/.config/spaceship: config/spaceship
+    # ~/.config/spaceship: config/spaceship
     ~/.config/yazi: config/yazi
     ~/.config/yt-dlp: config/yt-dlp
-    # ~/.config/neofetch: config/neofetch
+    # ~/.config/zathura: .config/zathura
 
 - shell:
   - [git submodule update --init --recursive, Installing git submodules]
