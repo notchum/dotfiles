@@ -1,6 +1,6 @@
 ignore-empty-password
 daemonize
-image=/usr/share/backgrounds/anime/perfect-blue-1920x1080.jpg
+image=$HOME/Pictures/wallpapers/anime/perfect-blue-1920x1080.jpg
 clock
 indicator
 indicator-radius=100

@@ -14,7 +14,7 @@ set $up k
 set $right l
 
 # Your preferred terminal emulator
-set $term alacritty
+set $term kitty
 
 # Your preferred application launcher
 set $menu $HOME/.config/rofi/launcher/launcher.sh
@@ -51,7 +51,7 @@ exec autotiling
 #############################
 ###      Background       ###
 #############################
-output * bg /usr/share/backgrounds/anime/perfect-blue-1920x1080.jpg fill
+output * bg $HOME/Pictures/wallpapers/anime/perfect-blue-1920x1080.jpg fill
 
 #############################
 ###         Idle          ###
@@ -100,10 +100,10 @@ bindsym $mod+Shift+q kill
 bindsym $mod+d exec $menu
 
 # Take a screenshot with region
-bindsym $mod+Shift+s exec grim -g "$(slurp)" - | wl-copy --type image/png && scrot_path="$HOME/photos/screenshots/screenshot_`date +%Y.%m.%d_%H.%M.%S`.png" && wl-paste > "$scrot_path" && notify-send "Screenshot captured" "Saved to $scrot_path" -i dialog-information-symbolic
+bindsym $mod+Shift+s exec grim -g "$(slurp)" - | wl-copy --type image/png && scrot_path="$HOME/Pictures/Screenshots/screenshot_`date +%Y.%m.%d_%H.%M.%S`.png" && wl-paste > "$scrot_path" && notify-send "Screenshot captured" "Saved to $scrot_path" -i dialog-information-symbolic
 
 # Take a screenshot with region
-bindsym $mod+Print exec grim - | wl-copy --type image/png && scrot_path="$HOME/photos/screenshots/screenshot_`date +%Y.%m.%d_%H.%M.%S`.png" && wl-paste > "$scrot_path" && notify-send "Screenshot captured" "Saved to $scrot_path" -i dialog-information-symbolic
+bindsym $mod+Print exec grim - | wl-copy --type image/png && scrot_path="$HOME/Pictures/Screenshots/screenshot_`date +%Y.%m.%d_%H.%M.%S`.png" && wl-paste > "$scrot_path" && notify-send "Screenshot captured" "Saved to $scrot_path" -i dialog-information-symbolic
 
 # Drag floating windows by holding down $mod and left mouse button.
 # Resize them with right mouse button + $mod.
@@ -254,7 +254,7 @@ bar swaybar_command waybar
   client.focused_tab_title #333333 #5f676a #ffffff
   client.unfocused         #333333 #222222 #888888 #292d2e #222222
   client.urgent            #2f343a #900000 #ffffff #900000 #900000
-  client.placeholder       #000000 #0c0c0c #ffffff #000000 #0c0c0c 
+  client.placeholder       #000000 #0c0c0c #ffffff #000000 #0c0c0c
   client.background        #000000 #ffffff
 
 include /etc/sway/config.d/*

@@ -12,7 +12,7 @@
 + wallpaper: [here](https://github.com/notchum/wallpapers/blob/main/anime/perfect-blue-1920x1080.jpg)
 + font: `Hack`
 + icons: `Pop`
-+ Shown in the screenshots: `sway`, `waybar`, `neovim`, `nitch`, `zathura`, `mpv`, `cbonsai`, `alacritty`.
++ Shown in the screenshots: `sway`, `waybar`, `neovim`, `nitch`, `zathura`, `mpv`, `cbonsai`, `kitty`.
 
 ### CLI
 - [zsh](https://github.com/zsh-users/zsh) - A shell designed for interactive use, although it is also a powerful scripting language.
@@ -22,8 +22,8 @@
         - [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting) - Fish shell like syntax highlighting for zsh.
         - [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions) - Fish-like autosuggestions for zsh.
 - [neovim](https://github.com/neovim/neovim) - Hyperextensible Vim-based text editor.
-    - [AstroNvim](https://github.com/AstroNvim/AstroNvim) - An aesthetic and feature-rich neovim config that is extensible and easy to use with a great set of plugins. 
-- [alacritty](https://github.com/alacritty/alacritty) - A cross-platform, OpenGL terminal emulator.
+    - [AstroNvim](https://github.com/AstroNvim/AstroNvim) - An aesthetic and feature-rich neovim config that is extensible and easy to use with a great set of plugins.
+- [kitty](https://sw.kovidgoyal.net/kitty/) - A fast, featureful, GPU based terminal emulator.
 
 ### Tools
 - [bat](https://github.com/sharkdp/bat) - A cat clone with syntax highlighting and Git integration.
@@ -64,5 +64,5 @@
 - [ranger](https://github.com/ranger/ranger) - A VIM-inspired filemanager for the console.
     - [ranger_devicons](https://github.com/alexanderjeurissen/ranger_devicons) - Ranger plugin that adds file glyphs / icon support to Ranger.
 - [spotify-tui](https://github.com/Rigellute/spotify-tui) - A Spotify client for the terminal written in Rust.
-    - [spotifyd](https://github.com/Spotifyd/spotifyd) - A Spotify daemon. 
+    - [spotifyd](https://github.com/Spotifyd/spotifyd) - A Spotify daemon.
 - [zathura](https://github.com/pwmt/zathura) - A document viewer.

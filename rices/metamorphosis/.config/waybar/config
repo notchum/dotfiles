@@ -3,7 +3,7 @@
 	"modules-left": ["custom/launcher","cpu","memory","network","custom/vpn","custom/spotify","sway/mode"],
 	"modules-center": ["sway/workspaces"],
 	"modules-right": ["custom/updates","custom/wallpaper","pulseaudio","battery","clock","custom/power"],
-	
+
   "sway/workspaces": {
     "disable-scroll": true,
     "all-outputs": true,
@@ -86,7 +86,7 @@
     "smooth-scrolling-threshold": 10,
     "on-scroll-up" : "playerctl -p spotifyd next",
     "on-scroll-down" : "playerctl -p spotifyd previous",
-    "exec": "$HOME/bin/mediaplayer.py 2> /dev/null",
+    "exec": "$HOME/bin/spotify/mediaplayer.py 2> /dev/null",
     "exec-if": "pgrep spotifyd"
   },
   "custom/vpn": {
