@@ -26,7 +26,6 @@
     ~/.zshrc: home/.zshrc
     ~/.local/bin: scripts
     ~/.config/bat: config/bat
-    # ~/.config/bottom: config/bottom
     ~/.config/kitty: config/kitty
     ~/.config/lazygit: config/lazygit
     ~/.config/lite-xl: config/lite-xl
@@ -55,7 +54,3 @@
     command: >-
       if [[ ! -d ~/Pictures/wallpapers ]] ; then git clone https://github.com/notchum/wallpapers ~/Pictures/wallpapers ; fi
     description: Installing wallpapers to ~/Pictures/wallpapers
-
-# - crontab:
-#   - cron: "0 13 */2 * *"
-#     command: $HOME/bin/bw_backup_notify.sh
