@@ -1,6 +1,23 @@
 # --------------------------------------------------- // System
+brightnessctl                                          # screen brightness control
 grim                                                   # image grabber
 slurp                                                  # region select for screenshot/screenshare
+swappy                                                 # screenshot editor
+udiskie                                                # manage removable media
+bluetui                                                # bluetooth manager tui
+
+# --------------------------------------------------- // Display Manager
+ly                                                     # simple display manager
+
+# --------------------------------------------------- // Window Manager
+sway                                                   # wayland compositor
+swaybg                                                 # wallpaper
+swayidle                                               # idle management
+swaylock-effects-git                                   # lock screen
+rofi-lbonn-wayland-git                                 # application launcher
+waybar                                                 # system bar
+dunst                                                  # notification daemon
+autotiling-rs                                          # automatic tiling
 
 # --------------------------------------------------- // Dependencies
 spotifyd                                               # daemon for tui spotify

@@ -50,3 +50,8 @@ nvtop                                                  # gpu process monitor
 qemu-full                                              # virtual machine manager
 yt-dlp                                                 # video downloader
 tailscale                                              # mesh network client
+
+# --------------------------------------------------- // Fun
+bash-pipes                                             # animated pipes terminal screensaver
+cbonsai                                                # bonsai tree generator
+cowsay                                                 # talking cow

@@ -6,13 +6,9 @@ pipewire-jack                                          # pipewire jack client
 pipewire-pulse                                         # pipewire pulseaudio client
 wireplumber                                            # pipewire session manager
 cronie                                                 # schedule programs
-downgrade                                              # downgrade packages
-flameshot                                              # screenshots
-jmtpfs                                                 # access mtp devices ???? NEEDED?
-mtpfs                                                  # access mtp devices ???? NEEDED?
 ntp                                                    # network time protocol
-udisks2                                                # manage removable media
-samba                                                  # smb fileserver
+bluez                                                  # bluetooth protocol stack
+bluez-utils                                            # bluetooth utility cli
 
 # --------------------------------------------------- // Programming
 clang
@@ -67,6 +63,7 @@ mpv                                                    # media player
 
 # --------------------------------------------------- // Tools
 btop                                                   # terminal based graphical activity monitor
+downgrade                                              # downgrade packages
 inxi                                                   # command line system information
 rsync                                                  # file copying tool
 tealdeer                                               # handy tool for linux command example usage
@@ -82,6 +79,9 @@ onefetch                                               # fetch for git repos
 
 # --------------------------------------------------- // Fonts
 ttf-unifont
+ttf-juliamono-nerd-font
+ttf-jetbrains-mono-nerd
+ttf-noto-nerd
 noto-fonts
 noto-fonts-cjk
 noto-fonts-emoji
