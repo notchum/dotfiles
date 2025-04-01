@@ -47,10 +47,5 @@
     description: Making zsh the default shell
   -
     command: >-
-      if paru -Qs gnu-free-fonts >/dev/null ; then paru -R --noconfirm gnu-free-fonts ; fi
-    description: Removing gnu-free-fonts if installed
-    stdin: true
-  -
-    command: >-
       if [[ ! -d ~/Pictures/wallpapers ]] ; then git clone https://github.com/notchum/wallpapers ~/Pictures/wallpapers ; fi
     description: Installing wallpapers to ~/Pictures/wallpapers

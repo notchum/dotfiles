@@ -27,6 +27,11 @@
     description: Updating spotifyd git index
   -
     command: >-
+      if paru -Qs gnu-free-fonts >/dev/null ; then paru -R --noconfirm gnu-free-fonts ; fi
+    description: Removing gnu-free-fonts if installed
+    stdin: true
+  -
+    command: >-
       cd $XDG_DATA_HOME/fonts && curl -O https://github.com/adi1090x/rofi/raw/refs/heads/master/fonts/Icomoon-Feather.ttf
     description: Installing Feather icon font for rofi
 
