@@ -9,8 +9,6 @@
 - clean: ['~']
 
 - create:
-  - ~/.backup
-  - ~/.themes
   - $XDG_DATA_HOME/fonts
   - $XDG_DATA_HOME/icons
   - ~/repos
@@ -24,9 +22,9 @@
   - ~/Videos
 
 - link:
-    ~/bin: scripts
     ~/.p10k.zsh: home/.p10k.zsh
     ~/.zshrc: home/.zshrc
+    ~/.local/bin: scripts
     ~/.config/bat: config/bat
     # ~/.config/bottom: config/bottom
     ~/.config/kitty: config/kitty
@@ -41,7 +39,6 @@
     # ~/.config/spaceship: config/spaceship
     ~/.config/yazi: config/yazi
     ~/.config/yt-dlp: config/yt-dlp
-    # ~/.config/zathura: .config/zathura
 
 - shell:
   - [git submodule update --init --recursive, Installing git submodules]
@@ -58,14 +55,6 @@
     command: >-
       if [[ ! -d ~/Pictures/wallpapers ]] ; then git clone https://github.com/notchum/wallpapers ~/Pictures/wallpapers ; fi
     description: Installing wallpapers to ~/Pictures/wallpapers
-  # -
-  #   command: >-
-  #     ~/bin/install_fonts.sh
-  #   description: Installing fonts
-  # -
-  #   command: >-
-  #     ~/bin/install_icons.sh
-  #   description: Installing icons
 
 # - crontab:
 #   - cron: "0 13 */2 * *"
