@@ -43,9 +43,14 @@
   - [git submodule update --init --recursive, Installing git submodules]
   -
     command: >-
-      if [[ "$(grep "/${USER}:" /etc/passwd | awk -F '/' '{print $NF}')" != "zsh" ]] ; then chsh -s $(which zsh) ; fi
+      if [[ "$(grep "/${USER}:" /etc/passwd | awk -F '/' '{print $NF}')" != "zsh" ]] ; then chsh -s /usr/bin/zsh ; fi
     description: Making zsh the default shell
+    stdin: true
   -
     command: >-
       if [[ ! -d ~/Pictures/wallpapers ]] ; then git clone https://github.com/notchum/wallpapers ~/Pictures/wallpapers ; fi
     description: Installing wallpapers to ~/Pictures/wallpapers
+  -
+    command: >-
+      tldr --update
+    description: Update tealdeer cache
