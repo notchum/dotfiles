@@ -10,6 +10,7 @@
     ~/.config/neofetch: config/neofetch
     ~/.config/OpenRGB: config/OpenRGB
     ~/.config/plasmarc: config/plasmarc
+    ~/.config/vesktop/settings/settings.json: config/vesktop/settings/settings.json
 
 - shell:
   # -
