@@ -11,11 +11,11 @@ bluez                                                  # bluetooth protocol stac
 bluez-utils                                            # bluetooth utility cli
 
 # --------------------------------------------------- // Programming
-clang
-cmake
-rustup
-lua
-python
+clang                                                  # c language
+cmake                                                  # make system
+rustup                                                 # rust language
+lua                                                    # lua language
+python                                                 # python language
 python-pip                                             # python package manager
 python-uv                                              # python package/project manager
 ipython                                                # interactive python shell
@@ -70,12 +70,15 @@ tealdeer                                               # handy tool for linux co
 trash-cli                                              # cli to manage trash files
 
 # --------------------------------------------------- // Fetches
+onefetch                                               # fetch for git repos
 neofetch
 macchina
 nitch
 pfetch
-fastfetch
-onefetch                                               # fetch for git repos
+
+# --------------------------------------------------- // Icons
+pop-icon-theme
+marwaita-icons-git
 
 # --------------------------------------------------- // Fonts
 ttf-unifont
