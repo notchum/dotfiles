@@ -7,7 +7,6 @@
 - link:
     ~/.config/kitty/font.conf: config/kitty/font.conf
     ~/.config/kitty/theme.conf: config/kitty/theme.conf
-    ~/.config/neofetch: config/neofetch
     ~/.config/OpenRGB: config/OpenRGB
     ~/.config/plasmarc: config/plasmarc
     ~/.config/vesktop/settings/settings.json: config/vesktop/settings/settings.json
