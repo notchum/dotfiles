@@ -22,14 +22,11 @@ Spictify theme: [`Sleek UltraBlack`](https://github.com/spicetify/spicetify-them
 
 Vesktop themes:
 + [`amoled-cord`](https://github.com/LuckFire/amoled-cord)
-+ [`midnight`](https://refact0r.github.io/midnight-discord/)
 + [`modern-indicators`](https://github.com/discord-extensions/modern-indicators)
-
-VSCode theme: [`Night Owl Black`](https://marketplace.visualstudio.com/items?itemName=thedavej.night-owl-black)
 
 KDE themes:
 + Colors: [`Dark Dream`](https://store.kde.org/p/1466132/)
-+ Application Style: `Breeze` with [`Flat Remix (White Darkest)`](https://drasite.com/flat-remix-gtk) GTK Style
++ Application Style: `Breeze`
 + Plasma Style: `Breeze`
 + Window Decorations: [`Willow Dark`](https://store.kde.org/p/1561335/)
 + Icons: [`Marwaita`](https://store.kde.org/p/1270110/)
