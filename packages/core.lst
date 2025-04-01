@@ -50,6 +50,10 @@ bat                                                    # better cat
 ripgrep                                                # better search
 git-delta                                              # highlighting pager for git diffs
 
+# --------------------------------------------------- // Theming
+qt5-wayland                                            # wayland support in qt5
+qt6-wayland                                            # wayland support in qt6
+
 # --------------------------------------------------- // Applications
 firefox                                                # browser
 kitty                                                  # terminal

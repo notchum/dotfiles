@@ -5,6 +5,7 @@ slurp                                                  # region select for scree
 swappy                                                 # screenshot editor
 udiskie                                                # manage removable media
 bluetui                                                # bluetooth manager tui
+pavucontrol                                            # pulseaudio volume control
 
 # --------------------------------------------------- // Display Manager
 ly                                                     # simple display manager
@@ -18,6 +19,7 @@ rofi-lbonn-wayland-git                                 # application launcher
 waybar                                                 # system bar
 dunst                                                  # notification daemon
 autotiling-rs                                          # automatic tiling
+cliphist                                               # clipboard manager
 
 # --------------------------------------------------- // Dependencies
 spotifyd                                               # daemon for tui spotify

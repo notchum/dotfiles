@@ -55,3 +55,4 @@ tailscale                                              # mesh network client
 bash-pipes                                             # animated pipes terminal screensaver
 cbonsai                                                # bonsai tree generator
 cowsay                                                 # talking cow
+cava                                                   # audio visualizer
