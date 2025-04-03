@@ -163,5 +163,9 @@ ranger() {
   fi
 }
 
+# Load fzf theme
+FZF_THEME=${FZF_THEME:-$XDG_CONFIG_HOME/fzf/theme.sh}
+[[ -r $FZF_THEME ]] && source $FZF_THEME
+
 # Display Pokemon on startup
 pokemon-colorscripts --no-title -r 1,2,3,6
