@@ -1,0 +1,19 @@
+- defaults:
+    link:
+      relink: true
+      stdin: true
+      stdout: true
+
+- create:
+    - ~/.config/eza
+    - ~/.config/fzf
+    - ~/.config/yazi/flavors
+
+- link:
+    ~/.config/eza/theme.yml: config/eza/ashen.yml
+    ~/.config/fzf/theme.sh: config/fzf/ashen.sh
+    ~/.config/kitty/font.conf: config/kitty/font.conf
+    ~/.config/kitty/theme.conf: config/kitty/ashen.conf
+    ~/.config/swaylock: config/swaylock
+    ~/.config/yazi/theme.toml: config/yazi/ashen.toml
+    ~/.config/yazi/flavors/ashen.yazi: config/yazi/flavors/ashen.yazi
