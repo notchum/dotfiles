@@ -1,6 +1,9 @@
 # python
 *.pyc
 
+# environment
+.env
+
 # zcompile files
 *.zwc
 
@@ -29,3 +32,10 @@ config/kitty/theme.conf
 **/lite-xl/session.lua
 **/lite-xl/ws/
 **/lite-xl/fonts/
+
+# yazi flavors/theme
+config/yazi/flavors/
+config/yazi/theme.toml
+
+# nvim lazy artifacts
+**/nvim/lazy-lock.json
