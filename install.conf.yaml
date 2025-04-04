@@ -4,13 +4,14 @@
       stdin: true
       stdout: true
     shell:
+      stdin: true
       stdout: true
+      stderr: true
 
 - clean: ['~']
 
 - create:
-  - $XDG_DATA_HOME/fonts
-  - $XDG_DATA_HOME/icons
+  - ~/.local
   - ~/repos
   - ~/Desktop
   - ~/Documents
@@ -43,9 +44,8 @@
   - [git submodule update --init --recursive, Installing git submodules]
   -
     command: >-
-      if [[ "$(grep "/${USER}:" /etc/passwd | awk -F '/' '{print $NF}')" != "zsh" ]] ; then chsh -s /usr/bin/zsh ; fi
+      if [[ "$(grep "/${USER}:" /etc/passwd | awk -F '/' '{print $NF}')" != "zsh" ]] ; then chsh -s $(which zsh) ; fi
     description: Making zsh the default shell
-    stdin: true
   -
     command: >-
       if [[ ! -d ~/Pictures/wallpapers ]] ; then git clone https://github.com/notchum/wallpapers ~/Pictures/wallpapers ; fi
@@ -53,4 +53,4 @@
   -
     command: >-
       tldr --update
-    description: Update tealdeer cache
+    description: Updating tealdeer cache
