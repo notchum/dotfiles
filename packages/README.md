@@ -2,6 +2,15 @@
 
 These are the foreign packages that I use on every install.
 
+# Install
+
+To install the core packages:
+```sh
+paru -S --needed - < <(cut -d '#' -f 1 core.lst | awk 'NF' | awk '{$1=$1};1')
+```
+
+Use the same command with a different package list file to install any other packages.
+
 ### Shell
 - [zsh](https://github.com/zsh-users/zsh) - A shell designed for interactive use, although it is also a powerful scripting language.
     - [spaceship](https://github.com/spaceship-prompt/spaceship-prompt) - Minimalistic, powerful and extremely customizable zsh prompt.
@@ -10,7 +19,7 @@ These are the foreign packages that I use on every install.
         - [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting) - Fish shell like syntax highlighting for zsh.
         - [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions) - Fish-like autosuggestions for zsh.
 - [neovim](https://github.com/neovim/neovim) - Hyperextensible Vim-based text editor.
-    - [AstroNvim](https://github.com/AstroNvim/AstroNvim) - An aesthetic and feature-rich neovim config that is extensible and easy to use with a great set of plugins. 
+    - [AstroNvim](https://github.com/AstroNvim/AstroNvim) - An aesthetic and feature-rich neovim config that is extensible and easy to use with a great set of plugins.
 - [kitty](https://sw.kovidgoyal.net/kitty/) - A fast, featureful, GPU based terminal emulator.
     - [Hurtado](https://github.com/dexpota/kitty-themes) - A black kitty theme with good color coverage.
 
@@ -52,7 +61,7 @@ These are the foreign packages that I use on every install.
     - [ranger_devicons](https://github.com/alexanderjeurissen/ranger_devicons) - Ranger plugin that adds file glyphs / icon support to Ranger.
 
 - [vesktop](https://github.com/Vencord/Vesktop) - A lightweight custom Discord app that is aimed for better privacy and performance.
-    
+
 
 # Extra Packages
 
