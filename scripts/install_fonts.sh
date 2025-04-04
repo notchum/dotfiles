@@ -5,11 +5,11 @@
 
 ## Description ----------------------------
 # Installs my preferred fonts
-# 
+#
 # NOTE: only works for ZIP assets for now..
 
 ## Directories ----------------------------
-FONT_DIR=$HOME/.local/share/fonts
+FONT_DIR="$XDG_DATA_HOME/fonts"
 
 download_font_asset_github () {
     font_name=$1
@@ -20,7 +20,7 @@ download_font_asset_github () {
     cd "$FONT_DIR" || exit
 
     http_code="$(curl -w '%{http_code}\n' -z "$file_name" -LOR "$(curl -s "$api_url" | jq -r --arg file_name "$file_name" '.assets[] | select(.name == $file_name).browser_download_url')")"
-    
+
     if [[ $http_code -eq 304 ]] ; then
         echo "$font_name up to date. Skipping..."
     else
@@ -38,6 +38,8 @@ fonts=(
     "Iosevka ryanoasis/nerd-fonts"
     "Noto ryanoasis/nerd-fonts"
 )
+
+mkdir -pv "$FONT_DIR"
 
 # Loop over each font and download it
 OLDIFS=$IFS
