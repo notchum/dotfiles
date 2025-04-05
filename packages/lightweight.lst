@@ -16,10 +16,18 @@ swaybg                                                 # wallpaper
 swayidle                                               # idle management
 swaylock-effects-git                                   # lock screen
 rofi-lbonn-wayland-git                                 # application launcher
+fuzzle                                                 # application launcher
 waybar                                                 # system bar
 dunst                                                  # notification daemon
 autotiling-rs                                          # automatic tiling
 cliphist                                               # clipboard manager
+
+# --------------------------------------------------- // Theming
+nwg-look                                               # gtk configuration tool
+qt5ct                                                  # qt5 configuration tool
+qt6ct                                                  # qt6 configuration tool
+kvantum                                                # svg based qt6 theme engine
+kvantum-qt5                                            # svg based qt5 theme engine
 
 # --------------------------------------------------- // Dependencies
 spotifyd                                               # daemon for tui spotify
