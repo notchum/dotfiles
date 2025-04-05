@@ -25,8 +25,10 @@ hash = "a6b78bf9af5390e3a85a6951fbb7b93"
 
 [[plugin.deps]]
 use = "ndtoan96/ouch"
-rev = "c438bd5"
-hash = "6b9df492b94db87de3cb42fe8e54c1dc"
+rev = "558188d"
+hash = "2d0afef7b50747c543c4304004a72cec"
 
-[flavor]
-deps = []
+[[flavor.deps]]
+use = "ficcdaf/ashen:ashen"
+rev = "a17536c"
+hash = "e1ae4dbbbc24985970205810d8cf378e"
