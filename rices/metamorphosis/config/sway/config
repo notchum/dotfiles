@@ -45,8 +45,8 @@ font pango:Hack Nerd Font 10
 #############################
 ###    Autostart Apps     ###
 #############################
-exec diskie -F
-exec autotiling
+exec udiskie -F
+exec autotiling-rs
 
 #############################
 ###      Background       ###
