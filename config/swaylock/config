@@ -1,6 +1,5 @@
 ignore-empty-password
 daemonize
-image=$HOME/Pictures/wallpapers/space/volcanic-planet-5120x3200.png
 clock
 indicator
 indicator-radius=100

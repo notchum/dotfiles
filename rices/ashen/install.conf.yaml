@@ -17,7 +17,10 @@
     ~/.config/fzf/theme.sh: config/fzf/ashen.sh
     ~/.config/kitty/font.conf: config/kitty/font.conf
     ~/.config/kitty/theme.conf: config/kitty/ashen.conf
-    ~/.config/sway: config/sway
-    ~/.config/swaylock: config/swaylock
+    # TODO move this line to sway install file
+    ~/.config/sway: ../../config/sway
+    # TODO move this line to sway install file
+    ~/.config/swaylock: ../../config/swaylock
+    ~/.config/swaylock/theme: config/swaylock/ashen
     ~/.config/yazi/theme.toml: config/yazi/ashen.toml
     ~/.config/yazi/flavors/ashen.yazi: config/yazi/flavors/ashen.yazi
