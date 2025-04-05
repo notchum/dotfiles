@@ -109,6 +109,6 @@ M.polish_hl = {
 
 M.type = "dark"
 
-M = require("base46").override_theme(M, "obsidian_black")
+M = require("base46").override_theme(M, "camp")
 
 return M
