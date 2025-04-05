@@ -32,6 +32,14 @@ config/kitty/theme.conf
 config/fuzzel/font.ini
 config/fuzzel/theme.ini
 
+# sway themes/fonts symlinks
+config/sway/font
+config/sway/theme
+
+# swaylock themes/fonts symlinks
+config/swaylock/font
+config/swaylock/theme
+
 # lite-xl sessions
 **/lite-xl/session.lua
 **/lite-xl/ws/
