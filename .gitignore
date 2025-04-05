@@ -28,6 +28,10 @@
 config/kitty/font.conf
 config/kitty/theme.conf
 
+# fuzzel themes/fonts symlinks
+config/fuzzel/font.ini
+config/fuzzel/theme.ini
+
 # lite-xl sessions
 **/lite-xl/session.lua
 **/lite-xl/ws/
