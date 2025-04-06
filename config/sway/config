@@ -38,20 +38,11 @@ gaps bottom 10
 gaps top    10
 
 #############################
-###         Font          ###
-#############################
-font pango:JuliaMono Nerd Font 10
-
-#############################
 ###    Autostart Apps     ###
 #############################
 exec udiskie -F
 exec autotiling-rs
-
-#############################
-###      Background       ###
-#############################
-output * bg $HOME/Pictures/wallpapers/space/volcanic-planet-5120x3200.png fill
+exec wl-paste --watch cliphist store
 
 #############################
 ###         Idle          ###
@@ -105,10 +96,13 @@ bindsym $mod+Shift+q kill
 bindsym $mod+d exec $menu
 
 # Take a screenshot with region
-bindsym $mod+Shift+s exec grim -g "$(slurp)" - | wl-copy --type image/png && scrot_path="$HOME/Pictures/Screenshots/screenshot_`date +%Y.%m.%d_%H.%M.%S`.png" && wl-paste > "$scrot_path" && notify-send "Screenshot captured" "Saved to $scrot_path" -i dialog-information-symbolic
+bindsym $mod+Shift+s exec grim -g "$(slurp)" - | swappy -f -
 
-# Take a screenshot with region
-bindsym $mod+Print exec grim - | wl-copy --type image/png && scrot_path="$HOME/Pictures/Screenshots/screenshot_`date +%Y.%m.%d_%H.%M.%S`.png" && wl-paste > "$scrot_path" && notify-send "Screenshot captured" "Saved to $scrot_path" -i dialog-information-symbolic
+# Take a screenshot fullscreen
+bindsym $mod+Print exec grim - | swappy -f -
+
+# Open the pasteboard
+bindsym $mod+v exec cliphist list | fuzzel --dmenu --with-nth=2 | cliphist decode | wl-copy
 
 # Drag floating windows by holding down $mod and left mouse button.
 # Resize them with right mouse button + $mod.
@@ -176,10 +170,10 @@ bindsym $mod+Shift+9 move container to workspace number 9
 ###        Layout         ###
 #############################
 # You can "split" the current object of your focus with
-# $mod+b or $mod+v, for horizontal and vertical splits
+# $mod+Shift+b or $mod+Shift+v, for horizontal and vertical splits
 # respectively.
-bindsym $mod+b splith; exec notify-send "Sway" "Horizontal split" -i dialog-information-symbolic -t 1000
-bindsym $mod+v splitv; exec notify-send "Sway" "Vertical split" -i dialog-information-symbolic -t 1000
+bindsym $mod+Shift+b splith; exec notify-send "Sway" "Horizontal split" -i dialog-information-symbolic -t 1000
+bindsym $mod+Shift+v splitv; exec notify-send "Sway" "Vertical split" -i dialog-information-symbolic -t 1000
 
 # Switch the current container between different layout styles
 bindsym $mod+s layout stacking; exec notify-send "Sway" "Stacking layout" -i dialog-information-symbolic -t 1000
@@ -251,35 +245,8 @@ bindsym $mod+r mode "resize"
 bar swaybar_command waybar
 
 #############################
-###        Colors         ###
+###        Theme          ###
 #############################
-# Ashen: https://github.com/ficcdaf/ashen/blob/main/sway/config
-set $bg #121212
-set $fg #f5f5f5
-
-set $c0  #121212
-set $c1  #B14242
-set $c2  #D87C4A
-set $c3  #E49A44
-set $c4  #4A8B8B
-set $c5  #a7a7a7
-set $c6  #b4b4b4
-set $c7  #d5d5d5
-set $c8  #949494
-set $c9  #B14242
-set $c10 #D87C4A
-set $c11 #E49A44
-set $c12 #4A8B8B
-set $c13 #a7a7a7
-set $c14 #b4b4b4
-set $c15 #d5d5d5
-
-# class                 border backgr. text indic. child_border
-client.focused          $c9 $c9 $fg $c9 $c9
-client.focused_inactive $bg $bg $bg $bg $bg
-client.unfocused        $bg $bg $bg $bg $bg
-client.placeholder      $c9 $c9 $fg $c9 $c9
-client.background       $c9
-client.urgent           $c11 $c11 $fg $c11 $c11
+include $HOME/.config/sway/theme
 
 include /etc/sway/config.d/*
