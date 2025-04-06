@@ -13,7 +13,9 @@
     ~/.config/eza/theme.yml: config/eza/ashen.yml
     # TODO move this line to sway install file
     ~/.config/fuzzel: ../../config/fuzzel
-    ~/.config/fuzzel/theme.ini: config/fuzzel/ashen.ini
+    ~/.config/fuzzel/colors.ini: config/fuzzel/ashen.ini
+    ~/.config/fuzzel/fonts.ini: config/fuzzel/fonts.ini
+    ~/.config/fuzzel/icons.ini: config/fuzzel/icons.ini
     ~/.config/fzf/theme.sh: config/fzf/ashen.sh
     ~/.config/kitty/font.conf: config/kitty/font.conf
     ~/.config/kitty/theme.conf: config/kitty/ashen.conf

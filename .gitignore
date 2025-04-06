@@ -29,8 +29,9 @@ config/kitty/font.conf
 config/kitty/theme.conf
 
 # fuzzel themes/fonts symlinks
-config/fuzzel/font.ini
-config/fuzzel/theme.ini
+config/fuzzel/fonts.ini
+config/fuzzel/colors.ini
+config/fuzzel/icons.ini
 
 # sway themes/fonts symlinks
 config/sway/font
