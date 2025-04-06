@@ -18,7 +18,10 @@
     ~/.config/kitty/font.conf: config/kitty/font.conf
     ~/.config/kitty/theme.conf: config/kitty/ashen.conf
     # TODO move this line to sway install file
+    ~/.config/swappy: ../../config/swappy
+    # TODO move this line to sway install file
     ~/.config/sway: ../../config/sway
+    ~/.config/sway/theme: config/sway/ashen
     # TODO move this line to sway install file
     ~/.config/swaylock: ../../config/swaylock
     ~/.config/swaylock/theme: config/swaylock/ashen
