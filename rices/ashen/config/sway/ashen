@@ -1,7 +1,7 @@
 #############################
 ###         Font          ###
 #############################
-font pango:JuliaMono Nerd Font 10
+font pango:BerkeleyMono Nerd Font 10
 
 #############################
 ###      Background       ###
