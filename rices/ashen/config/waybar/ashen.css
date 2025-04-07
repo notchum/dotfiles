@@ -1,0 +1,71 @@
+/* Ashen */
+
+@define-color bg0_h           #121212;
+@define-color bg0             #212121;
+@define-color bg1             #323232;
+@define-color bg2             #535353;
+@define-color bg3             #737373;
+@define-color bg4             #949494;
+@define-color gray            #a7a7a7;
+@define-color fg              #d5d5d5;
+@define-color red             #b14242;
+@define-color bright_red      #c53030;
+@define-color green           #629c7d;
+@define-color bright_green    #1e6f54;
+@define-color yellow          #d7a933;
+@define-color bright_yellow   #f4ca64;
+@define-color blue            #3a6e6e;
+@define-color bright_blue     #4a8b8b;
+@define-color purple          #7a3d82;
+@define-color bright_purple   #8e5e93;
+@define-color aqua            #6e91c4;
+@define-color bright_aqua     #4ac4c4;
+@define-color orange          #e49a44;
+@define-color bright_orange   #e5a72a;
+
+@define-color white           #d5d5d5;
+@define-color black           #121212;
+
+/*
+  bg - background
+  fg - foreground
+  br - border
+*/
+
+/* Main Colors */
+
+@define-color shadow          shade(@bg0_h, 0.5);
+@define-color main-fg         @fg;
+@define-color main-bg         @bg0_h;
+@define-color main-br         @fg;
+
+@define-color active-bg       @red;
+@define-color active-fg       @bg0_h;
+
+@define-color hover-bg        @bg2;
+@define-color hover-fg        alpha(@fg, 0.75);
+
+/* Module Colors */
+
+@define-color module-fg       @fg;
+@define-color workspaces      @bg0;
+
+@define-color cpuinfo         @bg0;
+@define-color memory          @bg1;
+@define-color cpu             @bg2;
+@define-color distro-fg       @black;
+@define-color distro-bg       @red;
+@define-color time            @bg2;
+@define-color date            @bg1;
+@define-color tray            @bg0;
+
+@define-color pulseaudio      @bg0;
+@define-color backlight       @bg1;
+@define-color battery         @bg2;
+@define-color power           @red;
+
+/* State Colors */
+
+@define-color warning         @bright_orange;
+@define-color critical        @bright_red;
+@define-color charging        @fg;
