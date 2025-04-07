@@ -33,6 +33,9 @@ config/fuzzel/fonts.ini
 config/fuzzel/colors.ini
 config/fuzzel/icons.ini
 
+# rofi theme symlink
+config/rofi/theme.rasi
+
 # sway themes/fonts symlinks
 config/sway/font
 config/sway/theme
@@ -40,6 +43,10 @@ config/sway/theme
 # swaylock themes/fonts symlinks
 config/swaylock/font
 config/swaylock/theme
+
+# waybar theme symlinks
+config/waybar/theme.css
+config/waybar/config.jsonc
 
 # lite-xl sessions
 **/lite-xl/session.lua
