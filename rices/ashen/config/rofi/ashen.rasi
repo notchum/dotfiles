@@ -1,0 +1,41 @@
+/* Ashen */
+
+* {
+  bg0h:           #121212;
+  bg0:            #212121;
+  bg1:            #323232;
+  bg2:            #535353;
+  bg3:            #737373;
+  bg4:            #949494;
+  gray:           #a7a7a7;
+  fg:             #d5d5d5;
+  red:            #b14242;
+  brightred:      #c53030;
+  green:          #629c7d;
+  brightgreen:    #1e6f54;
+  yellow:         #d7a933;
+  brightyellow:   #f4ca64;
+  blue:           #3a6e6e;
+  brightblue:     #4a8b8b;
+  purple:         #7a3d82;
+  brightpurple:   #8e5e93;
+  aqua:           #6e91c4;
+  brightaqua:     #4ac4c4;
+  orange:         #e49a44;
+  brightorange:   #e5a72a;
+}
+
+/*
+  bg - background
+  fg - foreground
+  br - border
+*/
+
+* {
+  main-bg:        @bg0h;
+  main-fg:        @fg;
+  main-br:        @bg2;
+  input-bg:       @bg1;
+  select-bg:      @red;
+  select-fg:      @bg0h;
+}
