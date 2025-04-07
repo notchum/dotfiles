@@ -44,9 +44,8 @@ config/sway/theme
 config/swaylock/font
 config/swaylock/theme
 
-# waybar theme symlinks
+# waybar theme symlink
 config/waybar/theme.css
-config/waybar/config.jsonc
 
 # lite-xl sessions
 **/lite-xl/session.lua
