@@ -6,6 +6,7 @@ swappy                                                 # screenshot editor
 udiskie                                                # manage removable media
 bluetui                                                # bluetooth manager tui
 pavucontrol                                            # pulseaudio volume control
+# network-manager-applet                                 # network manager system tray utility
 
 # --------------------------------------------------- // Display Manager
 ly                                                     # simple display manager
@@ -15,12 +16,13 @@ sway                                                   # wayland compositor
 swaybg                                                 # wallpaper
 swayidle                                               # idle management
 swaylock-effects-git                                   # lock screen
-rofi-lbonn-wayland-git                                 # application launcher
+rofi-lbonn-wayland-git                                 # waybar submenus
 fuzzle                                                 # application launcher
 waybar                                                 # system bar
 dunst                                                  # notification daemon
 autotiling-rs                                          # automatic tiling
 cliphist                                               # clipboard manager
+hyprpicker                                             # color picker
 
 # --------------------------------------------------- // Theming
 nwg-look                                               # gtk configuration tool
@@ -30,6 +32,8 @@ kvantum                                                # svg based qt6 theme eng
 kvantum-qt5                                            # svg based qt5 theme engine
 
 # --------------------------------------------------- // Dependencies
+xdg-desktop-portal-wlr                                 # xdg desktop portal for wlroots
+xdg-desktop-portal-gtk                                 # xdg desktop portal for gtk
 spotifyd                                               # daemon for tui spotify
 
 # --------------------------------------------------- // Applications
