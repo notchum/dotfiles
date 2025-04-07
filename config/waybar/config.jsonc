@@ -218,8 +218,10 @@
   },
 
   "custom/distro": {
-    "format": " ",
-    "tooltip": false
+    "exec": "hostnamectl | jq -R -s -c 'gsub(\"\n\"; \"\n\") | {tooltip: .}'",
+    "return-type": "json",
+    "interval": 3600,
+    "format": " "
   },
 
   "idle_inhibitor": {
