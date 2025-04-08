@@ -35,3 +35,6 @@
     ~/.config/waybar/theme.css: config/waybar/ashen.css
     ~/.config/yazi/theme.toml: config/yazi/ashen.toml
     ~/.config/yazi/flavors/ashen.yazi: config/yazi/flavors/ashen.yazi
+    # TODO move this line to sway install file
+    ~/.config/zathura: ../../config/zathura
+    ~/.config/zathura/theme: config/zathura/ashen

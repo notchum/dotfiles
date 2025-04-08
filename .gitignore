@@ -56,5 +56,8 @@ config/waybar/theme.css
 config/yazi/flavors/
 config/yazi/theme.toml
 
+# zathura theme symlink
+config/zathura/theme
+
 # nvim lazy artifacts
 **/nvim/lazy-lock.json
