@@ -22,4 +22,4 @@ map p print
 map g goto top
 map xb toggle_statusbar
 
-include ~/.config/zathura/theme
+include ./theme
