@@ -110,7 +110,7 @@
     "exec": "checkupdates | wc -l",
     "exec-if": "[[ $(checkupdates | wc -l) != 0 ]]",
     "interval": 3600,
-    "on-click": "alacritty -e paru -Syu && notify-send 'paru' 'The system has been updated' -i dialog-information-symbolic"
+    "on-click": "kitty -e paru -Syu && notify-send 'paru' 'The system has been updated' -i dialog-information-symbolic"
   }
 }
 

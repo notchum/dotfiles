@@ -89,7 +89,7 @@ export XDG_STATE_HOME=$HOME/.local/state
 export VISUAL=nvim
 export EDITOR=$VISUAL
 export PAGER=bat
-export TERMCMD=alacritty
+export TERMCMD=kitty
 export BROWSER=firefox
 
 # pfetch configuration

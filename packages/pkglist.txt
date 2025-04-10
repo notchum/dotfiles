@@ -1,5 +1,4 @@
 acpi
-alacritty
 alsa-utils
 atool
 autotiling
@@ -28,6 +27,7 @@ grub
 imv
 intel-ucode
 jq
+kitty
 lazygit
 libnotify
 linux
