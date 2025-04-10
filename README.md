@@ -1,57 +1,74 @@
-# dotfiles
-
-My collection of dotfiles from over the years. This repo is mostly used as a reference for snapshots of past configurations that I had on old systems and isn't really intended to be easily deployed on anyone's system using the provided `install` script - for something like that I'd suggest looking at [hyprdots](https://github.com/prasanthrangan/hyprdots).
-
-That being said, dotfiles that should be compatible with any system are kept in [`home`](home/) and [`config`](config/). Any extra configurations are kept in [`rices`](rices/) in the respective rice's folder. These are usually configurations with certain themes or for certain niche applications.
-
-I've named each rice to better identify each 'theme'. Since each rice is more of a snapshot in time rather than a reflection of my current config, there will be some things that are out-of-date, deprecated, and/or something that I no longer use. In order from newest to oldest:
-| name                                    | description                                       | status     |
-|-----------------------------------------|---------------------------------------------------|------------|
-| [`grimoire`](rices/grimoire/)           | **my current config** - black, dark, kde          | maintained |
-| [`metamorphosis`](rices/metamorphosis/) | my favorite rice - soothing, lightweight, sway    | archived   |
-| [`prose`](rices/prose/)                 | my first desktop rice - pretty, well-rounded, i3  | archived   |
-| [`an-94`](rices/an-94/)                 | my first laptop rice - simple, transparent, i3    | archived   |
-
-## Installation
-
-I use a modified [dotbot](https://github.com/anishathalye/dotbot) install script to manage my dotfiles. Usage:
-```sh
-$ install [--rice an-94|grimoire|metamorphosis|prose] (...dotbot OPTIONS...)
-```
-
-Just running `./install` is enough to link all dotfiles from [`home`](home/) and [`config`](config/). But using the `--rice` option will link the files within the respective rice's folder.
-
-> [!NOTE]
-> The `install` script doesn't install packages, those would have to be installed manually. See [`packages`](packages/).
-
-## Usage
-
-~~I keep a list of packages installed on each rice in `<theme>/.pkglist/`. This method of backing up packages is outlined on the Arch Linux Wiki [here](https://wiki.archlinux.org/title/Pacman/Tips_and_tricks#List_of_installed_packages).~~ I used to run a cronjob that used `pacman` to backup all of the packages currently installed to a `.pkglist/` directory. However, I now just manually keep lists of various packages that I use in [`packages`](packages/).
-
-The wallpapers can be found here: [wallpapers](https://github.com/notchum/wallpapers).
+# `metamorphosis`
+> illusions can't come to life
 
 ## Screenshots
 
-### [`metamorphosis`](rices/metamorphosis/)
+![screenshot1](images/screenshot1.png)
+![screenshot2](images/screenshot2.png)
 
-![screenshot1](rices/metamorphosis/images/screenshot1.png)
-![screenshot2](rices/metamorphosis/images/screenshot2.png)
+## Details
++ distro: [`Arch Linux`](https://www.archlinux.org/)
++ display server: [`Wayland`](https://wayland.freedesktop.org/)
++ wallpaper: [here](https://github.com/notchum/wallpapers/blob/main/anime/perfect-blue-1920x1080.jpg)
++ font: `Hack`
++ icons: `Pop`
++ Shown in the screenshots: `sway`, `waybar`, `neovim`, `nitch`, `zathura`, `mpv`, `cbonsai`, `kitty`.
 
-### [`prose`](rices/prose/)
+### CLI
+- [zsh](https://github.com/zsh-users/zsh) - A shell designed for interactive use, although it is also a powerful scripting language.
+    - [spaceship](https://github.com/spaceship-prompt/spaceship-prompt) - Minimalistic, powerful and extremely customizable zsh prompt.
+    - [ohmyzsh](https://github.com/ohmyzsh/ohmyzsh) - An open source, community-driven framework for managing your zsh configuration.
+        - [z](https://github.com/rupa/z) - Tracks your most used directories, based on frequency.
+        - [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting) - Fish shell like syntax highlighting for zsh.
+        - [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions) - Fish-like autosuggestions for zsh.
+- [neovim](https://github.com/neovim/neovim) - Hyperextensible Vim-based text editor.
+    - [AstroNvim](https://github.com/AstroNvim/AstroNvim) - An aesthetic and feature-rich neovim config that is extensible and easy to use with a great set of plugins.
+- [kitty](https://sw.kovidgoyal.net/kitty/) - A fast, featureful, GPU based terminal emulator.
 
-![screenshot1](rices/prose/images/screenshot1.png)
-![screenshot2](rices/prose/images/screenshot2.png)
+### Tools
+- [bat](https://github.com/sharkdp/bat) - A cat clone with syntax highlighting and Git integration.
+- [cbonsai](https://gitlab.com/jallbrit/cbonsai) - Grow bonsai trees in your terminal.
+- [delta](https://github.com/dandavison/delta) - A syntax-highlighting pager for git, diff, and grep output.
+- [dust](https://github.com/bootandy/dust) - A more intuitive version of du in rust.
+- [eza](https://github.com/eza-community/eza) - A modern, maintained replacement for ‘ls’.
+- [fzf](https://github.com/junegunn/fzf) - A command-line fuzzy finder.
+- [gotop](https://github.com/xxxserxxx/gotop) - A terminal based graphical activity monitor.
+- [lazygit](https://github.com/jesseduffield/lazygit) - Simple terminal UI for git commands.
+- [nitch](https://github.com/ssleert/nitch) - Incredibly fast system fetch written in nim.
+- [onefetch](https://github.com/o2sh/onefetch) - A command-line Git information tool.
+- [paru](https://github.com/Morganamilo/paru) - Feature packed AUR helper.
+- [wl-clipboard](https://github.com/bugaevc/wl-clipboard) - Command-line copy/paste utilities for Wayland.
+- [yt-dlp](https://github.com/yt-dlp/yt-dlp) - A youtube-dl fork with additional features and fixes.
 
-### [`an-94`](rices/an-94/)
+### Display
+- [sway](https://github.com/swaywm/sway) - i3-compatible Wayland compositor.
+    - [autotiling](https://github.com/nwg-piotr/autotiling) - Script for sway and i3 to automatically switch the horizontal / vertical window split orientation.
+    - [swaybg](https://github.com/swaywm/swaybg) - Wallpaper tool for Wayland compositors.
+    - [swayidle](https://github.com/swaywm/swayidle) - Idle management daemon for Wayland.
+    - [swaylock-effects](https://github.com/mortie/swaylock-effects) - Swaylock, with fancy effects.
+- [dunst](https://github.com/dunst-project/dunst) - Lightweight and customizable notification daemon.
+- [greetd](https://git.sr.ht/~kennylevinsen/greetd) - A minimal and flexible login manager daemon that makes no assumptions about what you want to launch.
+    - [tuigreet](https://github.com/apognu/tuigreet) - Graphical console greeter for greetd.
+- [rofi-lbonn-wayland](https://github.com/lbonn/rofi) - A window switcher, application launcher and dmenu replacement - fork with wayland support.
+    - [adi1090x's rofi menus](https://github.com/adi1090x/rofi) - A huge collection of Rofi based custom Applets, Launchers & Powermenus.
+- [waybar](https://github.com/Alexays/Waybar) - Highly customizable Wayland bar for Sway and Wlroots based compositors.
+    - Modified version of [theCode-Breaker's waybar config](https://github.com/theCode-Breaker/riverwm)
 
-![screenshot1](rices/an-94/images/screenshot1.png)
-![screenshot2](rices/an-94/images/screenshot2.png)
+### Applications
+- [imv](https://sr.ht/~exec64/imv/) - A command line image viewer intended for use with tiling window managers.
+- [firefox](https://mozilla.org/firefox) - A free and open source web browser.
+- [grim](https://sr.ht/~emersion/grim/) - Grab images from a Wayland compositor.
+    - [slurp](https://github.com/emersion/slurp) - Select a region in a Wayland compositor.
+- [mpv](https://github.com/mpv-player/mpv) - A free (as in freedom) media player for the command line.
+    - [mpv_thumbnail_script](https://github.com/marzzzello/mpv_thumbnail_script) - Show preview thumbnails in mpv's OSC seekbar.
+- [ranger](https://github.com/ranger/ranger) - A VIM-inspired filemanager for the console.
+    - [ranger_devicons](https://github.com/alexanderjeurissen/ranger_devicons) - Ranger plugin that adds file glyphs / icon support to Ranger.
+- [spotify-tui](https://github.com/Rigellute/spotify-tui) - A Spotify client for the terminal written in Rust.
+    - [spotifyd](https://github.com/Spotifyd/spotifyd) - A Spotify daemon.
+- [zathura](https://github.com/pwmt/zathura) - A document viewer.
 
-## Fetches
+## Usage
 
-- [pfetch](https://github.com/dylanaraps/pfetch) - Fast and pretty fetch tool that can be configured with one line in `.zshrc`/`.bashrc`.
-- [nitch](https://github.com/ssleert/nitch) - Very uniquely designed fetch tool that has a great configuration out of the box.
-- [macchina](https://github.com/Macchina-CLI/macchina) - Extremely customizable fetch tool with an amazing name. Also written in Rust btw.
-- [neofetch](https://github.com/dylanaraps/neofetch) - The king of system info. Holds a special place in my heart.
+I keep a list of packages installed on each rice in `<theme>/.pkglist/`. This method of backing up packages is outlined on the Arch Linux Wiki [here](https://wiki.archlinux.org/title/Pacman/Tips_and_tricks#List_of_installed_packages).
 
-![fetch](images/fetch.png)
+The wallpapers can be found here: [wallpapers](https://github.com/notchum/wallpapers).

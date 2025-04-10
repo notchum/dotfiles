@@ -17,10 +17,10 @@ set $right l
 set $term kitty
 
 # Your preferred application launcher
-set $menu fuzzel
+set $menu $HOME/.config/rofi/launcher/launcher.sh
 
 # Your preferred powermenu
-set $power $HOME/.config/waybar/scripts/power-menu.sh
+set $power $HOME/.config/rofi/powermenu/powermenu.sh
 
 #############################
 ###       Windows         ###
@@ -38,19 +38,28 @@ gaps bottom 10
 gaps top    10
 
 #############################
+###         Font          ###
+#############################
+font pango:Hack Nerd Font 10
+
+#############################
 ###    Autostart Apps     ###
 #############################
 exec udiskie -F
 exec autotiling-rs
-exec wl-paste --watch cliphist store
+
+#############################
+###      Background       ###
+#############################
+output * bg $HOME/Pictures/wallpapers/anime/perfect-blue-1920x1080.jpg fill
 
 #############################
 ###         Idle          ###
 #############################
 exec swayidle -w \
-       timeout 300 'swaylock -C <(cat ~/.config/swaylock/config ~/.config/swaylock/theme)' \
+       timeout 300 'swaylock' \
        timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
-       before-sleep 'swaylock -C <(cat ~/.config/swaylock/config ~/.config/swaylock/theme)'
+       before-sleep 'swaylock'
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
 # resumed. It will also lock your screen before your computer goes to sleep.
@@ -58,7 +67,7 @@ exec swayidle -w \
 #############################
 ###        Input          ###
 #############################
-input "1739:0:Synaptics_TM3276-022" {
+input "2:7:SynPS/2_Synaptics_TouchPad" {
   dwt enabled
   tap enabled
   natural_scroll enabled
@@ -66,19 +75,14 @@ input "1739:0:Synaptics_TM3276-022" {
 }
 
 #############################
-###       Output          ###
-#############################
-output eDP-1 scale 1.5
-
-#############################
 ###    Custom Keybinds    ###
 #############################
-bindsym XF86AudioRaiseVolume  exec $HOME/.config/waybar/scripts/volume-control.sh -o i
-bindsym XF86AudioLowerVolume  exec $HOME/.config/waybar/scripts/volume-control.sh -o d
-bindsym XF86AudioMute         exec $HOME/.config/waybar/scripts/volume-control.sh -o m
+bindsym XF86AudioRaiseVolume  exec $HOME/bin/volume_brightness.sh volume_up
+bindsym XF86AudioLowerVolume  exec $HOME/bin/volume_brightness.sh volume_down
+bindsym XF86AudioMute         exec $HOME/bin/volume_brightness.sh volume_mute
 bindsym XF86AudioMicMute      exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
-bindsym XF86MonBrightnessDown exec $HOME/.config/waybar/scripts/brightness-control.sh -o d
-bindsym XF86MonBrightnessUp   exec $HOME/.config/waybar/scripts/brightness-control.sh -o i
+bindsym XF86MonBrightnessDown exec $HOME/bin/volume_brightness.sh brightness_down
+bindsym XF86MonBrightnessUp   exec $HOME/bin/volume_brightness.sh brightness_up
 bindsym XF86AudioPlay         exec playerctl play-pause
 bindsym XF86AudioNext         exec playerctl next
 bindsym XF86AudioPrev         exec playerctl previous
@@ -96,13 +100,10 @@ bindsym $mod+Shift+q kill
 bindsym $mod+d exec $menu
 
 # Take a screenshot with region
-bindsym $mod+Shift+s exec grim -g "$(slurp)" - | swappy -f -
+bindsym $mod+Shift+s exec grim -g "$(slurp)" - | wl-copy --type image/png && scrot_path="$HOME/Pictures/Screenshots/screenshot_`date +%Y.%m.%d_%H.%M.%S`.png" && wl-paste > "$scrot_path" && notify-send "Screenshot captured" "Saved to $scrot_path" -i dialog-information-symbolic
 
-# Take a screenshot fullscreen
-bindsym $mod+Print exec grim - | swappy -f -
-
-# Open the pasteboard
-bindsym $mod+v exec cliphist list | fuzzel --dmenu --with-nth=2 | cliphist decode | wl-copy
+# Take a screenshot with region
+bindsym $mod+Print exec grim - | wl-copy --type image/png && scrot_path="$HOME/Pictures/Screenshots/screenshot_`date +%Y.%m.%d_%H.%M.%S`.png" && wl-paste > "$scrot_path" && notify-send "Screenshot captured" "Saved to $scrot_path" -i dialog-information-symbolic
 
 # Drag floating windows by holding down $mod and left mouse button.
 # Resize them with right mouse button + $mod.
@@ -170,10 +171,10 @@ bindsym $mod+Shift+9 move container to workspace number 9
 ###        Layout         ###
 #############################
 # You can "split" the current object of your focus with
-# $mod+Shift+b or $mod+Shift+v, for horizontal and vertical splits
+# $mod+b or $mod+v, for horizontal and vertical splits
 # respectively.
-bindsym $mod+Shift+b splith; exec notify-send "Sway" "Horizontal split" -i dialog-information-symbolic -t 1000
-bindsym $mod+Shift+v splitv; exec notify-send "Sway" "Vertical split" -i dialog-information-symbolic -t 1000
+bindsym $mod+b splith; exec notify-send "Sway" "Horizontal split" -i dialog-information-symbolic -t 1000
+bindsym $mod+v splitv; exec notify-send "Sway" "Vertical split" -i dialog-information-symbolic -t 1000
 
 # Switch the current container between different layout styles
 bindsym $mod+s layout stacking; exec notify-send "Sway" "Stacking layout" -i dialog-information-symbolic -t 1000
@@ -198,8 +199,8 @@ bindsym $mod+Ctrl+Right workspace next
 bindsym $mod+Ctrl+$left workspace prev
 bindsym $mod+Ctrl+Left workspace prev
 # Allow switching between workspaces with left and right swipes
-bindgesture swipe:4:right workspace prev
-bindgesture swipe:4:left workspace next
+bindgesture swipe:3:right workspace prev
+bindgesture swipe:3:left workspace next
 
 #############################
 ###      Scratchpad       ###
@@ -245,8 +246,15 @@ bindsym $mod+r mode "resize"
 bar swaybar_command waybar
 
 #############################
-###        Theme          ###
+###        Colors         ###
 #############################
-include $HOME/.config/sway/theme
+# class                    border  backgr. text    indic.  child_border
+  client.focused           #4c7899 #285577 #ffffff #C7C7C7 #53BDFA
+  client.focused_inactive  #333333 #5f676a #ffffff #484e50 #5f676a
+  client.focused_tab_title #333333 #5f676a #ffffff
+  client.unfocused         #333333 #222222 #888888 #292d2e #222222
+  client.urgent            #2f343a #900000 #ffffff #900000 #900000
+  client.placeholder       #000000 #0c0c0c #ffffff #000000 #0c0c0c
+  client.background        #000000 #ffffff
 
 include /etc/sway/config.d/*

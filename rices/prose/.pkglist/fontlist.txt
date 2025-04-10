@@ -1,9 +1,0 @@
-noto-fonts
-noto-fonts-cjk
-noto-fonts-emoji
-ttf-hack-nerd
-ttf-noto-nerd
-ttf-dejavu
-ttf-liberation
-ttf-symbola
-ttf-unifont

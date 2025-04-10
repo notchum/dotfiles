@@ -7,6 +7,14 @@ set page-padding 1
 set selection-clipboard clipboard
 set adjust-open width
 
+# recolor-lightcolor Defines the color value that is used to represent light colors in recoloring mode
+# recolor-darkcolor Defines the color value that is used to represent dark colors in recoloring mode
+set recolor-lightcolor          "#0A0E14"
+set recolor-darkcolor           "#B3B1AD"
+
+set recolor-keephue             "true"
+set recolor                     "true"
+
 # Get rid of statusbar by default
 set guioptions none
 
@@ -21,5 +29,3 @@ map i recolor
 map p print
 map g goto top
 map xb toggle_statusbar
-
-include ./theme
