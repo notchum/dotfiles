@@ -7,3 +7,6 @@
     path = crontab-dotbot
     url = https://github.com/fundor333/crontab-dotbot.git
 
+[submodule "astronvim"]
+	path = config/nvim
+	url = https://github.com/astronvim/astronvim
