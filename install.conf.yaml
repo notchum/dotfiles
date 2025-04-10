@@ -12,11 +12,11 @@
 - link:
     ~/bin: scripts
 
-    ~/.fehbg: .fehbg
-    ~/.xbindkeysrc: .xbindkeysrc
-    ~/.xprofile: .xprofile
-    ~/.Xresources: .Xresources
-    ~/.zshrc: .zshrc
+    ~/.fehbg: home/.fehbg
+    ~/.xbindkeysrc: home/.xbindkeysrc
+    ~/.xprofile: home/.xprofile
+    ~/.Xresources: home/.Xresources
+    ~/.zshrc: home/.zshrc
 
     ~/.config/dunst: config/dunst
     ~/.config/i3: config/i3
@@ -31,18 +31,18 @@
 
 - shell:
   - [git submodule update --init --recursive, Installing git submodules]
-  - 
+  -
     command: if [[ ! -d ~/.oh-my-zsh ]] ; then sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" ; fi
     description: Installing Oh My Zsh
-  - 
+  -
     command: >-
       if [[ ! -d ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting ]] ; then git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting ; fi
     description: Installing zsh-syntax-highlighting
-  - 
+  -
     command: >-
       if [[ ! -d ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting ]] ; then git clone https://github.com/zsh-users/zsh-autosuggestions.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions ; fi
     description: Installing zsh-autosuggestions
-  - 
+  -
     command: >-
       curl https://raw.githubusercontent.com/ergenekonyigit/lambda-gitster/master/lambda-gitster.zsh-theme -o ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/lambda-gitster.zsh-theme
     description: Installing zsh prompt
