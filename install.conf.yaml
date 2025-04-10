@@ -3,54 +3,66 @@
       relink: true
       stdin: true
       stdout: true
-    shell:
-      stdin: true
-      stdout: true
-      stderr: true
 
 - clean: ['~']
 
 - create:
-  - ~/.local
-  - ~/repos
-  - ~/Desktop
-  - ~/Documents
-  - ~/Downloads
-  - ~/Music
-  - ~/Pictures/Screenshots
-  - ~/Public
-  - ~/Templates
-  - ~/Videos
+  - ~/downloads
+  - ~/.config/nvim
 
 - link:
-    ~/.p10k.zsh: home/.p10k.zsh
+    ~/.pkglist: packages
+    ~/bin: scripts
+
+    ~/.fehbg: home/.fehbg
+    ~/.xprofile: home/.xprofile
+    ~/.Xresources: home/.Xresources
     ~/.zshrc: home/.zshrc
-    ~/.local/bin: scripts
+
     ~/.config/bat: config/bat
-    ~/.config/kitty: config/kitty
+    ~/.config/dunst: config/dunst
     ~/.config/lazygit: config/lazygit
-    ~/.config/lite-xl: config/lite-xl
-    ~/.config/macchina: config/macchina
+    ~/.config/i3: config/i3
+    ~/.config/kitty: config/kitty
     ~/.config/mpv: config/mpv
     ~/.config/neofetch: config/neofetch
-    ~/.config/nvim: config/nvim
+    ~/.config/nvim/init.vim: config/nvim/init.vim
     ~/.config/paru: config/paru
-    # ~/.config/ranger: config/ranger
-    # ~/.config/spaceship: config/spaceship
-    ~/.config/yazi: config/yazi
+    ~/.config/picom: config/picom
+    ~/.config/polybar: config/polybar
+    ~/.config/ranger: config/ranger
+    ~/.config/rofi: config/rofi
     ~/.config/yt-dlp: config/yt-dlp
+    # ~/.config/spicetify: config/spicetify
+    ~/.config/zathura: config/zathura
 
 - shell:
   - [git submodule update --init --recursive, Installing git submodules]
   -
-    command: >-
-      if [[ "$(grep "/${USER}:" /etc/passwd | awk -F '/' '{print $NF}')" != "zsh" ]] ; then chsh -s $(which zsh) ; fi
-    description: Making zsh the default shell
+    command: if [[ ! -d ~/.oh-my-zsh ]] ; then sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" ; fi
+    description: Installing Oh My Zsh
   -
     command: >-
-      if [[ ! -d ~/Pictures/wallpapers ]] ; then git clone https://github.com/notchum/wallpapers ~/Pictures/wallpapers ; fi
-    description: Installing wallpapers to ~/Pictures/wallpapers
+      if [[ ! -d ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting ]] ; then git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting ; fi
+    description: Installing zsh-syntax-highlighting
   -
     command: >-
-      tldr --update
-    description: Updating tealdeer cache
+      if [[ ! -d ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting ]] ; then git clone https://github.com/zsh-users/zsh-autosuggestions.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions ; fi
+    description: Installing zsh-autosuggestions
+  -
+    command: >-
+      curl https://raw.githubusercontent.com/sohnryang/lambda-minimal-theme/master/lambda-minimal.zsh-theme -o ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/lambda-minimal.zsh-theme
+    description: Installing zsh prompt
+  - [rm -f ~/.config/mpv/scripts/mpv_thumbnail_script_*, Cleaning up mpv scripts]
+  -
+    command: >-
+      cd ~/.config/mpv/scripts && curl -s https://api.github.com/repos/marzzzello/mpv_thumbnail_script/releases/latest | grep "browser_download_url.*lua" | cut -d : -f 2,3 | tr -d \" | wget -qi -
+    description: Installing mpv thumbnails scripts
+  -
+    command: if paru -Qs gnu-free-fonts >/dev/null ; then paru -R --noconfirm gnu-free-fonts ; fi
+    description: Removing gnu-free-fonts if installed
+    stdin: true
+
+- crontab:
+  - cron: "@daily"
+    command: $HOME/bin/pkglist_mgr.sh

@@ -1,2 +1,0 @@
-#!/bin/bash
-rofi -show p -modi p:$HOME/.config/polybar/rofi-power-menu -theme an_94

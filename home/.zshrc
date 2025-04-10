@@ -1,160 +1,134 @@
 # Update PATH for user scripts
 if [ -d "$HOME/bin" ] ; then
-  export PATH="$HOME/.local/bin:$PATH"
+  export PATH="$HOME/bin:$PATH"
 fi
 
-# Oh-my-zsh installation path
-ZSH=/usr/share/oh-my-zsh/
+# Path to your oh-my-zsh installation.
+export ZSH="$HOME/.oh-my-zsh"
 
-# Update cache directory
-ZSH_CACHE_DIR=$HOME/.cache/oh-my-zsh
-if [[ ! -d $ZSH_CACHE_DIR ]]; then
-  mkdir $ZSH_CACHE_DIR
-fi
+# Set name of the theme to load --- if set to "random", it will
+# load a random theme each time oh-my-zsh is loaded, in which case,
+# to know which specific one was loaded, run: echo $RANDOM_THEME
+# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
+ZSH_THEME="lambda-minimal"
 
-# Powerlevel10k theme path
-P10k_THEME=${P10k_THEME:-/usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme}
-[[ -r $P10k_THEME ]] && source $P10k_THEME
+# Set list of themes to pick from when loading at random
+# Setting this variable when ZSH_THEME=random will cause zsh to load
+# a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
+# If set to an empty array, this variable will have no effect.
+# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# Uncomment the following line to use case-sensitive completion.
+# CASE_SENSITIVE="true"
 
-# Oh-my-zsh plugins
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# Uncomment the following line to use hyphen-insensitive completion.
+# Case-sensitive completion must be off. _ and - will be interchangeable.
+# HYPHEN_INSENSITIVE="true"
+
+# Uncomment the following line to disable bi-weekly auto-update checks.
+# DISABLE_AUTO_UPDATE="true"
+
+# Uncomment the following line to change how often to auto-update (in days).
+# export UPDATE_ZSH_DAYS=13
+
+# Uncomment the following line to disable colors in ls.
+# DISABLE_LS_COLORS="true"
+
+# Uncomment the following line to disable auto-setting terminal title.
+# DISABLE_AUTO_TITLE="true"
+
+# Uncomment the following line to enable command auto-correction.
+# ENABLE_CORRECTION="true"
+
+# Uncomment the following line to display red dots whilst waiting for completion.
+# COMPLETION_WAITING_DOTS="true"
+
+# Uncomment the following line if you want to disable marking untracked files
+# under VCS as dirty. This makes repository status check for large repositories
+# much, much faster.
+# DISABLE_UNTRACKED_FILES_DIRTY="true"
+
+# Uncomment the following line if you want to change the command execution time
+# stamp shown in the history command output.
+# You can set one of the optional three formats:
+# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+# or set a custom format using the strftime function format specifications,
+# see 'man strftime' for details.
+# HIST_STAMPS="mm/dd/yyyy"
+
+# Would you like to use another custom folder than $ZSH/custom?
+# ZSH_CUSTOM=/path/to/new-custom-folder
+
+# Which plugins would you like to load?
+# Standard plugins can be found in ~/.oh-my-zsh/plugins/*
+# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  # adds 'ctrl+o' to copy current command line text to clipboard
-  copybuffer
-
-  # copyfile <filename>: copies the contents of 'filename'
-  copyfile
-
-  # copypath: copies the absolute path of the current directory
-  # copypath <file_or_directory>: copies the absolute path of the given file
-  copypath
-
-  # defines `cpv` function that uses `rsync`
-  cp
-
-  # extract <filename>: extracts the archive of the file you pass to it
-  extract
-
-  # enables fzf (installed separately)
-  fzf
-
-  # adds a ton of git aliases https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git
-  git
-
-  # kssh: runs a kitten ssh session
-  # kssh-slow: slower form of 'kssh' that always works
-  # kitty-theme: change the theme of kitty term
-  kitty
-
-  # py: runs 'python3'
-  # pyclean [dirs]: cleans byte-code and cache files
-  # mkv: make a new virtual environment
-  # automatically activates the venv when entering a python project directory
-  python
-
-  # adds completion for 'rustc', 'rustup', and 'cargo'
-  rust
+    copyfile
+    extract
+    git
+    python
+    rust
+    fzf
+    z
+    zsh-syntax-highlighting
+    zsh-autosuggestions
 )
-
-# Plugin configurations
-export PYTHON_VENV_NAME=.venv
-export PYTHON_AUTO_VRUN=true
-
-# Source Oh-my-zsh
+export FZF_BASE=/usr/bin/fzf
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
 export LANG=en_US.UTF-8
 export ARCHFLAGS="-arch x86_64"
 export SUDO_PROMPT="[] Enter Password: "
-export XDG_CONFIG_HOME="${XDG_CONFIG_HOME:-$HOME/.config}"
-export XDG_CONFIG_DIR="${XDG_CONFIG_DIR:-$HOME/.config}"
-export XDG_DATA_HOME="${XDG_DATA_HOME:-$HOME/.local/share}"
-export XDG_DATA_DIRS="${XDG_DATA_DIRS:-$XDG_DATA_HOME:/usr/local/share:/usr/share}"
-export XDG_STATE_HOME="${XDG_STATE_HOME:-$HOME/.local/state}"
-export XDG_CACHE_HOME="${XDG_CACHE_HOME:-$HOME/.cache}"
-export XDG_DESKTOP_DIR="${XDG_DESKTOP_DIR:-$HOME/Desktop}"
-export XDG_DOWNLOAD_DIR="${XDG_DOWNLOAD_DIR:-$HOME/Downloads}"
-export XDG_TEMPLATES_DIR="${XDG_TEMPLATES_DIR:-$HOME/Templates}"
-export XDG_PUBLICSHARE_DIR="${XDG_PUBLICSHARE_DIR:-$HOME/Public}"
-export XDG_DOCUMENTS_DIR="${XDG_DOCUMENTS_DIR:-$HOME/Documents}"
-export XDG_MUSIC_DIR="${XDG_MUSIC_DIR:-$HOME/Music}"
-export XDG_PICTURES_DIR="${XDG_PICTURES_DIR:-$HOME/Pictures}"
-export XDG_VIDEOS_DIR="${XDG_VIDEOS_DIR:-$HOME/Videos}"
+export XDG_CACHE_HOME=$HOME/.cache
+export XDG_CONFIG_HOME=$HOME/.config
+export XDG_DATA_HOME=$HOME/.local/share
+export XDG_STATE_HOME=$HOME/.local/state
 export VISUAL=nvim
 export EDITOR=$VISUAL
 export PAGER=bat
 export TERMCMD=kitty
 export BROWSER=firefox
 
-# pfetch configuration
-export PF_INFO="ascii title os kernel shell pkgs uptime memory"
-
-# Shortened command aliases
-alias v='vim'
-alias nv='nvim'
-
-# Directory navigation shortcuts
+# User aliases
 alias ..='cd ..'
-alias ...='cd ../..'
-alias .3='cd ../../..'
-alias .4='cd ../../../..'
-alias .5='cd ../../../../..'
-
-# Improved command aliases
 alias rm='rm -rIv'
 alias cp='cp -rv'
 alias mv='mv -v'
+alias cat='bat'
+# alias ls='ls -CF --color=auto'
+# alias ll='ls -lisah --color=auto'
+alias eza='eza --icons --group-directories-first --git --color=auto'
+alias la='eza -a'
+alias ll='eza -lah'
+alias ls='eza'
+alias ezatree='eza --icons --tree --level=2'
 alias mkdir='mkdir -pv'
 alias free='free -mt'
 alias ps='ps auxf'
-alias grep='grep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn,.idea,.tox,.venv,venv}'
-alias dust='dust -r'
-alias delta='delta -sn'
-
-# Helpful aliases
-alias ls='eza -1 --icons=auto'
-alias ll='eza -lah --icons=auto --sort=name --group-directories-first --git'
-alias ld='eza -lhD --icons=auto'
-alias lt='eza --icons=auto --tree --level=2'
-alias lS='eza -l -ssize'
-alias lT='eza -l -snewest'
-alias rsync-copy='rsync -avz --progress -h'
-alias rsync-move='rsync -avz --progress -h --remove-source-files'
-alias rsync-update='rsync -avzu --progress -h'
-alias rsync-synchronize='rsync -avzu --delete --progress -h'
-alias hmmm='paru -Sy &> /dev/null && paru -Qu'
-alias remove-orphans='paru -Qdtq | paru -Rnu -'
-alias error='journalctl -b -p err'
 alias psgrep='ps aux | grep -v grep | grep -i -e VSZ -e'
 alias histg='history | grep'
 alias myip='curl ipv4.icanhazip.com'
-alias ipv4="ip addr show | grep 'inet ' | grep -v '127.0.0.1' | cut -d' ' -f6 | cut -d/ -f1"
-alias ipv6="ip addr show | grep 'inet6 ' | cut -d ' ' -f6 | sed -n '2p'"
+alias grep='grep --color=auto'
+alias show='xdg-open'
+alias dust='dust -r'
+alias delta='delta -sn'
 alias bw-lock='bw lock && unset BW_SESSION'
 alias bw-unlock='export BW_SESSION=$( bw unlock --raw )'
 
-# Open yazi with 'y' and change CWD on exit
-function y() {
-  local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
-  yazi "$@" --cwd-file="$tmp"
-  if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
-    builtin cd -- "$cwd"
-  fi
-  rm -f -- "$tmp"
-}
+# Startup commands
+clear
+neofetch
 
-# Open lazygit with Ctrl+g
+# User functions
 lazygit_func () {
   eval 'lazygit'
 }
 zle -N lazygit_func
 bindkey '^g' lazygit_func
 
-# Prevent ranger from nesting
 ranger() {
   if [ -z "$RANGER_LEVEL" ]; then
     /usr/bin/ranger "$@"
@@ -163,9 +137,7 @@ ranger() {
   fi
 }
 
-# Load fzf theme
-FZF_THEME=${FZF_THEME:-$XDG_CONFIG_HOME/fzf/theme.sh}
-[[ -r $FZF_THEME ]] && source $FZF_THEME
-
-# Display Pokemon on startup
-pokemon-colorscripts --no-title -r 1,2,3,6
+# Turn off all beeps
+unsetopt BEEP
+# Turn off autocomplete beeps
+# unsetopt LIST_BEEP
