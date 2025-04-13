@@ -1,18 +1,21 @@
 - defaults:
-    link:
-      relink: true
-      stdin: true
-      stdout: true
-    shell:
-      stdin: true
-      stdout: true
-      stderr: true
+  link:
+    relink: true
+    stdin: true
+    stdout: true
+  shell:
+    stdin: true
+    stdout: true
+    stderr: true
 
-- clean: ['~']
+- clean: [
+  '~',
+  '~/.config'
+]
 
 - create:
-  - ~/.local
-  - ~/repos
+  # Create all freedesktop user directories
+  # https://wiki.archlinux.org/title/XDG_user_directories
   - ~/Desktop
   - ~/Documents
   - ~/Downloads
@@ -23,22 +26,24 @@
   - ~/Videos
 
 - link:
-    ~/.p10k.zsh: home/.p10k.zsh
-    ~/.zshrc: home/.zshrc
-    ~/.local/bin: scripts
-    ~/.config/bat: config/bat
-    ~/.config/kitty: config/kitty
-    ~/.config/lazygit: config/lazygit
-    ~/.config/lite-xl: config/lite-xl
-    ~/.config/macchina: config/macchina
-    ~/.config/mpv: config/mpv
-    ~/.config/neofetch: config/neofetch
-    ~/.config/nvim: config/nvim
-    ~/.config/paru: config/paru
-    # ~/.config/ranger: config/ranger
-    # ~/.config/spaceship: config/spaceship
-    ~/.config/yazi: config/yazi
-    ~/.config/yt-dlp: config/yt-dlp
+  ~/.local/bin:
+    create: true
+    path: scripts
+
+  ~/.p10k.zsh: home/.p10k.zsh
+  ~/.zshrc:    home/.zshrc
+
+  ~/.config/bat:      config/bat
+  ~/.config/kitty:    config/kitty
+  ~/.config/lazygit:  config/lazygit
+  ~/.config/lite-xl:  config/lite-xl
+  ~/.config/macchina: config/macchina
+  ~/.config/mpv:      config/mpv
+  ~/.config/neofetch: config/neofetch
+  ~/.config/nvim:     config/nvim
+  ~/.config/paru:     config/paru
+  ~/.config/yazi:     config/yazi
+  ~/.config/yt-dlp:   config/yt-dlp
 
 - shell:
   - [git submodule update --init --recursive, Installing git submodules]
@@ -48,9 +53,16 @@
     description: Making zsh the default shell
   -
     command: >-
-      if [[ ! -d ~/Pictures/wallpapers ]] ; then git clone https://github.com/notchum/wallpapers ~/Pictures/wallpapers ; fi
-    description: Installing wallpapers to ~/Pictures/wallpapers
-  -
-    command: >-
       tldr --update
     description: Updating tealdeer cache
+
+- git:
+    ~/Pictures/wallpapers:
+        description: notchum's wallpapers
+        url: https://github.com/notchum/wallpapers
+        method: clone-or-pull
+
+# - if:
+#     cond: hostname | grep -q 'cruel-oath'
+#     met:
+#       - link
