@@ -1,0 +1,9 @@
+[submodule "dotbot"]
+	path = .dotbot
+	url = https://github.com/anishathalye/dotbot
+[submodule "dotbot-if"]
+	path = .dotbot-plugins/if
+	url = https://github.com/wonderbeyond/dotbot-if.git
+[submodule "dotbot-crontab"]
+	path = .dotbot-plugins/crontab
+	url = https://github.com/fundor333/crontab-dotbot
