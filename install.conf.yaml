@@ -8,14 +8,16 @@
     stdout: true
     stderr: true
 
+
 - clean: [
   '~',
   '~/.config'
 ]
 
+
+# Create all freedesktop user directories
+# https://wiki.archlinux.org/title/XDG_user_directories
 - create:
-  # Create all freedesktop user directories
-  # https://wiki.archlinux.org/title/XDG_user_directories
   - ~/Desktop
   - ~/Documents
   - ~/Downloads
@@ -25,6 +27,8 @@
   - ~/Templates
   - ~/Videos
 
+
+# Base configuration files, common to all profiles
 - link:
   ~/.local/bin:
     create: true
@@ -45,6 +49,7 @@
   ~/.config/yazi:     config/yazi
   ~/.config/yt-dlp:   config/yt-dlp
 
+
 - shell:
   - [git submodule update --init --recursive, Installing git submodules]
   -
@@ -56,13 +61,59 @@
       tldr --update
     description: Updating tealdeer cache
 
-- git:
-    ~/Pictures/wallpapers:
-        description: notchum's wallpapers
-        url: https://github.com/notchum/wallpapers
-        method: clone-or-pull
 
-# - if:
-#     cond: hostname | grep -q 'cruel-oath'
-#     met:
-#       - link
+- git:
+  ~/Pictures/wallpapers:
+    description: notchum's wallpapers
+    url: https://github.com/notchum/wallpapers
+    method: clone-or-pull
+
+
+# Specific configurations for my laptop (Thinkpad T480)
+# with hostname 'cruel-oath'
+- if:
+  cond: hostnamectl | head -n 1 | grep -q 'cruel-oath'
+  met:
+    # Link the configs for Sway + apps
+    - link:
+      ~/.config/fuzzel:   config/fuzzel
+      ~/.config/rofi:     config/rofi
+      ~/.config/swappy:   config/swappy
+      ~/.config/sway:     config/sway
+      ~/.config/swaylock: config/swaylock
+      ~/.config/waybar:   config/waybar
+      ~/.config/zathura:  config/zathura
+
+    - shell:
+      -
+        command: >-
+          paru -Sy --needed - < <(cut -d '#' -f 1 packages/sway.lst | awk 'NF' | awk '{$1=$1};1')
+        description: Installing packages for Sway...
+      -
+        command: >-
+          paru -Sy --needed - < <(cut -d '#' -f 1 packages/thinkpad-t480.lst | awk 'NF' | awk '{$1=$1};1')
+        description: Installing packages for T480 hardware support...
+
+
+# Specific configurations for my desktop (custom)
+# with hostname 'virtuous-treaty'
+- if:
+  cond: hostnamectl | head -n 1 | grep -q 'virtuous-treaty'
+  met:
+    # Link the configs for Plasma + special apps
+    - link:
+      ~/.config/OpenRGB:  config/OpenRGB
+      ~/.config/plasmarc: config/plasmarc
+      ~/.config/vesktop/settings/settings.json:
+        create: true
+        path: config/vesktop/settings/settings.json
+
+    - shell:
+      -
+        command: >-
+          paru -Sy --needed - < <(cut -d '#' -f 1 packages/plasma.lst | awk 'NF' | awk '{$1=$1};1')
+        description: Installing packages for KDE Plasma...
+      -
+        command: >-
+          paru -Sy --needed - < <(cut -d '#' -f 1 packages/workstation.lst | awk 'NF' | awk '{$1=$1};1')
+        description: Installing packages for workstation hardware support...
