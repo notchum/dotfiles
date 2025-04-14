@@ -69,8 +69,9 @@
     method: clone-or-pull
 
 
-# Specific configurations for my laptop (Thinkpad T480)
-# with hostname 'cruel-oath'
+# Specific configurations for my laptop (Thinkpad T480) with hostname 'cruel-oath'
+#
+# This is the basic configuration for Sway
 - if:
   cond: hostnamectl | head -n 1 | grep -q 'cruel-oath'
   met:
@@ -95,18 +96,21 @@
         description: Installing packages for T480 hardware support...
 
 
-# Specific configurations for my desktop (custom)
-# with hostname 'virtuous-treaty'
+# Specific configurations for my desktop workstation with hostname 'virtuous-treaty'
+#
+# This is a special profile that doesn't use my Sway config
 - if:
   cond: hostnamectl | head -n 1 | grep -q 'virtuous-treaty'
   met:
     # Link the configs for Plasma + special apps
     - link:
-      ~/.config/OpenRGB:  config/OpenRGB
-      ~/.config/plasmarc: config/plasmarc
+      ~/.config/kitty/font.conf:  profiles/workstation/config/kitty/font.conf
+      ~/.config/kitty/theme.conf: profiles/workstation/config/kitty/theme.conf
+      ~/.config/OpenRGB:          profiles/workstation/config/OpenRGB
+      ~/.config/plasmarc:         profiles/workstation/config/plasmarc
       ~/.config/vesktop/settings/settings.json:
         create: true
-        path: config/vesktop/settings/settings.json
+        path: profiles/workstation/config/vesktop/settings/settings.json
 
     - shell:
       -
@@ -117,3 +121,21 @@
         command: >-
           paru -Sy --needed - < <(cut -d '#' -f 1 packages/workstation.lst | awk 'NF' | awk '{$1=$1};1')
         description: Installing packages for workstation hardware support...
+      # -
+      #   command: >-
+      #     spicetify && spicetify backup apply
+      #   description: Creating spicetify config and backing up
+      # -
+      #   command: >-
+      #     spicetify config current_theme Sleek && spicetify config color_scheme UltraBlack && spicetify apply
+      #   description: Applying spicetify theme
+
+    - git:
+      ~/.config/spicetify/Themes:
+        description: Spicetify Themes
+        url: https://github.com/spicetify/spicetify-themes
+        method: clone-or-pull
+
+    - crontab:
+      - cron: "@reboot"
+        command: openrgb --profile "dark orange"
