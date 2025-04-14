@@ -1,40 +1,38 @@
 - defaults:
-    link:
-      relink: true
-      stdin: true
-      stdout: true
+  link:
+    relink: true
+    stdin: true
+    stdout: true
 
-- create:
-    - ~/.config/eza
-    - ~/.config/fzf
-    - ~/.config/yazi/flavors
 
+# All configs for Ashen
 - link:
-    ~/.config/eza/theme.yml: config/eza/ashen.yml
-    # TODO move this line to sway install file
-    ~/.config/fuzzel: ../../config/fuzzel
-    ~/.config/fuzzel/colors.ini: config/fuzzel/ashen.ini
-    ~/.config/fuzzel/fonts.ini: config/fuzzel/fonts.ini
-    ~/.config/fuzzel/icons.ini: config/fuzzel/icons.ini
-    ~/.config/fzf/theme.sh: config/fzf/ashen.sh
-    ~/.config/kitty/font.conf: config/kitty/font.conf
-    ~/.config/kitty/theme.conf: config/kitty/ashen.conf
-    # TODO move this line to sway install file
-    ~/.config/rofi: ../../config/rofi
-    ~/.config/rofi/theme.rasi: config/rofi/ashen.rasi
-    # TODO move this line to sway install file
-    ~/.config/swappy: ../../config/swappy
-    # TODO move this line to sway install file
-    ~/.config/sway: ../../config/sway
-    ~/.config/sway/theme: config/sway/ashen
-    # TODO move this line to sway install file
-    ~/.config/swaylock: ../../config/swaylock
-    ~/.config/swaylock/theme: config/swaylock/ashen
-    # TODO move this line to sway install file
-    ~/.config/waybar: ../../config/waybar
-    ~/.config/waybar/theme.css: config/waybar/ashen.css
-    ~/.config/yazi/theme.toml: config/yazi/ashen.toml
-    ~/.config/yazi/flavors/ashen.yazi: config/yazi/flavors/ashen.yazi
-    # TODO move this line to sway install file
-    ~/.config/zathura: ../../config/zathura
-    ~/.config/zathura/theme: config/zathura/ashen
+  ~/.config/eza/theme.yml:
+    create: true
+    path: config/eza/ashen.yml
+
+  ~/.config/fuzzel/colors.ini: config/fuzzel/ashen.ini
+  ~/.config/fuzzel/fonts.ini:  config/fuzzel/fonts.ini
+  ~/.config/fuzzel/icons.ini:  config/fuzzel/icons.ini
+
+  ~/.config/fzf/theme.sh:
+    create: true
+    path: config/fzf/ashen.sh
+
+  ~/.config/kitty/font.conf:  config/kitty/font.conf
+  ~/.config/kitty/theme.conf: config/kitty/ashen.conf
+
+  ~/.config/rofi/theme.rasi: config/rofi/ashen.rasi
+
+  ~/.config/sway/theme: config/sway/ashen
+
+  ~/.config/swaylock/theme: config/swaylock/ashen
+
+  ~/.config/waybar/theme.css: config/waybar/ashen.css
+
+  ~/.config/yazi/theme.toml: config/yazi/ashen.toml
+  ~/.config/yazi/flavors/ashen.yazi:
+    create: true
+    path: config/yazi/flavors/ashen.yazi
+
+  ~/.config/zathura/theme: config/zathura/ashen
