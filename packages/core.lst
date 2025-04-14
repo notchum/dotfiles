@@ -67,9 +67,11 @@ dolphin                                                # kde file manager
 ark                                                    # kde file archiver
 vim                                                    # terminal text editor
 neovim                                                 # vim based text editor
+lite-xl                                                # lightweight text editor
 yazi                                                   # terminal file manager
 lazygit                                                # tui for git commands
 mpv                                                    # media player
+yt-dlp                                                 # video downloader
 
 # --------------------------------------------------- // Tools
 btop                                                   # terminal based graphical activity monitor

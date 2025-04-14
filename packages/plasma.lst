@@ -1,0 +1,28 @@
+# --------------------------------------------------- // Desktop Environment
+plasma                                                 # kde plasma group
+
+# --------------------------------------------------- // System
+flameshot                                              # screenshots
+
+# --------------------------------------------------- // Applications
+plasma6-applets-thermal-monitor-git                    # hardware temps on panel
+ktailctl                                               # plasma tailscale gui
+# from 'kde-applications' group
+ark
+dolphin
+dolphin-plugins
+ffmpegthumbs
+filelight
+gwenview
+isoimagewriter
+kamoso
+kcharselect
+kdenlive
+kfind
+kio-extras
+kolourpaint
+konsole
+ksystemlog
+kwalletmanager
+okular
+signon-kwallet-extension

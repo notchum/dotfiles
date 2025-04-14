@@ -1,0 +1,10 @@
+# Package list for hardware support on a Thinkpad T480
+
+# --------------------------------------------------- // Touchpad
+libinput-gestures                                      # actions touchpad gestures using libinput
+gestures                                               # gui for libinput-gestures
+
+# --------------------------------------------------- // NVIDIA
+nvidia-dkms
+nvidia-settings
+nvidia-utils

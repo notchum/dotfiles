@@ -27,8 +27,7 @@ filezilla                                              # ftp application
 gnumeric                                               # spreadsheet application
 gparted                                                # disk partition editor
 handbrake                                              # video transcoder
-lite-xl                                                # lightweight text editor
-losslesscut-bin                                        # quick and dirty video editing software
+losslesscut-bin                                        # quick and dirty video cutting software
 monero-gui                                             # monero wallet management
 mullvad-vpn                                            # vpn client
 obsidian                                               # note-taking app
@@ -48,7 +47,6 @@ vlc                                                    # video player
 # --------------------------------------------------- // Applications (CLI)
 nvtop                                                  # gpu process monitor
 qemu-full                                              # virtual machine manager
-yt-dlp                                                 # video downloader
 tailscale                                              # mesh network client
 
 # --------------------------------------------------- // Fun
