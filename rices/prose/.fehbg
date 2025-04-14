@@ -1,2 +1,0 @@
-#!/usr/bin/env bash
-feh --no-fehbg --bg-fill '/usr/share/backgrounds/nature/alina-sofia-cropped-1920x1080.jpg' '/usr/share/backgrounds/nature/saffu-1440x2560.jpg' '/usr/share/backgrounds/nature/pink-roses-1920x1080.jpg'
