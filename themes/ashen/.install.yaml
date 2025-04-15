@@ -1,38 +1,29 @@
 - defaults:
-  link:
-    relink: true
-    stdin: true
-    stdout: true
+    link:
+      relink: true
+      stdin: true
+      stdout: true
 
 
 # All configs for Ashen
 - link:
-  ~/.config/eza/theme.yml:
-    create: true
-    path: config/eza/ashen.yml
-
-  ~/.config/fuzzel/colors.ini: config/fuzzel/ashen.ini
-  ~/.config/fuzzel/fonts.ini:  config/fuzzel/fonts.ini
-  ~/.config/fuzzel/icons.ini:  config/fuzzel/icons.ini
-
-  ~/.config/fzf/theme.sh:
-    create: true
-    path: config/fzf/ashen.sh
-
-  ~/.config/kitty/font.conf:  config/kitty/font.conf
-  ~/.config/kitty/theme.conf: config/kitty/ashen.conf
-
-  ~/.config/rofi/theme.rasi: config/rofi/ashen.rasi
-
-  ~/.config/sway/theme: config/sway/ashen
-
-  ~/.config/swaylock/theme: config/swaylock/ashen
-
-  ~/.config/waybar/theme.css: config/waybar/ashen.css
-
-  ~/.config/yazi/theme.toml: config/yazi/ashen.toml
-  ~/.config/yazi/flavors/ashen.yazi:
-    create: true
-    path: config/yazi/flavors/ashen.yazi
-
-  ~/.config/zathura/theme: config/zathura/ashen
+    ~/.config/eza/theme.yml:
+      create: true
+      path: config/eza/ashen.yml
+    ~/.config/fuzzel/colors.ini: config/fuzzel/ashen.ini
+    ~/.config/fuzzel/fonts.ini:  config/fuzzel/fonts.ini
+    ~/.config/fuzzel/icons.ini:  config/fuzzel/icons.ini
+    ~/.config/fzf/theme.sh:
+      create: true
+      path: config/fzf/ashen.sh
+    ~/.config/kitty/font.conf:  config/kitty/font.conf
+    ~/.config/kitty/theme.conf: config/kitty/ashen.conf
+    ~/.config/rofi/theme.rasi: config/rofi/ashen.rasi
+    ~/.config/sway/theme: config/sway/ashen
+    ~/.config/swaylock/theme: config/swaylock/ashen
+    ~/.config/waybar/theme.css: config/waybar/ashen.css
+    ~/.config/yazi/theme.toml: config/yazi/ashen.toml
+    ~/.config/yazi/flavors/ashen.yazi:
+      create: true
+      path: config/yazi/flavors/ashen.yazi
+    ~/.config/zathura/theme: config/zathura/ashen

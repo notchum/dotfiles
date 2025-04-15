@@ -17,7 +17,7 @@ swaybg                                                 # wallpaper
 swayidle                                               # idle management
 swaylock-effects-git                                   # lock screen
 rofi-lbonn-wayland-git                                 # waybar submenus
-fuzzle                                                 # application launcher
+fuzzel-git                                             # application launcher
 waybar                                                 # system bar
 dunst                                                  # notification daemon
 autotiling-rs                                          # automatic tiling

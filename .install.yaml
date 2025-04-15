@@ -1,12 +1,10 @@
 - defaults:
-  link:
-    relink: true
-    stdin: true
-    stdout: true
-  shell:
-    stdin: true
-    stdout: true
-    stderr: true
+    link:
+      relink: true
+      stdin: true
+      stdout: true
+    shell:
+      stdin: true
 
 
 - clean: [
@@ -18,124 +16,117 @@
 # Create all freedesktop user directories
 # https://wiki.archlinux.org/title/XDG_user_directories
 - create:
-  - ~/Desktop
-  - ~/Documents
-  - ~/Downloads
-  - ~/Music
-  - ~/Pictures/Screenshots
-  - ~/Public
-  - ~/Templates
-  - ~/Videos
+    - ~/Desktop
+    - ~/Documents
+    - ~/Downloads
+    - ~/Music
+    - ~/Pictures/Screenshots
+    - ~/Public
+    - ~/Templates
+    - ~/Videos
 
 
 # Base configuration files, common to all profiles
 - link:
-  ~/.local/bin:
-    create: true
-    path: scripts
+    ~/.local/bin:
+      create: true
+      path: scripts
 
-  ~/.p10k.zsh: home/.p10k.zsh
-  ~/.zshrc:    home/.zshrc
+    ~/.p10k.zsh: home/.p10k.zsh
+    ~/.zshrc:    home/.zshrc
 
-  ~/.config/bat:      config/bat
-  ~/.config/kitty:    config/kitty
-  ~/.config/lazygit:  config/lazygit
-  ~/.config/lite-xl:  config/lite-xl
-  ~/.config/macchina: config/macchina
-  ~/.config/mpv:      config/mpv
-  ~/.config/neofetch: config/neofetch
-  ~/.config/nvim:     config/nvim
-  ~/.config/paru:     config/paru
-  ~/.config/yazi:     config/yazi
-  ~/.config/yt-dlp:   config/yt-dlp
+    ~/.config/bat:      config/bat
+    ~/.config/kitty:    config/kitty
+    ~/.config/lazygit:  config/lazygit
+    ~/.config/lite-xl:  config/lite-xl
+    ~/.config/macchina: config/macchina
+    ~/.config/mpv:      config/mpv
+    ~/.config/neofetch: config/neofetch
+    ~/.config/nvim:     config/nvim
+    ~/.config/paru:     config/paru
+    ~/.config/yazi:     config/yazi
+    ~/.config/yt-dlp:   config/yt-dlp
 
 
 - shell:
-  - [git submodule update --init --recursive, Installing git submodules]
-  -
-    command: >-
-      if [[ "$(grep "/${USER}:" /etc/passwd | awk -F '/' '{print $NF}')" != "zsh" ]] ; then chsh -s $(which zsh) ; fi
-    description: Making zsh the default shell
-  -
-    command: >-
-      tldr --update
-    description: Updating tealdeer cache
+    - [git submodule update --init --recursive, Installing git submodules...]
+    -
+      command: >-
+        if [[ "$(grep "/${USER}:" /etc/passwd | awk -F '/' '{print $NF}')" != "zsh" ]] ; then chsh -s $(which zsh) ; fi
+      description: Making zsh the default shell...
+    -
+      command: tldr --update
+      description: Updating tealdeer cache...
 
 
 - git:
-  ~/Pictures/wallpapers:
-    description: notchum's wallpapers
-    url: https://github.com/notchum/wallpapers
-    method: clone-or-pull
+    ~/Pictures/wallpapers:
+      description: notchum's wallpapers
+      url: https://github.com/notchum/wallpapers
+      method: clone-or-pull
 
 
 # Specific configurations for my laptop (Thinkpad T480) with hostname 'cruel-oath'
 #
 # This is the basic configuration for Sway
 - if:
-  cond: hostnamectl | head -n 1 | grep -q 'cruel-oath'
-  met:
+    cond: hostnamectl | head -n 1 | grep -q 'cruel-oath'
+    met:
     # Link the configs for Sway + apps
     - link:
-      ~/.config/fuzzel:   config/fuzzel
-      ~/.config/rofi:     config/rofi
-      ~/.config/swappy:   config/swappy
-      ~/.config/sway:     config/sway
-      ~/.config/swaylock: config/swaylock
-      ~/.config/waybar:   config/waybar
-      ~/.config/zathura:  config/zathura
+        ~/.config/fuzzel:   config/fuzzel
+        ~/.config/rofi:     config/rofi
+        ~/.config/swappy:   config/swappy
+        ~/.config/sway:     config/sway
+        ~/.config/swaylock: config/swaylock
+        ~/.config/waybar:   config/waybar
+        ~/.config/zathura:  config/zathura
 
     - shell:
-      -
-        command: >-
-          paru -Sy --needed - < <(cut -d '#' -f 1 packages/sway.lst | awk 'NF' | awk '{$1=$1};1')
-        description: Installing packages for Sway...
-      -
-        command: >-
-          paru -Sy --needed - < <(cut -d '#' -f 1 packages/thinkpad-t480.lst | awk 'NF' | awk '{$1=$1};1')
-        description: Installing packages for T480 hardware support...
+        -
+          command: paru -Sy --needed - < <(cut -d '#' -f 1 packages/sway.lst | awk 'NF' | awk '{$1=$1};1') || true
+          description: Installing packages for Sway...
+        -
+          command: paru -Sy --needed - < <(cut -d '#' -f 1 packages/thinkpad-t480.lst | awk 'NF' | awk '{$1=$1};1') || true
+          description: Installing packages for T480 hardware support...
 
 
 # Specific configurations for my desktop workstation with hostname 'virtuous-treaty'
 #
 # This is a special profile that doesn't use my Sway config
 - if:
-  cond: hostnamectl | head -n 1 | grep -q 'virtuous-treaty'
-  met:
+    cond: hostnamectl | head -n 1 | grep -q 'virtuous-treaty'
+    met:
     # Link the configs for Plasma + special apps
     - link:
-      ~/.config/kitty/font.conf:  profiles/workstation/config/kitty/font.conf
-      ~/.config/kitty/theme.conf: profiles/workstation/config/kitty/theme.conf
-      ~/.config/OpenRGB:          profiles/workstation/config/OpenRGB
-      ~/.config/plasmarc:         profiles/workstation/config/plasmarc
-      ~/.config/vesktop/settings/settings.json:
-        create: true
-        path: profiles/workstation/config/vesktop/settings/settings.json
+        ~/.config/kitty/font.conf:  profiles/workstation/config/kitty/font.conf
+        ~/.config/kitty/theme.conf: profiles/workstation/config/kitty/theme.conf
+        ~/.config/OpenRGB:          profiles/workstation/config/OpenRGB
+        ~/.config/plasmarc:         profiles/workstation/config/plasmarc
+        ~/.config/vesktop/settings/settings.json:
+          create: true
+          path: profiles/workstation/config/vesktop/settings/settings.json
 
     - shell:
-      -
-        command: >-
-          paru -Sy --needed - < <(cut -d '#' -f 1 packages/plasma.lst | awk 'NF' | awk '{$1=$1};1')
-        description: Installing packages for KDE Plasma...
-      -
-        command: >-
-          paru -Sy --needed - < <(cut -d '#' -f 1 packages/workstation.lst | awk 'NF' | awk '{$1=$1};1')
-        description: Installing packages for workstation hardware support...
-      # -
-      #   command: >-
-      #     spicetify && spicetify backup apply
-      #   description: Creating spicetify config and backing up
-      # -
-      #   command: >-
-      #     spicetify config current_theme Sleek && spicetify config color_scheme UltraBlack && spicetify apply
-      #   description: Applying spicetify theme
+        -
+          command: paru -Sy --needed - < <(cut -d '#' -f 1 packages/plasma.lst | awk 'NF' | awk '{$1=$1};1')
+          description: Installing packages for KDE Plasma...
+        -
+          command: paru -Sy --needed - < <(cut -d '#' -f 1 packages/workstation.lst | awk 'NF' | awk '{$1=$1};1')
+          description: Installing packages for workstation hardware support...
+        # -
+        #   command: spicetify && spicetify backup apply
+        #   description: Creating spicetify config and backing up
+        # -
+        #   command: spicetify config current_theme Sleek && spicetify config color_scheme UltraBlack && spicetify apply
+        #   description: Applying spicetify theme
 
     - git:
-      ~/.config/spicetify/Themes:
-        description: Spicetify Themes
-        url: https://github.com/spicetify/spicetify-themes
-        method: clone-or-pull
+        ~/.config/spicetify/Themes:
+          description: Spicetify Themes
+          url: https://github.com/spicetify/spicetify-themes
+          method: clone-or-pull
 
     - crontab:
-      - cron: "@reboot"
-        command: openrgb --profile "dark orange"
+        - cron: "@reboot"
+          command: openrgb --profile "dark orange"

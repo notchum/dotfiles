@@ -7,20 +7,14 @@ DOTBOT_DIR=".dotbot"
 DOTBOT_BIN="bin/dotbot"
 DOTBOT_PLUGINS_DIR=".dotbot-plugins"
 BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-
 DOTBOT_PLUGINS=(
-  "crontab/crontab.py"
-  "git/git.py"
-  "if/if.py"
+  "${DOTBOT_PLUGINS_DIR}/crontab/crontab.py"
+  "${DOTBOT_PLUGINS_DIR}/git/git.py"
+  "${DOTBOT_PLUGINS_DIR}/if/if.py"
 )
 
-die () {
-  echo >&2 "${@}"
-  exit 1
-}
-
 # Get the names of available themes
-cd "${BASEDIR}"/themes
+cd "${BASEDIR}/themes"
 themes=()
 for dir in */ ; do
   themes+=("$(basename ${dir})")
@@ -42,7 +36,8 @@ for var in "${@}" ; do
       echo "Theme selected for install: ${var}"
       THEME_NAME="${var}"
     else
-      die "${var} is not a valid theme! Choose one of ${THEMES_STR%|}"
+      echo >&2 "${var} is not a valid theme! Choose one of ${THEMES_STR%|}"
+      exit 1
     fi
 
     rflag=false
@@ -59,17 +54,20 @@ cd "${BASEDIR}"
 git -C "${DOTBOT_DIR}" submodule sync --quiet --recursive
 git submodule update --init --recursive "${DOTBOT_DIR}"
 
+# Add each plugin to the arguments
+for plugin in "${DOTBOT_PLUGINS[@]}"; do
+  args+=(-p "$plugin")
+done
+
 # Run dotbot with the base config
-"${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" \
-  $(join "-p ${DOTBOT_PLUGINS_DIR}/" ${DOTBOT_PLUGINS[@]}) \
+"${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -vv \
   -d "${BASEDIR}" \
   -c "${CONFIG}" \
   "${args[@]}"
 
 # If a theme was selected, run dotbot again with the config within that theme's directory
 if [[ "${THEME_NAME+x}" ]] ; then
-  "${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" \
-    $(join "-p ${DOTBOT_PLUGINS_DIR}/" ${DOTBOT_PLUGINS[@]}) \
+  "${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -vv \
     -d "${BASEDIR}/themes/${THEME_NAME}" \
     -c "themes/${THEME_NAME}/${CONFIG}" \
     "${args[@]}"
