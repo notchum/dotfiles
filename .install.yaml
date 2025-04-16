@@ -66,6 +66,14 @@
       method: clone-or-pull
 
 
+- sudo:
+    - sync:
+        /etc/pacman.conf:
+          path: 'etc/pacman.conf'
+          owner: root
+          group: root
+
+
 # Specific configurations for my laptop (Thinkpad T480) with hostname 'cruel-oath'
 #
 # This is the basic configuration for Sway
@@ -82,6 +90,7 @@
         ~/.config/waybar:   config/waybar
         ~/.config/zathura:  config/zathura
 
+    # Install all of the required packages
     - shell:
         -
           command: paru -Sy --needed - < <(cut -d '#' -f 1 packages/sway.lst | awk 'NF' | awk '{$1=$1};1') || true
@@ -89,6 +98,14 @@
         -
           command: paru -Sy --needed - < <(cut -d '#' -f 1 packages/thinkpad-t480.lst | awk 'NF' | awk '{$1=$1};1') || true
           description: Installing packages for T480 hardware support...
+
+    # Sync any configs owned by 'root'
+    - sudo:
+        - sync:
+            /etc/ly/config.ini:
+              path: 'etc/ly/config.ini'
+              owner: root
+              group: root
 
 
 # Specific configurations for my desktop workstation with hostname 'virtuous-treaty'
