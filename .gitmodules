@@ -7,3 +7,9 @@
 [submodule "dotbot-git"]
 	path = .dotbot-plugins/git
 	url = https://github.com/DrDynamic/dotbot-git
+[submodule "dotbot-sudo"]
+	path = .dotbot-plugins/sudo
+	url = https://github.com/DrDynamic/dotbot-sudo
+[submodule "dotbot-sync"]
+	path = .dotbot-plugins/sync
+	url = https://github.com/j1r1k/dotbot-sync

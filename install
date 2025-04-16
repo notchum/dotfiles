@@ -11,6 +11,8 @@ DOTBOT_PLUGINS=(
   "${DOTBOT_PLUGINS_DIR}/crontab/crontab.py"
   "${DOTBOT_PLUGINS_DIR}/git/git.py"
   "${DOTBOT_PLUGINS_DIR}/if/if.py"
+  "${DOTBOT_PLUGINS_DIR}/sudo/sudo.py"
+  "${DOTBOT_PLUGINS_DIR}/sync/sync.py"
 )
 
 # Get the names of available themes
