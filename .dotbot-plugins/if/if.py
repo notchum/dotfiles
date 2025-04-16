@@ -47,7 +47,8 @@ class If(dotbot.Plugin):
                 plugin_paths.append(path)
         for path in plugin_paths:
             abspath = os.path.abspath(path)
-            plugins.extend(module.load(abspath))
+            if abspath != __file__:
+                plugins.extend(module.load(abspath))
         if not self._context.options().disable_built_in_plugins:
             plugins.extend([Clean, Create, Link, Shell])
         return plugins
