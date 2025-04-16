@@ -57,7 +57,7 @@ class Sudo(dotbot.Plugin):
             remove(conf_file)
 
     def _find_dotbot(self):
-        base = path.dirname(path.dirname(dotbot.__file__))
+        base = path.dirname(path.dirname(path.dirname(dotbot.__file__)))
         ret = path.join(base, 'bin', 'dotbot')
         self._log.debug('sudo: dotbot app path: {}'.format(ret))
         return ret
