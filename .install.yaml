@@ -131,6 +131,13 @@
           command: paru -Sy --needed - < <(cut -d '#' -f 1 packages/workstation.lst | awk 'NF' | awk '{$1=$1};1') || true
           description: Installing packages for workstation hardware support...
 
+    - sudo:
+        - sync:
+            /etc/coolercontrol/config.toml:
+              path: 'profiles/workstation/etc/coolercontrol/config.toml'
+              owner: root
+              group: root
+
     - crontab:
         - cron: "@reboot"
           command: openrgb --profile "dark orange"
