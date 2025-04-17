@@ -115,8 +115,8 @@
     cond: hostnamectl | head -n 1 | grep -q 'virtuous-treaty'
     met:
     - link:
-        ~/.config/kitty/font.conf:  profiles/workstation/config/kitty/font.conf
-        ~/.config/kitty/theme.conf: profiles/workstation/config/kitty/theme.conf
+        ~/.config/kitty/font.conf:  themes/ashen/config/kitty/font.conf
+        ~/.config/kitty/theme.conf: themes/ashen/config/kitty/ashen.conf
         ~/.config/OpenRGB:          profiles/workstation/config/OpenRGB
         ~/.config/plasmarc:         profiles/workstation/config/plasmarc
         ~/.config/vesktop/settings/settings.json:
