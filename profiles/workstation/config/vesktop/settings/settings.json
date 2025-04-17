@@ -3,7 +3,6 @@
     "autoUpdateNotification": true,
     "useQuickCss": true,
     "themeLinks": [
-        "https://luckfire.github.io/amoled-cord/src/amoled-cord.css",
         "https://discord-extensions.github.io/modern-indicators/src/source.css"
     ],
     "enabledThemes": [],
@@ -638,7 +637,7 @@
         "authenticated": false,
         "url": "https://api.vencord.dev/",
         "settingsSync": false,
-        "settingsSyncVersion": 1742959516144
+        "settingsSyncVersion": 1744868110065
     },
     "eagerPatches": false
 }

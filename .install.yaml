@@ -114,7 +114,6 @@
 - if:
     cond: hostnamectl | head -n 1 | grep -q 'virtuous-treaty'
     met:
-    # Link the configs for Plasma + special apps
     - link:
         ~/.config/kitty/font.conf:  profiles/workstation/config/kitty/font.conf
         ~/.config/kitty/theme.conf: profiles/workstation/config/kitty/theme.conf
@@ -126,23 +125,11 @@
 
     - shell:
         -
-          command: paru -Sy --needed - < <(cut -d '#' -f 1 packages/plasma.lst | awk 'NF' | awk '{$1=$1};1')
+          command: paru -Sy --needed - < <(cut -d '#' -f 1 packages/plasma.lst | awk 'NF' | awk '{$1=$1};1') || true
           description: Installing packages for KDE Plasma...
         -
-          command: paru -Sy --needed - < <(cut -d '#' -f 1 packages/workstation.lst | awk 'NF' | awk '{$1=$1};1')
+          command: paru -Sy --needed - < <(cut -d '#' -f 1 packages/workstation.lst | awk 'NF' | awk '{$1=$1};1') || true
           description: Installing packages for workstation hardware support...
-        # -
-        #   command: spicetify && spicetify backup apply
-        #   description: Creating spicetify config and backing up
-        # -
-        #   command: spicetify config current_theme Sleek && spicetify config color_scheme UltraBlack && spicetify apply
-        #   description: Applying spicetify theme
-
-    - git:
-        ~/.config/spicetify/Themes:
-          description: Spicetify Themes
-          url: https://github.com/spicetify/spicetify-themes
-          method: clone-or-pull
 
     - crontab:
         - cron: "@reboot"
