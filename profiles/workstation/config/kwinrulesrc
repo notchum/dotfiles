@@ -1,0 +1,25 @@
+[12f7a043-af99-4cba-aec1-2aadeae5f605]
+Description=Block compositing for Fallout 4
+blockcompositing=true
+blockcompositingrule=2
+wmclass=steam_app_377160
+wmclassmatch=1
+
+[General]
+count=2
+rules=12f7a043-af99-4cba-aec1-2aadeae5f605,a39e756d-2bc7-4fe0-83c1-ca59f3465309
+
+[a39e756d-2bc7-4fe0-83c1-ca59f3465309]
+Description=Force flameshot fullscreen
+above=true
+aboverule=2
+fullscreenrule=2
+position=0,0
+positionrule=2
+strictgeometry=true
+strictgeometryrule=2
+title=flameshot
+titlematch=1
+types=1
+wmclass=flameshot
+wmclassmatch=1
