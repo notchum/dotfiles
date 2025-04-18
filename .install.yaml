@@ -117,6 +117,7 @@
     - link:
         ~/.config/kitty/font.conf:  themes/ashen/config/kitty/font.conf
         ~/.config/kitty/theme.conf: themes/ashen/config/kitty/ashen.conf
+        ~/.config/kwinrc:           profiles/workstation/config/kwinrc
         ~/.config/kwinrulesrc:      profiles/workstation/config/kwinrulesrc
         ~/.config/OpenRGB:          profiles/workstation/config/OpenRGB
         ~/.config/plasmarc:         profiles/workstation/config/plasmarc
