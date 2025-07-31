@@ -9,7 +9,7 @@ gpu-screen-recorder                                    # shadowplay-like screen 
 gpu-screen-recorder-notification                       # screen recording notifications
 npm                                                    # javascript package manager
 syncthing                                              # sync app
-syncthingtray-qt6                                      # tray icon/info for syncthing
+syncthingtray                                          # tray icon/info for syncthing
 
 # --------------------------------------------------- // Applications (KDE)
 isoimagewriter                                         # write iso files to usb
@@ -32,12 +32,12 @@ monero-gui                                             # monero wallet managemen
 mullvad-vpn                                            # vpn client
 obsidian                                               # note-taking app
 obs-studio                                             # recording software
+revolt-desktop-git                                     # revolt client
 rpi-image                                              # create raspberry pi devices
 rustdesk-bin                                           # remote desktop
 signal-desktop                                         # messaging app
 spicetify-cli                                          # cli to customize spotify
 spotify                                                # spotify music client
-teamspeak                                              # teamspeak client
 torbrowser-launcher                                    # private internet browser
 tutanota-desktop-bin                                   # email client
 vesktop-bin                                            # discord client
