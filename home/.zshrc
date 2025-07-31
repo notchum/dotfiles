@@ -136,6 +136,7 @@ alias ipv4="ip addr show | grep 'inet ' | grep -v '127.0.0.1' | cut -d' ' -f6 | 
 alias ipv6="ip addr show | grep 'inet6 ' | cut -d ' ' -f6 | sed -n '2p'"
 alias bw-lock='bw lock && unset BW_SESSION'
 alias bw-unlock='export BW_SESSION=$( bw unlock --raw )'
+alias clear-cache='free -h && sudo sysctl -w vm.drop_caches=3 && sudo sync && echo 3 | sudo tee /proc/sys/vm/drop_caches && free -h'
 
 # Open yazi with 'y' and change CWD on exit
 function y() {
