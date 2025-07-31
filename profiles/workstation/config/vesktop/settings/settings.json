@@ -135,7 +135,7 @@
             "enabled": false
         },
         "CopyEmojiMarkdown": {
-            "enabled": false
+            "enabled": true
         },
         "CopyFileContents": {
             "enabled": false
@@ -166,9 +166,6 @@
         },
         "DontRoundMyTimestamps": {
             "enabled": false
-        },
-        "EmoteCloner": {
-            "enabled": true
         },
         "Experiments": {
             "enabled": false
@@ -206,7 +203,7 @@
             "enabled": false
         },
         "FixSpotifyEmbeds": {
-            "enabled": false
+            "enabled": true
         },
         "FixYoutubeEmbeds": {
             "enabled": false
@@ -625,6 +622,12 @@
         },
         "HideMedia": {
             "enabled": false
+        },
+        "ExpressionCloner": {
+            "enabled": true
+        },
+        "DisableDeepLinks": {
+            "enabled": true
         }
     },
     "notifications": {
@@ -637,7 +640,7 @@
         "authenticated": false,
         "url": "https://api.vencord.dev/",
         "settingsSync": false,
-        "settingsSyncVersion": 1744868110065
+        "settingsSyncVersion": 1753892534867
     },
     "eagerPatches": false
 }
