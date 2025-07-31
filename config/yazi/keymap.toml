@@ -1,4 +1,4 @@
-[manager]
+[mgr]
 prepend_keymap = [
   { on = ["f"],        run = "plugin jump-to-char", desc = "Jump to char"            },
   { on = [ "c", "m" ], run = "plugin chmod",        desc = "Chmod on selected files" },
