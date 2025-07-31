@@ -4,6 +4,7 @@ plasma                                                 # kde plasma group
 # --------------------------------------------------- // Applications
 plasma6-applets-thermal-monitor-git                    # hardware temps on panel
 ktailctl                                               # plasma tailscale gui
+trayplay                                               # frontend for gpu-screen-record
 # from 'kde-applications' group
 ark
 dolphin
@@ -14,6 +15,7 @@ gwenview
 isoimagewriter
 kamoso
 kcharselect
+kdeconnect
 kdenlive
 kfind
 kio-extras

@@ -53,6 +53,7 @@ eza                                                    # file lister for zsh
 dust                                                   # better du
 bat                                                    # better cat
 ripgrep                                                # better search
+dysk                                                   # better df
 git-delta                                              # highlighting pager for git diffs
 
 # --------------------------------------------------- // Theming

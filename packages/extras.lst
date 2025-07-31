@@ -5,8 +5,7 @@ mkvtoolnix-cli                                         # for freevine (TODO: ins
 
 # --------------------------------------------------- // System
 backrest                                               # restic backup interface
-gpu-screen-recorder-git                                # shadowplay-like screen recorder
-gpu-screen-recorder-gtk-git                            # frontend for gpu-screen-record
+gpu-screen-recorder                                    # shadowplay-like screen recorder
 gpu-screen-recorder-notification                       # screen recording notifications
 npm                                                    # javascript package manager
 syncthing                                              # sync app
@@ -23,6 +22,7 @@ okular                                                 # document viewer
 bitwarden-cli                                          # password manager client
 brave-bin                                              # browser
 bottles                                                # wine prefix manager
+easyeffects                                            # audio effects for pipewire
 filezilla                                              # ftp application
 gnumeric                                               # spreadsheet application
 gparted                                                # disk partition editor
