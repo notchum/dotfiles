@@ -1,34 +1,34 @@
 [[plugin.deps]]
 use = "yazi-rs/plugins:git"
-rev = "2730199"
-hash = "e0d2c8d7e7afe5b82270367098d1a821"
+rev = "de53d90"
+hash = "63b6c222bf2103b3023389dde5e2ecfe"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:jump-to-char"
-rev = "2730199"
-hash = "a670c03eb3760812e044a24f94cedc55"
+rev = "de53d90"
+hash = "d2f04875bbd4ed3dd5696e8c4b094fde"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:full-border"
-rev = "2730199"
-hash = "1f3dad061209081a6b04dd6ff2cb06c7"
+rev = "de53d90"
+hash = "3996fc74044bc44144b323686f887e1"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:chmod"
-rev = "2730199"
-hash = "2f1053f89d1a301a648ab181d0948e38"
+rev = "de53d90"
+hash = "1adc12c2b2b025411ab61eb8f0879574"
 
 [[plugin.deps]]
 use = "Reledia/glow"
-rev = "c76bf4f"
-hash = "a6b78bf9af5390e3a85a6951fbb7b93"
+rev = "bd3eaa5"
+hash = "92b5c58159a51c567f82b618cee2b78"
 
 [[plugin.deps]]
 use = "ndtoan96/ouch"
-rev = "558188d"
-hash = "2d0afef7b50747c543c4304004a72cec"
+rev = "0742fff"
+hash = "2bd799b42b8e42b8ef100310be71f8d1"
 
 [[flavor.deps]]
 use = "ficcdaf/ashen:ashen"
-rev = "a17536c"
-hash = "e1ae4dbbbc24985970205810d8cf378e"
+rev = "9d8d3fc"
+hash = "a48aa4d7140c52cdd14552039b632800"
