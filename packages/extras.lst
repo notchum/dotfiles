@@ -43,6 +43,7 @@ tutanota-desktop-bin                                   # email client
 vesktop-bin                                            # discord client
 virt-manager                                           # manage virtual machines
 vlc                                                    # video player
+vlc-plugin-ffmpeg                                      # vlc codec plugin
 
 # --------------------------------------------------- // Applications (CLI)
 nvtop                                                  # gpu process monitor
