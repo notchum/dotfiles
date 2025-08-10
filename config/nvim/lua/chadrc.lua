@@ -19,14 +19,6 @@ M.ui = {
   statusline = {
     theme = "vscode_colored",
   },
-  tabufline = {
-    modules = {
-      treeOffset = require("custom.tabufline.modules").treeOffset,
-      buffers = require("custom.tabufline.modules").buffers,
-      tabs = require("custom.tabufline.modules").tabs,
-      btns = require("custom.tabufline.modules").btns,
-    },
-  },
 }
 
 return M

@@ -11,6 +11,17 @@ map("n", "<leader>tl", "<cmd>set list!<CR>", { desc = "toggle list mode" })
 -- tabufline
 map("n", "<leader>ta", "<cmd>tabnew<CR>", { desc = "create new tab" })
 map("n", "<leader>tc", "<cmd>tabclose<CR>", { desc = "close current tab" })
+vim.keymap.del("n", "<leader>b")
+map("n", "<leader>bn", "<cmd>enew<CR>", { desc = "buffer new" })
+map("n", "<leader>bp", function()
+  require("nvchad.tabufline").pin_buf(vim.api.nvim_get_current_buf())
+end, { desc = "buffer pin" })
+map("n", "<leader>bu", function()
+  require("nvchad.tabufline").unpin_buf(vim.api.nvim_get_current_buf())
+end, { desc = "buffer unpin" })
+map("n", "<leader>bx", function()
+  require("nvchad.tabufline").closeNonPinnedBufs()
+end, { desc = "buffer close all unpinned" })
 
 -- yazi
 map({ "n", "v" }, "<leader>-", "<cmd>Yazi<cr>", { desc = "open yazi at the current file" })
