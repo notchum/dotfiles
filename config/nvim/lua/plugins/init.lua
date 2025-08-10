@@ -83,11 +83,12 @@ return {
       "LazyGitFilter",
       "LazyGitFilterCurrentFile",
     },
-    dependencies = { "nvim-lua/plenary.nvim" },
+    dependencies = "nvim-lua/plenary.nvim",
   },
 
   {
     "iamcco/markdown-preview.nvim",
+    lazy = true,
     cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
     build = "cd app && npm install && git restore .",
     init = function()
@@ -109,6 +110,9 @@ return {
         "bash",
         "python",
         "make",
+        "dockerfile",
+        "json",
+        "yaml",
       },
     },
   },
