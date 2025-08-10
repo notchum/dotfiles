@@ -167,3 +167,6 @@ ranger() {
 # Load fzf theme
 FZF_THEME=${FZF_THEME:-$XDG_CONFIG_HOME/fzf/theme.sh}
 [[ -r $FZF_THEME ]] && source $FZF_THEME
+
+# Startup commands
+clear
