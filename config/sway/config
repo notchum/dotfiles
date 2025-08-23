@@ -33,9 +33,6 @@ focus_follows_mouse no
 ###         Gaps          ###
 #############################
 gaps inner  10
-gaps outer  10
-gaps bottom 10
-gaps top    10
 
 #############################
 ###    Autostart Apps     ###
