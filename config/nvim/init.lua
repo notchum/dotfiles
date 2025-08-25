@@ -39,6 +39,7 @@ vim.pack.add({
   { src = "https://github.com/echasnovski/mini.pick" },
   { src = "https://github.com/kdheepak/lazygit.nvim" },
   { src = "https://github.com/lewis6991/gitsigns.nvim" },
+  { src = "https://github.com/rmagatti/auto-session" },
 })
 
 -- package configs
@@ -46,6 +47,7 @@ require("ashen").setup()
 require("oil").setup()
 require("mason").setup()
 require("aerial").setup()
+require("auto-session").setup()
 require("mini.pick").setup({
   mappings = { move_down = '<C-j>', move_up = '<C-k>' }
 })
@@ -54,7 +56,7 @@ require("nvim-treesitter.configs").setup({
   highlight = { enable = true },
 })
 require("gitsigns").setup({
-  signs_staged = {
+  signs = {
     delete = { show_count = true },
     topdelete = { show_count = true },
   },
@@ -62,29 +64,7 @@ require("gitsigns").setup({
 })
 
 -- language servers
-require("lspconfig").efm.setup {
-  init_options = { documentFormatting = true },
-  settings = {
-    rootMarkers = { ".git/" },
-    languages = {
-      bash = {
-        {
-          prefix = 'shellcheck',
-          lintSource = 'shellcheck',
-          lintCommand = 'shellcheck --color=never --format=gcc -',
-          lintIgnoreExitCode = true,
-          lintStdin = true,
-          lintFormats = { '-:%l:%c: %trror: %m', '-:%l:%c: %tarning: %m', '-:%l:%c: %tote: %m' },
-        },
-        {
-          formatCommand = 'shfmt -ci -s -bn',
-          formatStdin = true
-        },
-      }
-    }
-  }
-}
-vim.lsp.enable({ "lua_ls", "clangd", "ruff", "rust_analyzer" })
+require("lsp")
 
 -- colors
 vim.cmd("colorscheme ashen")
@@ -92,12 +72,12 @@ vim.cmd("colorscheme ashen")
 -- mappings
 local map = vim.keymap.set
 map('i', 'jk', '<ESC>')
+map('n', '<ESC>', ':noh<CR>')
 map('n', '<leader>w', ':write<CR>')
 map('n', '<leader>q', ':quit<CR>')
 map('n', '<leader>tl', ':set list!<CR>')
 map('n', '<leader>lf', vim.lsp.buf.format)
-map('n', '<leader>gd', vim.lsp.buf.definition)
-map('n', '<leader>gD', vim.lsp.buf.declaration)
+map('n', '<leader>r', vim.lsp.buf.rename)
 map({ 'n', 'v' }, '<leader>c', '1z=')
 map({ 'n', 'v', 'x' }, '<leader>y', '"+y<CR>')
 map({ 'n', 'v', 'x' }, '<leader>d', '"+d<CR>')
