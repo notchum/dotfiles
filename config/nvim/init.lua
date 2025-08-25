@@ -25,7 +25,7 @@ vim.opt.undofile = true
 vim.opt.wrap = false
 vim.opt.cursorline = true
 vim.opt.cursorlineopt = "both"
-vim.opt.winborder = "rounded"
+vim.opt.winborder = "double"
 vim.opt.listchars = { tab = "››", space = "·" }
 
 -- packages
@@ -36,10 +36,10 @@ vim.pack.add({
   { src = "https://github.com/ficd0/ashen.nvim" },
   { src = "https://github.com/stevearc/oil.nvim" },
   { src = "https://github.com/stevearc/aerial.nvim" },
-  { src = "https://github.com/echasnovski/mini.pick" },
   { src = "https://github.com/kdheepak/lazygit.nvim" },
   { src = "https://github.com/lewis6991/gitsigns.nvim" },
   { src = "https://github.com/rmagatti/auto-session" },
+  { src = "https://github.com/ibhagwan/fzf-lua" },
 })
 
 -- package configs
@@ -48,8 +48,15 @@ require("oil").setup()
 require("mason").setup()
 require("aerial").setup()
 require("auto-session").setup()
-require("mini.pick").setup({
-  mappings = { move_down = '<C-j>', move_up = '<C-k>' }
+require("fzf-lua").setup({
+  winopts = {
+    height = 0.60,
+    width = 0.60,
+    row = 1,
+    col = 0,
+    border = "double",
+    preview = { hidden = true },
+  },
 })
 require("nvim-treesitter.configs").setup({
   ensure_installed = { "lua", "c", "cpp", "bash", "python", "make", "rust" },
@@ -83,9 +90,9 @@ map({ 'n', 'v', 'x' }, '<leader>y', '"+y<CR>')
 map({ 'n', 'v', 'x' }, '<leader>d', '"+d<CR>')
 map({ 'n', 'v', 'x' }, '<leader>s', ':e #<CR>')
 map({ 'n', 'v', 'x' }, '<leader>S', ':sf #<CR>')
-map('n', '<leader>f', ':Pick files<CR>')
-map('n', '<leader>h', ':Pick help<CR>')
-map('n', '<leader>b', ':Pick buffers<CR>')
+map('n', '<leader>f', ':FzfLua files<CR>')
+map('n', '<leader>h', ':FzfLua helptags<CR>')
+map('n', '<leader>b', ':FzfLua buffers<CR>')
 map('n', '<leader>e', ':Oil<CR>')
 map('n', '<leader>lg', ':LazyGit<CR>')
 map('n', '<leader>to', ':AerialToggle!<CR>')
