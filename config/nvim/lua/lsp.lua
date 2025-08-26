@@ -144,22 +144,20 @@ end
 
 -- configuring single server efm for bash linting + formatting
 lspconfig.efm.setup {
+  on_attach = on_attach,
   init_options = { documentFormatting = true },
   settings = {
     rootMarkers = { ".git/" },
     languages = {
-      bash = {
+      sh = {
         {
-          prefix = 'shellcheck',
-          lintSource = 'shellcheck',
-          lintCommand = 'shellcheck --color=never --format=gcc -',
-          lintIgnoreExitCode = true,
+          lintCommand = "shellcheck -f gcc -x -",
           lintStdin = true,
-          lintFormats = { '-:%l:%c: %trror: %m', '-:%l:%c: %tarning: %m', '-:%l:%c: %tote: %m' },
+          lintFormats = { "-:%l:%c: %trror: %m", "-:%l:%c: %tarning: %m", "-:%l:%c: %tote: %m" },
         },
         {
-          formatCommand = 'shfmt -ci -s -bn',
-          formatStdin = true
+          formatCommand = "shfmt -ci -s -bn",
+          formatStdin = true,
         },
       }
     }

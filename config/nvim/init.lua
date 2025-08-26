@@ -4,6 +4,7 @@ vim.g.mapleader = " "
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.completeopt = { "menuone", "noselect", "popup" }
+vim.opt.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
 
 vim.opt.expandtab = true
 vim.opt.shiftwidth = 2
@@ -19,7 +20,6 @@ vim.opt.mouse = "a"
 vim.opt.signcolumn = "yes"
 vim.opt.splitbelow = true
 vim.opt.splitright = true
-vim.opt.timeoutlen = 400
 vim.opt.undofile = true
 
 vim.opt.wrap = false
@@ -100,6 +100,7 @@ map('n', '<leader>b', ':FzfLua buffers<CR>')
 map('n', '<leader>e', ':Oil<CR>')
 map('n', '<leader>lg', ':LazyGit<CR>')
 map('n', '<leader>to', ':AerialToggle!<CR>')
+map('n', '<leader>p', ':SessionSearch<CR>')
 map('n', '<leader>td', function() vim.diagnostic.enable(not vim.diagnostic.is_enabled()) end)
 
 -- user commands
