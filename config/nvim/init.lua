@@ -43,7 +43,6 @@ vim.pack.add({
 })
 
 -- package configs
-require("ashen").setup()
 require("oil").setup()
 require("mason").setup()
 require("aerial").setup()
@@ -73,6 +72,13 @@ require("gitsigns").setup({
 -- language servers
 require("lsp")
 
+-- diagnostics
+vim.diagnostic.config {
+  virtual_text = {},
+  underline = true,
+  float = { border = "double" },
+}
+
 -- colors
 vim.cmd("colorscheme ashen")
 
@@ -83,9 +89,7 @@ map('n', '<ESC>', ':noh<CR>')
 map('n', '<leader>w', ':write<CR>')
 map('n', '<leader>q', ':quit<CR>')
 map('n', '<leader>tl', ':set list!<CR>')
-map('n', '<leader>lf', vim.lsp.buf.format)
-map('n', '<leader>r', vim.lsp.buf.rename)
-map({ 'n', 'v' }, '<leader>c', '1z=')
+map({ 'n', 'v' }, '<leader>ac', '1z=')
 map({ 'n', 'v', 'x' }, '<leader>y', '"+y<CR>')
 map({ 'n', 'v', 'x' }, '<leader>d', '"+d<CR>')
 map({ 'n', 'v', 'x' }, '<leader>s', ':e #<CR>')
@@ -96,6 +100,7 @@ map('n', '<leader>b', ':FzfLua buffers<CR>')
 map('n', '<leader>e', ':Oil<CR>')
 map('n', '<leader>lg', ':LazyGit<CR>')
 map('n', '<leader>to', ':AerialToggle!<CR>')
+map('n', '<leader>td', function() vim.diagnostic.enable(not vim.diagnostic.is_enabled()) end)
 
 -- user commands
 vim.api.nvim_create_user_command("MasonInstallAll", function()
