@@ -102,7 +102,8 @@ map('n', '<leader>b', ':FzfLua buffers<CR>')
 map('n', '<leader>e', ':Oil<CR>')
 map('n', '<leader>lg', ':LazyGit<CR>')
 map('n', '<leader>to', ':AerialToggle!<CR>')
-map('n', '<leader>p', ':SessionSearch<CR>')
+map('n', '<leader>p', ':AutoSession search<CR>')
+map('n', '<leader>u', vim.pack.update)
 map('n', '<leader>td', function() vim.diagnostic.enable(not vim.diagnostic.is_enabled()) end)
 
 -- user commands
