@@ -46,7 +46,6 @@ vim.pack.add({
 require("oil").setup()
 require("mason").setup()
 require("aerial").setup()
-require("auto-session").setup()
 require("fzf-lua").setup({
   winopts = {
     height = 0.60,
@@ -56,6 +55,9 @@ require("fzf-lua").setup({
     border = "double",
     preview = { hidden = true },
   },
+})
+require("auto-session").setup({
+  auto_restore = false,
 })
 require("nvim-treesitter.configs").setup({
   ensure_installed = { "lua", "c", "cpp", "bash", "python", "make", "rust" },
