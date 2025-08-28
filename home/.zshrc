@@ -1,5 +1,5 @@
 # Update PATH for user scripts
-if [ -d "$HOME/bin" ] ; then
+if [[ -d "$HOME/.local/bin" ]] ; then
   export PATH="$HOME/.local/bin:$PATH"
 fi
 
@@ -94,15 +94,9 @@ export BROWSER=firefox
 export PF_INFO="ascii title os kernel shell pkgs uptime memory"
 
 # Shortened command aliases
+alias ..='cd ..'
 alias v='vim'
 alias nv='nvim'
-
-# Directory navigation shortcuts
-alias ..='cd ..'
-alias ...='cd ../..'
-alias .3='cd ../../..'
-alias .4='cd ../../../..'
-alias .5='cd ../../../../..'
 
 # Improved command aliases
 alias rm='rm -rIv'
@@ -154,15 +148,6 @@ lazygit_func () {
 }
 zle -N lazygit_func
 bindkey '^g' lazygit_func
-
-# Prevent ranger from nesting
-ranger() {
-  if [ -z "$RANGER_LEVEL" ]; then
-    /usr/bin/ranger "$@"
-  else
-    exit
-  fi
-}
 
 # Load fzf theme
 FZF_THEME=${FZF_THEME:-$XDG_CONFIG_HOME/fzf/theme.sh}
