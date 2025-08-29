@@ -40,12 +40,19 @@ vim.pack.add({
   { src = "https://github.com/lewis6991/gitsigns.nvim" },
   { src = "https://github.com/rmagatti/auto-session" },
   { src = "https://github.com/ibhagwan/fzf-lua" },
+  { src = "https://github.com/hrsh7th/nvim-cmp" },
+  { src = "https://github.com/hrsh7th/cmp-nvim-lsp" },
 })
 
 -- package configs
 require("oil").setup()
 require("mason").setup()
 require("aerial").setup()
+require("cmp").setup({
+  sources = {
+    { name = "nvim_lsp" }
+  }
+})
 require("fzf-lua").setup({
   winopts = {
     height = 0.60,
@@ -109,7 +116,7 @@ map('n', '<leader>td', function() vim.diagnostic.enable(not vim.diagnostic.is_en
 -- user commands
 vim.api.nvim_create_user_command("MasonInstallAll", function()
   local ensure_mason_installed = {
-    "clangd", "clang-format", "lua-language-server", "ruff", "rust-analyzer", "efm", "shellcheck", "shfmt"
+    "clangd", "clang-format", "lua-language-server", "ruff", "ty", "rust-analyzer", "efm", "shellcheck", "shfmt"
   }
   vim.cmd("MasonInstall " .. table.concat(ensure_mason_installed, " "))
 end, {})

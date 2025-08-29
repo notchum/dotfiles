@@ -1,8 +1,5 @@
-local lspconfig = require "lspconfig"
-local servers = { "lua_ls", "clangd", "ruff", "rust_analyzer" }
-
 -- Modified from https://gist.github.com/MariaSolOs/2e44a86f569323c478e5a078d0cf98cc
-local function on_attach(client, bufnr)
+local function global_on_attach(client, bufnr)
   ---Utility for keymap creation.
   ---@param lhs string
   ---@param rhs string|function
@@ -15,77 +12,77 @@ local function on_attach(client, bufnr)
     vim.keymap.set(mode, lhs, rhs, opts)
   end
 
-  ---For replacing certain <C-x>... keymaps.
-  ---@param keys string
-  local function feedkeys(keys)
-    vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes(keys, true, false, true), 'n', true)
-  end
-
-  ---Is the completion menu open?
-  local function pumvisible()
-    return tonumber(vim.fn.pumvisible()) ~= 0
-  end
-
-  -- Enable completion and configure keybindings.
-  if client:supports_method(vim.lsp.protocol.Methods.textDocument_completion) then
-    vim.lsp.completion.enable(true, client.id, bufnr, { autotrigger = true })
-
-    -- Use enter to accept completions.
-    keymap('<CR>', function()
-      return pumvisible() and '<C-y>' or '<CR>'
-    end, { expr = true }, 'i')
-
-    -- Use slash to dismiss the completion menu.
-    keymap('/', function()
-      return pumvisible() and '<C-e>' or '/'
-    end, { expr = true }, 'i')
-
-    -- Use <C-n> to navigate to the next completion or:
-    -- - Trigger LSP completion.
-    -- - If there's no one, fallback to vanilla omnifunc.
-    keymap('<C-n>', function()
-      if pumvisible() then
-        feedkeys '<C-n>'
-      else
-        if next(vim.lsp.get_clients { bufnr = 0 }) then
-          vim.lsp.completion.trigger()
-        else
-          if vim.bo.omnifunc == '' then
-            feedkeys '<C-x><C-n>'
-          else
-            feedkeys '<C-x><C-o>'
-          end
-        end
-      end
-    end, 'Trigger/select next completion', 'i')
-
-    -- Buffer completions.
-    keymap('<C-u>', '<C-x><C-n>', { desc = 'Buffer completions' }, 'i')
-
-    -- Use <Tab> to select the next completion or navigate between snippet tabstops
-    -- Do something similar with <S-Tab>.
-    keymap('<Tab>', function()
-      if pumvisible() then
-        feedkeys '<C-n>'
-      elseif vim.snippet.active { direction = 1 } then
-        vim.snippet.jump(1)
-      else
-        feedkeys '<Tab>'
-      end
-    end, {}, { 'i', 's' })
-    keymap('<S-Tab>', function()
-      if pumvisible() then
-        feedkeys '<C-p>'
-      elseif vim.snippet.active { direction = -1 } then
-        vim.snippet.jump(-1)
-      else
-        feedkeys '<S-Tab>'
-      end
-    end, {}, { 'i', 's' })
-
-    -- Inside a snippet, use backspace to remove the placeholder.
-    keymap('<BS>', '<C-o>s', {}, 's')
-  end
+  -- ---For replacing certain <C-x>... keymaps.
+  -- ---@param keys string
+  -- local function feedkeys(keys)
+  --   vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes(keys, true, false, true), 'n', true)
+  -- end
+  --
+  -- ---Is the completion menu open?
+  -- local function pumvisible()
+  --   return tonumber(vim.fn.pumvisible()) ~= 0
+  -- end
+  --
+  -- -- Enable completion and configure keybindings.
+  -- if client:supports_method(vim.lsp.protocol.Methods.textDocument_completion) then
+  --   vim.lsp.completion.enable(true, client.id, bufnr, { autotrigger = true })
+  --
+  --   -- Use enter to accept completions.
+  --   keymap('<CR>', function()
+  --     return pumvisible() and '<C-y>' or '<CR>'
+  --   end, { expr = true }, 'i')
+  --
+  --   -- Use slash to dismiss the completion menu.
+  --   keymap('/', function()
+  --     return pumvisible() and '<C-e>' or '/'
+  --   end, { expr = true }, 'i')
+  --
+  --   -- Use <C-n> to navigate to the next completion or:
+  --   -- - Trigger LSP completion.
+  --   -- - If there's no one, fallback to vanilla omnifunc.
+  --   keymap('<C-n>', function()
+  --     if pumvisible() then
+  --       feedkeys '<C-n>'
+  --     else
+  --       if next(vim.lsp.get_clients { bufnr = 0 }) then
+  --         vim.lsp.completion.trigger()
+  --       else
+  --         if vim.bo.omnifunc == '' then
+  --           feedkeys '<C-x><C-n>'
+  --         else
+  --           feedkeys '<C-x><C-o>'
+  --         end
+  --       end
+  --     end
+  --   end, 'Trigger/select next completion', 'i')
+  --
+  --   -- Buffer completions.
+  --   keymap('<C-u>', '<C-x><C-n>', { desc = 'Buffer completions' }, 'i')
+  --
+  --   -- Use <Tab> to select the next completion or navigate between snippet tabstops
+  --   -- Do something similar with <S-Tab>.
+  --   keymap('<Tab>', function()
+  --     if pumvisible() then
+  --       feedkeys '<C-n>'
+  --     elseif vim.snippet.active { direction = 1 } then
+  --       vim.snippet.jump(1)
+  --     else
+  --       feedkeys '<Tab>'
+  --     end
+  --   end, {}, { 'i', 's' })
+  --   keymap('<S-Tab>', function()
+  --     if pumvisible() then
+  --       feedkeys '<C-p>'
+  --     elseif vim.snippet.active { direction = -1 } then
+  --       vim.snippet.jump(-1)
+  --     else
+  --       feedkeys '<S-Tab>'
+  --     end
+  --   end, {}, { 'i', 's' })
+  --
+  --   -- Inside a snippet, use backspace to remove the placeholder.
+  --   keymap('<BS>', '<C-o>s', {}, 's')
+  -- end
 
   -- signatures
   -- Modified from https://github.com/NvChad/ui/blob/v3.0/lua/nvchad/lsp/signature.lua
@@ -161,16 +158,26 @@ local function on_attach(client, bufnr)
   end, { desc = "Rename symbol" })
 end
 
--- set up lsp servers
-for _, lsp in ipairs(servers) do
-  lspconfig[lsp].setup {
-    on_attach = on_attach,
-  }
+-- enable completion, keybinds, and signatures
+vim.api.nvim_create_autocmd("LspAttach", {
+  callback = function(ev)
+    local client = vim.lsp.get_client_by_id(ev.data.client_id)
+    local bufnr = ev.buf
+    global_on_attach(client, bufnr)
+  end,
+})
+
+-- configuring servers to use nvim-cmp as a completion engine
+local servers = { "lua_ls", "clangd", "ruff", "rust_analyzer", "ty", "efm" }
+local capabilities = require("cmp_nvim_lsp").default_capabilities()
+for _, server in ipairs(servers) do
+  vim.lsp.config(server, {
+    capabilities = capabilities,
+  })
 end
 
--- configuring single server efm for bash linting + formatting
-lspconfig.efm.setup {
-  on_attach = on_attach,
+-- configuring efm for bash linting + formatting
+vim.lsp.config("efm", {
   init_options = { documentFormatting = true },
   settings = {
     rootMarkers = { ".git/" },
@@ -188,4 +195,7 @@ lspconfig.efm.setup {
       }
     }
   }
-}
+})
+
+-- enable language servers
+vim.lsp.enable(servers)
