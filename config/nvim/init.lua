@@ -20,12 +20,13 @@ vim.opt.signcolumn = "yes"
 vim.opt.splitbelow = true
 vim.opt.splitright = true
 vim.opt.undofile = true
+vim.opt.scrolloff = 5
 
 vim.opt.wrap = false
 vim.opt.cursorline = true
 vim.opt.cursorlineopt = "both"
 vim.opt.winborder = "double"
-vim.opt.listchars = { tab = "››", space = "·" }
+vim.opt.listchars = { tab = "››", space = "·", nbsp = "␣" }
 
 -- packages
 vim.pack.add({
@@ -114,6 +115,7 @@ vim.cmd("colorscheme ashen")
 local map = vim.keymap.set
 map('i', 'jk', '<ESC>')
 map('n', '<ESC>', ':noh<CR>')
+map('t', '<ESC><ESC>', '<C-\\><C-n>')
 map('n', '<leader>w', ':write<CR>')
 map('n', '<leader>q', ':quit<CR>')
 map('n', '<leader>tl', ':set list!<CR>')
