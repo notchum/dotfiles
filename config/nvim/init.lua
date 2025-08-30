@@ -3,7 +3,6 @@ vim.g.mapleader = " "
 -- options
 vim.opt.number = true
 vim.opt.relativenumber = true
-vim.opt.completeopt = { "menuone", "noselect", "popup" }
 vim.opt.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
 
 vim.opt.expandtab = true
@@ -48,11 +47,6 @@ vim.pack.add({
 require("oil").setup()
 require("mason").setup()
 require("aerial").setup()
-require("cmp").setup({
-  sources = {
-    { name = "nvim_lsp" }
-  }
-})
 require("fzf-lua").setup({
   winopts = {
     height = 0.60,
@@ -76,6 +70,31 @@ require("gitsigns").setup({
     topdelete = { show_count = true },
   },
   count_chars = { "₁", "₂", "₃", "₄", "₅", "₆", "₇", "₈", "₉", ["+"] = "₊", },
+})
+local cmp = require("cmp")
+cmp.setup({
+  completion = { completeopt = "menu,menuone" },
+  snippet = {
+    expand = function(args)
+      vim.snippet.expand(args.body)
+    end,
+  },
+  window = {
+    completion = cmp.config.window.bordered({ border = "double" }),
+    documentation = cmp.config.window.bordered({ border = "double" }),
+  },
+  mapping = {
+    ["<C-p>"] = cmp.mapping.select_prev_item(),
+    ["<C-n>"] = cmp.mapping.select_next_item(),
+    ["<C-b>"] = cmp.mapping.scroll_docs(-4),
+    ["<C-f>"] = cmp.mapping.scroll_docs(4),
+    ["<C-Space>"] = cmp.mapping.complete(),
+    ["<C-e>"] = cmp.mapping.close(),
+    ["<CR>"] = cmp.mapping.confirm({ select = true }),
+  },
+  sources = {
+    { name = "nvim_lsp" }
+  }
 })
 
 -- language servers
