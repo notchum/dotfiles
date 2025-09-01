@@ -18,6 +18,7 @@
     #   path: config/fzf/ashen.sh
     ~/.config/kitty/font.conf:  config/kitty/font.conf
     ~/.config/kitty/theme.conf: config/kitty/ayu-dark.conf
+    ~/.config/nvim/lua/colorscheme.lua: config/nvim/lua/ayu-dark.lua
     # ~/.config/rofi/theme.rasi: config/rofi/ashen.rasi
     ~/.config/sway/theme: config/sway/ayu-dark
     # ~/.config/swaylock/theme: config/swaylock/ashen
