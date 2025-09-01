@@ -12,7 +12,7 @@ prepend_previewers = [
   { mime = "application/x-rar",           run = "ouch" },
   { mime = "application/x-xz",            run = "ouch" },
 # Markdown previewer
-  { name = "*.md", run = "glow" },
+  { name = "*.md", run = 'piper -- CLICOLOR_FORCE=1 glow -w=$w -s=dark "$1"' },
 ]
 
 [[plugin.prepend_fetchers]]
