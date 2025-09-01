@@ -61,3 +61,6 @@ config/zathura/theme
 
 # nvim lazy artifacts
 **/nvim/lazy-lock.json
+
+# nvim theme symlink
+**/nvim/lua/colorscheme.lua

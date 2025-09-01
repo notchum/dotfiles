@@ -33,7 +33,6 @@ vim.pack.add({
   { src = "https://github.com/neovim/nvim-lspconfig" },
   { src = "https://github.com/mason-org/mason.nvim" },
   { src = "https://github.com/nvim-treesitter/nvim-treesitter", version = "master" },
-  { src = "https://github.com/ficd0/ashen.nvim" },
   { src = "https://github.com/stevearc/oil.nvim" },
   { src = "https://github.com/stevearc/aerial.nvim" },
   { src = "https://github.com/kdheepak/lazygit.nvim" },
@@ -109,7 +108,7 @@ vim.diagnostic.config {
 }
 
 -- colors
-vim.cmd("colorscheme ashen")
+require("colorscheme")
 
 -- mappings
 local map = vim.keymap.set
