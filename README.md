@@ -31,14 +31,21 @@ I use the [Berkeley Mono](https://usgraphics.com/products/berkeley-mono) font, w
 
 The wallpapers can be found here: [wallpapers](https://github.com/notchum/wallpapers). This repo is cloned to `~/Pictures` with the dotbot install script.
 
-Using a dotbot plugin, I am able to identify my different machines by host name and link different configuration files for each. That is, I am able to use this single repo and single install script to bootstrap my dotfiles for both my KDE Plasma workstation and my sway laptop.
+Using a dotbot plugin, I am able to identify my different machines by host name and link different configuration files for each. That is, I am able to use this single repo and single install script to bootstrap my dotfiles for both my KDE Plasma workstation and my Sway laptop.
 
-## Screenshots
+Themes can be swapped around simply by re-executing the `install` script (i.e. running `./install --theme <name>`). Sway will need to be reloaded after a theme is applied by pressing <kbd>Meta-Shift-c</kbd>.
+
+## Themes
 
 ### [`ashen`](https://github.com/ficd0/ashen)
 
 ![ashen-screenshot1](images/ashen-screenshot1.png)
 ![ashen-screenshot2](images/ashen-screenshot2.png)
+
+### [`gruvbox-dark`](https://github.com/morhetz/gruvbox)
+
+![gruvbox-dark-screenshot1](images/gruvbox-dark-screenshot1.png)
+![gruvbox-dark-screenshot2](images/gruvbox-dark-screenshot2.png)
 
 ## Fetches
 
