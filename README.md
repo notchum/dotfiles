@@ -22,6 +22,11 @@ Just running `./install` is enough to link all dotfiles from [`home`](home/) and
 
 ## Usage
 
+I use the [Berkeley Mono](https://usgraphics.com/products/berkeley-mono) font, which is an amazing font from U.S. Graphics Company. I used the [Nerd Fonts](https://www.nerdfonts.com) patcher script for icons. A few free alternatives that I would use are IosevkaTerm Nerd Font or Noto Nerd Font.
+
+> [!NOTE]
+> My `waybar` config is based off an old version of [mechabar](https://github.com/sejjy/mechabar), which uses JetBrainsMono Nerd Font, not Berkeley Mono.
+
 ~~I keep a list of packages installed on each rice in `<theme>/.pkglist/`. This method of backing up packages is outlined on the Arch Linux Wiki [here](https://wiki.archlinux.org/title/Pacman/Tips_and_tricks#List_of_installed_packages).~~ I used to run a cronjob that used `pacman` to backup all of the packages currently installed to a `.pkglist/` directory. However, I now just manually keep lists of various packages that I use in [`packages`](packages/).
 
 The wallpapers can be found here: [wallpapers](https://github.com/notchum/wallpapers). This repo is cloned to `~/Pictures` with the dotbot install script.
