@@ -28,7 +28,5 @@ use = "yazi-rs/plugins:piper"
 rev = "d7588f6"
 hash = "2143a53182dbbe935a1abd1623424aa5"
 
-[[flavor.deps]]
-use = "ficcdaf/ashen:ashen"
-rev = "c8eedd3"
-hash = "a48aa4d7140c52cdd14552039b632800"
+[flavor]
+deps = []
