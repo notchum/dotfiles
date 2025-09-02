@@ -58,7 +58,7 @@
       command: tldr --update
       description: Updating tealdeer cache...
     -
-      command: ya pack -u
+      command: ya pkg upgrade
       description: Updating yazi plugins...
 
 
