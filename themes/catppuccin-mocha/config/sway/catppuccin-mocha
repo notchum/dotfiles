@@ -6,7 +6,7 @@ font pango:BerkeleyMono Nerd Font 10
 #############################
 ###      Background       ###
 #############################
-output * bg $HOME/Pictures/wallpapers/nature/pink-roses-1920x1080.jpg fill
+output * bg $HOME/Pictures/wallpapers/misc/thinking-about-her-1920x1080.png fill
 
 #############################
 ###        Colors         ###
