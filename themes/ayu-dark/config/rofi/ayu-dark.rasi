@@ -1,0 +1,38 @@
+* {
+  bg0h:           #0b0e14;
+  bg0:            #0f131a;
+  bg1:            #1b3a5b;
+  bg2:            #565b66;
+  fg:             #bfbdb6;
+  black:          #01060e;
+  brightblack:    #686868;
+  red:            #ea6c73;
+  brightred:      #f07178;
+  green:          #91b362;
+  brightgreen:    #c2d94c;
+  yellow:         #f9af4f;
+  brightyellow:   #ffb454;
+  blue:           #53bdfa;
+  brightblue:     #59c2ff;
+  purple:         #fae994;
+  brightpurple:   #ff3399;
+  aqua:           #90e1c6;
+  brightaqua:     #95e6cb;
+  white:          #c7c7c7;
+  brightwhite:    #ffffff;
+}
+
+/*
+  bg - background
+  fg - foreground
+  br - border
+*/
+
+* {
+  main-bg:        @bg0h;
+  main-fg:        @fg;
+  main-br:        @bg2;
+  input-bg:       @bg1;
+  select-bg:      @red;
+  select-fg:      @bg0h;
+}
