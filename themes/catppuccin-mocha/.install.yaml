@@ -1,0 +1,28 @@
+- defaults:
+    link:
+      relink: true
+      stdin: true
+      stdout: true
+
+
+# All configs for catppuccin-mocha
+- link:
+    ~/.config/eza/theme.yml:
+      create: true
+      path: config/eza/catppuccin-mocha.yml
+    ~/.config/fuzzel/colors.ini: config/fuzzel/catppuccin-mocha.ini
+    ~/.config/fuzzel/fonts.ini:  config/fuzzel/fonts.ini
+    ~/.config/fuzzel/icons.ini:  config/fuzzel/icons.ini
+    ~/.config/fzf/theme.sh:
+      create: true
+      path: config/fzf/catppuccin-mocha.sh
+    ~/.config/kitty/font.conf:  config/kitty/font.conf
+    ~/.config/kitty/theme.conf: config/kitty/catppuccin-mocha.conf
+    ~/.config/nvim/lua/colorscheme.lua: config/nvim/lua/catppuccin-mocha.lua
+    ~/.config/rofi/theme.rasi: config/rofi/catppuccin-mocha.rasi
+    ~/.config/sway/theme: config/sway/catppuccin-mocha
+    ~/.config/swaylock/theme: config/swaylock/catppuccin-mocha
+    ~/.config/waybar/theme.css: config/waybar/catppuccin-mocha.css
+    ~/.config/yazi/theme.toml: config/yazi/catppuccin-mocha.toml
+    ~/.config/yazi/theme.tmTheme: config/yazi/catppuccin-mocha.tmTheme
+    ~/.config/zathura/theme: config/zathura/catppuccin-mocha
