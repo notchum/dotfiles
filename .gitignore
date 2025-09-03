@@ -55,6 +55,7 @@ config/waybar/theme.css
 # yazi flavors/theme
 config/yazi/flavors/
 config/yazi/theme.toml
+config/yazi/theme.tmTheme
 
 # zathura theme symlink
 config/zathura/theme

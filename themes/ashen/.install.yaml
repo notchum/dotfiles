@@ -24,7 +24,5 @@
     ~/.config/swaylock/theme: config/swaylock/ashen
     ~/.config/waybar/theme.css: config/waybar/ashen.css
     ~/.config/yazi/theme.toml: config/yazi/ashen.toml
-    ~/.config/yazi/flavors/ashen.yazi:
-      create: true
-      path: config/yazi/flavors/ashen.yazi
+    ~/.config/yazi/theme.tmTheme: config/yazi/ashen.tmTheme
     ~/.config/zathura/theme: config/zathura/ashen

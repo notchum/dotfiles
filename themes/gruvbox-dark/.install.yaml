@@ -24,7 +24,5 @@
     ~/.config/swaylock/theme: config/swaylock/gruvbox-dark
     ~/.config/waybar/theme.css: config/waybar/gruvbox-dark.css
     ~/.config/yazi/theme.toml: config/yazi/gruvbox-dark.toml
-    ~/.config/yazi/flavors/gruvbox-dark.yazi:
-      create: true
-      path: config/yazi/flavors/gruvbox-dark.yazi
+    ~/.config/yazi/theme.tmTheme: config/yazi/gruvbox-dark.tmTheme
     ~/.config/zathura/theme: config/zathura/gruvbox-dark

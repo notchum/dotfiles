@@ -24,7 +24,5 @@
     ~/.config/swaylock/theme: config/swaylock/ayu-dark
     ~/.config/waybar/theme.css: config/waybar/ayu-dark.css
     ~/.config/yazi/theme.toml: config/yazi/ayu-dark.toml
-    ~/.config/yazi/flavors/ayu-dark.yazi:
-      create: true
-      path: config/yazi/flavors/ayu-dark.yazi
+    ~/.config/yazi/theme.tmTheme: config/yazi/ayu-dark.tmTheme
     ~/.config/zathura/theme: config/zathura/ayu-dark

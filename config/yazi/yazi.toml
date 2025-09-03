@@ -1,6 +1,7 @@
 [mgr]
 linemode = "size"
 show_hidden = true
+syntect_theme = "~/.config/yazi/theme.tmTheme"
 
 [plugin]
 prepend_previewers = [
