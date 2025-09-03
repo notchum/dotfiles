@@ -47,6 +47,11 @@ Themes can be swapped around simply by re-executing the `install` script (i.e. r
 ![gruvbox-dark-screenshot1](images/gruvbox-dark-screenshot1.png)
 ![gruvbox-dark-screenshot2](images/gruvbox-dark-screenshot2.png)
 
+### [`catppuccin-mocha`](https://catppuccin.com/)
+
+![catppuccin-mocha-screenshot1](images/catppuccin-mocha-screenshot1.png)
+![catppuccin-mocha-screenshot2](images/catppuccin-mocha-screenshot2.png)
+
 ## Fetches
 
 - [pfetch](https://github.com/dylanaraps/pfetch) - Fast and pretty fetch tool that can be configured with one line in `.zshrc`/`.bashrc`.
