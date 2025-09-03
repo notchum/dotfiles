@@ -12,7 +12,7 @@ output * bg $HOME/Pictures/wallpapers/misc/arch-box-10668x4502.png fill
 ###        Colors         ###
 #############################
 # class                 border backgr. text indic. child_border
-client.focused          #ebdbb2 #ebdbb2 #1d2021 #fe8019
+client.focused          #ebdbb2 #ebdbb2 #1d2021 #ebdbb2
 client.unfocused        #282828 #282828	#83a598 #1d2021
 client.focused_inactive #282828 #282828 #282828
 client.placeholder      #fabd2f	#fabd2f	#1d2021
