@@ -4,52 +4,10 @@ index f9e40b7..eaea00f 100644
 +++ b/.dotbot-plugins/sudo/sudo.py
 @@ -57,7 +57,7 @@ class Sudo(dotbot.Plugin):
              remove(conf_file)
- 
+
      def _find_dotbot(self):
 -        base = path.dirname(path.dirname(dotbot.__file__))
 +        base = path.dirname(path.dirname(path.dirname(dotbot.__file__)))
          ret = path.join(base, 'bin', 'dotbot')
          self._log.debug('sudo: dotbot app path: {}'.format(ret))
          return ret
-diff --git a/.install.yaml b/.install.yaml
-index 2abbb32..92eec4d 100644
---- a/.install.yaml
-+++ b/.install.yaml
-@@ -66,6 +66,14 @@
-       method: clone-or-pull
- 
- 
-+- sudo:
-+    - sync:
-+        /etc/pacman.conf:
-+          path: 'etc/pacman.conf'
-+          owner: root
-+          group: root
-+
-+
- # Specific configurations for my laptop (Thinkpad T480) with hostname 'cruel-oath'
- #
- # This is the basic configuration for Sway
-@@ -82,6 +90,7 @@
-         ~/.config/waybar:   config/waybar
-         ~/.config/zathura:  config/zathura
- 
-+    # Install all of the required packages
-     - shell:
-         -
-           command: paru -Sy --needed - < <(cut -d '#' -f 1 packages/sway.lst | awk 'NF' | awk '{$1=$1};1') || true
-@@ -90,6 +99,14 @@
-           command: paru -Sy --needed - < <(cut -d '#' -f 1 packages/thinkpad-t480.lst | awk 'NF' | awk '{$1=$1};1') || true
-           description: Installing packages for T480 hardware support...
- 
-+    # Sync any configs owned by 'root'
-+    - sudo:
-+        - sync:
-+            /etc/ly/config.ini:
-+              path: 'etc/ly/config.ini'
-+              owner: root
-+              group: root
-+
- 
- # Specific configurations for my desktop workstation with hostname 'virtuous-treaty'
- #
