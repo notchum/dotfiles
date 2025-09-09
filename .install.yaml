@@ -60,6 +60,9 @@
     -
       command: ya pkg upgrade
       description: Updating yazi plugins...
+    -
+      command: paru -Sy --needed - < <(cut -d '#' -f 1 packages/core.lst | awk 'NF' | awk '{$1=$1};1') || true
+      description: Installing core packages...
 
 
 - git:
@@ -83,7 +86,6 @@
 - if:
     cond: hostnamectl | head -n 1 | grep -q 'cruel-oath'
     met:
-    # Link the configs for Sway + apps
     - link:
         ~/.config/fuzzel:   config/fuzzel
         ~/.config/rofi:     config/rofi
@@ -93,8 +95,10 @@
         ~/.config/waybar:   config/waybar
         ~/.config/zathura:  config/zathura
 
-    # Install all of the required packages
     - shell:
+        -
+          command: xdg-mime default imv.desktop image/png image/jpeg image/gif image/tiff
+          description: Setting imv as default image viewer..
         -
           command: paru -Sy --needed - < <(cut -d '#' -f 1 packages/sway.lst | awk 'NF' | awk '{$1=$1};1') || true
           description: Installing packages for Sway...
@@ -118,12 +122,13 @@
     cond: hostnamectl | head -n 1 | grep -q 'virtuous-treaty'
     met:
     - link:
-        ~/.config/kitty/font.conf:  themes/ashen/config/kitty/font.conf
-        ~/.config/kitty/theme.conf: themes/ashen/config/kitty/ashen.conf
-        ~/.config/kwinrc:           profiles/workstation/config/kwinrc
-        ~/.config/kwinrulesrc:      profiles/workstation/config/kwinrulesrc
-        ~/.config/OpenRGB:          profiles/workstation/config/OpenRGB
-        ~/.config/plasmarc:         profiles/workstation/config/plasmarc
+        ~/.config/kitty/font.conf:          themes/ashen/config/kitty/font.conf
+        ~/.config/kitty/theme.conf:         themes/ashen/config/kitty/ashen.conf
+        ~/.config/nvim/lua/colorscheme.lua: themes/ashen/config/nvim/lua/ashen.lua
+        ~/.config/kwinrc:                   profiles/workstation/config/kwinrc
+        ~/.config/kwinrulesrc:              profiles/workstation/config/kwinrulesrc
+        ~/.config/OpenRGB:                  profiles/workstation/config/OpenRGB
+        ~/.config/plasmarc:                 profiles/workstation/config/plasmarc
         ~/.config/vesktop/settings/settings.json:
           create: true
           path: profiles/workstation/config/vesktop/settings/settings.json
@@ -135,6 +140,9 @@
         -
           command: paru -Sy --needed - < <(cut -d '#' -f 1 packages/workstation.lst | awk 'NF' | awk '{$1=$1};1') || true
           description: Installing packages for workstation hardware support...
+        -
+          command: paru -Sy --needed - < <(cut -d '#' -f 1 packages/gaming.lst | awk 'NF' | awk '{$1=$1};1') || true
+          description: Installing packages for gaming...
 
     - sudo:
         - sync:

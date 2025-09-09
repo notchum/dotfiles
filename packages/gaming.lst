@@ -1,7 +1,7 @@
 # --------------------------------------------------- // Steam
 asf                                                    # steam trading card utility
 gamemode                                               # daemon and library for game optimizations
-# gamescope                                            # micro-compositor for gaming
+gamescope                                              # micro-compositor for gaming
 mangohud                                               # system performance overlay
 proton-ge-custom-bin                                   # glorious eggroll proton
 protontricks                                           # proton wrapper for winetricks
@@ -10,6 +10,7 @@ steamtinkerlaunch-git                                  # wrapper for steam custo
 
 # --------------------------------------------------- // Other
 heroic-games-launcher-bin                              # epic games launcher
+lutris                                                 # gaming platform for linux
 
 # --------------------------------------------------- // Emulation
 rpcs3-bin                                              # ps3 emulator

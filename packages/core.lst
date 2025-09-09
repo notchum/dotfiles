@@ -14,6 +14,7 @@ bluez-utils                                            # bluetooth utility cli
 # --------------------------------------------------- // Programming
 clang                                                  # c language
 cmake                                                  # make system
+bear                                                   # compilation databases for clang
 rustup                                                 # rust language
 lua                                                    # lua language
 python                                                 # python language
@@ -39,7 +40,6 @@ pacman-contrib                                         # for system update check
 libnotify                                              # for notifications
 wl-clipboard                                           # for clipboard support
 zoxide                                                 # for historical directories navigation
-npm                                                    # for nvim mason packages
 unzip                                                  # for nvim extracting zipfiles
 
 # --------------------------------------------------- // Shell
@@ -47,7 +47,6 @@ zsh                                                    # z shell
 oh-my-zsh-git                                          # plugin manager for zsh
 zsh-syntax-highlighting-git                            # syntax highlights for zsh
 zsh-theme-powerlevel10k-git                            # theme for zsh
-# spaceship-prompt-git                                   # theme for zsh
 eza                                                    # file lister for zsh
 dust                                                   # better du
 bat                                                    # better cat
@@ -66,7 +65,7 @@ kitty                                                  # terminal
 dolphin                                                # kde file manager
 ark                                                    # kde file archiver
 vim                                                    # terminal text editor
-neovim                                                 # vim based text editor
+neovim-nightly-bin                                     # vim based text editor
 lite-xl                                                # lightweight text editor
 yazi                                                   # terminal file manager
 lazygit                                                # tui for git commands
@@ -85,7 +84,7 @@ trash-cli                                              # cli to manage trash fil
 onefetch                                               # fetch for git repos
 neofetch
 macchina
-nitch
+fastfetch
 pfetch
 
 # --------------------------------------------------- // Icons
