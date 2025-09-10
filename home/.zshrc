@@ -90,9 +90,6 @@ export PAGER=bat
 export TERMCMD=kitty
 export BROWSER=firefox
 
-# pfetch configuration
-export PF_INFO="ascii title os kernel shell pkgs uptime memory"
-
 # Shortened command aliases
 alias ..='cd ..'
 alias v='vim'
@@ -120,6 +117,8 @@ alias rsync-copy='rsync -avz --progress -h'
 alias rsync-move='rsync -avz --progress -h --remove-source-files'
 alias rsync-update='rsync -avzu --progress -h'
 alias rsync-synchronize='rsync -avzu --delete --progress -h'
+alias pfetch='neofetch --config $XDG_CONFIG_HOME/neofetch/pfetch.conf'
+alias blockfetch='neofetch --config $XDG_CONFIG_HOME/neofetch/blockfetch.conf'
 alias hmmm='paru -Sy &> /dev/null && paru -Qu'
 alias remove-orphans='paru -Qdtq | paru -Rnu -'
 alias error='journalctl -b -p err'

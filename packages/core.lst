@@ -85,7 +85,6 @@ onefetch                                               # fetch for git repos
 neofetch
 macchina
 fastfetch
-pfetch
 
 # --------------------------------------------------- // Icons
 pop-icon-theme
