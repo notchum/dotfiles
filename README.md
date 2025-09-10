@@ -51,12 +51,3 @@ Themes can be swapped around simply by re-executing the `install` script (i.e. r
 
 ![catppuccin-mocha-screenshot1](images/catppuccin-mocha-screenshot1.png)
 ![catppuccin-mocha-screenshot2](images/catppuccin-mocha-screenshot2.png)
-
-## Fetches
-
-- [pfetch](https://github.com/dylanaraps/pfetch) - Fast and pretty fetch tool that can be configured with one line in `.zshrc`/`.bashrc`.
-- [nitch](https://github.com/ssleert/nitch) - Very uniquely designed fetch tool that has a great configuration out of the box.
-- [macchina](https://github.com/Macchina-CLI/macchina) - Extremely customizable fetch tool with an amazing name. Also written in Rust btw.
-- [neofetch](https://github.com/dylanaraps/neofetch) - The king of system info. Holds a special place in my heart.
-
-![fetch](images/fetch.png)
