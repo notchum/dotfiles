@@ -100,6 +100,9 @@
           command: xdg-mime default imv.desktop image/png image/jpeg image/gif image/tiff
           description: Setting imv as default image viewer..
         -
+          command: xdg-mime default org.pwmt.zathura.desktop application/pdf
+          description: Setting zathura as default PDF viewer..
+        -
           command: paru -Sy --needed - < <(cut -d '#' -f 1 packages/sway.lst | awk 'NF' | awk '{$1=$1};1') || true
           description: Installing packages for Sway...
         -

@@ -40,3 +40,4 @@ spotifyd                                               # daemon for tui spotify
 imv                                                    # image viewer
 spotify-tui                                            # terminal spotify client
 zathura                                                # document viewer
+zathura-pdf-poppler                                    # pdf support in zathura
