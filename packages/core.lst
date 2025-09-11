@@ -82,9 +82,8 @@ trash-cli                                              # cli to manage trash fil
 
 # --------------------------------------------------- // Fetches
 onefetch                                               # fetch for git repos
-neofetch
-macchina
-fastfetch
+neofetch                                               # system fetch (deprecated)
+fastfetch                                              # highly customizable system fetch
 
 # --------------------------------------------------- // Icons
 pop-icon-theme
