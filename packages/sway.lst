@@ -34,10 +34,8 @@ kvantum-qt5                                            # svg based qt5 theme eng
 # --------------------------------------------------- // Dependencies
 xdg-desktop-portal-wlr                                 # xdg desktop portal for wlroots
 xdg-desktop-portal-gtk                                 # xdg desktop portal for gtk
-spotifyd                                               # daemon for tui spotify
 
 # --------------------------------------------------- // Applications
 imv                                                    # image viewer
-spotify-tui                                            # terminal spotify client
 zathura                                                # document viewer
 zathura-pdf-poppler                                    # pdf support in zathura
