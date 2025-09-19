@@ -34,7 +34,6 @@ vim.pack.add({
   { src = "https://github.com/mason-org/mason.nvim" },
   { src = "https://github.com/nvim-treesitter/nvim-treesitter", version = "master" },
   { src = "https://github.com/stevearc/oil.nvim" },
-  { src = "https://github.com/stevearc/aerial.nvim" },
   { src = "https://github.com/kdheepak/lazygit.nvim" },
   { src = "https://github.com/lewis6991/gitsigns.nvim" },
   { src = "https://github.com/rmagatti/auto-session" },
@@ -46,15 +45,10 @@ vim.pack.add({
 -- package configs
 require("oil").setup()
 require("mason").setup()
-require("aerial").setup()
 require("fzf-lua").setup({
   winopts = {
-    height = 0.60,
-    width = 0.60,
-    row = 1,
-    col = 0,
     border = "double",
-    preview = { hidden = true },
+    preview = { border = "double", layout = "vertical" },
   },
 })
 require("auto-session").setup({
@@ -84,8 +78,8 @@ cmp.setup({
     documentation = cmp.config.window.bordered({ border = "double" }),
   },
   mapping = {
-    ["<C-p>"] = cmp.mapping.select_prev_item(),
-    ["<C-n>"] = cmp.mapping.select_next_item(),
+    ["<C-k>"] = cmp.mapping.select_prev_item(),
+    ["<C-j>"] = cmp.mapping.select_next_item(),
     ["<C-b>"] = cmp.mapping.scroll_docs(-4),
     ["<C-f>"] = cmp.mapping.scroll_docs(4),
     ["<C-Space>"] = cmp.mapping.complete(),
@@ -115,7 +109,6 @@ local map = vim.keymap.set
 map('i', 'jk', '<ESC>')
 map('n', '<ESC>', ':noh<CR>')
 map('t', '<ESC><ESC>', '<C-\\><C-n>')
-map('n', '<leader>w', ':write<CR>')
 map('n', '<leader>q', ':quit<CR>')
 map('n', '<leader>tl', ':set list!<CR>')
 map('n', '<leader>x', ':bdelete<CR>')
@@ -124,12 +117,15 @@ map({ 'n', 'v', 'x' }, '<leader>y', '"+y<CR>')
 map({ 'n', 'v', 'x' }, '<leader>d', '"+d<CR>')
 map({ 'n', 'v', 'x' }, '<leader>s', ':e #<CR>')
 map({ 'n', 'v', 'x' }, '<leader>S', ':sf #<CR>')
-map('n', '<leader>f', ':FzfLua files<CR>')
+map('n', '<leader>d', ':FzfLua files<CR>')
 map('n', '<leader>h', ':FzfLua helptags<CR>')
 map('n', '<leader>b', ':FzfLua buffers<CR>')
+map('n', '<leader>F', ':FzfLua live_grep resume=true<CR>')
+map('n', '<leader>f', ':FzfLua lgrep_curbuf<CR>')
+map('n', '<leader>m', ':FzfLua marks<CR>')
+map('n', '<leader>o', ':FzfLua lsp_document_symbols<CR>')
 map('n', '<leader>e', ':Oil<CR>')
 map('n', '<leader>lg', ':LazyGit<CR>')
-map('n', '<leader>to', ':AerialToggle!<CR>')
 map('n', '<leader>p', ':AutoSession search<CR>')
 map('n', '<leader>u', vim.pack.update)
 map('n', '<leader>td', function() vim.diagnostic.enable(not vim.diagnostic.is_enabled()) end)
